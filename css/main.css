@@ -1,6 +1,8 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -9,25 +11,109 @@
     background-image: url("../images/backgroundimg.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    
 }
 
 nav {
     height: 100px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     border: 3px solid black;
 }
 
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
 }
 
 nav ul li {
-    font-size: 22px;
+    display: flex;
+    align-items: center;
     float: left;
 }
 
 nav ul li a {
     text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 14px #00000025;
+    font-size: 18px;
+    font-weight: bold;
+    color: #271f1f;
 }
+
+nav button {
+    padding: 12px 40px 12px 40px;
+    background-color: transparent;
+    border: 2px solid #271f1f;
+    border-radius: 40px;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 14px #00000025;
+    font-size: 18px;
+    font-weight: bold;
+    color: #271f1f;
+}
+
+.home-h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #3F3838;
+    text-shadow: 0px 3px 6px #00000025;
+    font-size: 70px;
+}
+
+.home-h2 {
+    text-align: center;
+    margin-top: 5px;
+    color: #D84C4C;
+    text-shadow: 0px 2px 14px #00000025;
+    font-size: 68px;
+}
+
+form {
+    margin-top: 40px;
+    text-align: center;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+}
+
+.input-algemeen {
+    padding: 12px 0px 12px 8px;
+    font-size: 24px;
+    border: 0px solid black;
+}
+
+.input-veld-opleiding {
+    width: 30%;
+    max-width: 580px;
+    height: 70px;
+}
+
+.input-veld-locatie {
+    width: 20%;
+    max-width: 380px;
+    height: 70px;
+    /* margin-left: 20px; */
+    margin-right: 20px;
+}
+
+.goknop {
+    width: 10%;
+    max-width: 200px;
+    height: 70px;
+    background-color: #D84C4C;
+    vertical-align: top;
+}
+
+.voorstel-stage-knop {
+    margin: 20px;
+    width: 250.25px;
+    height: 87px;
+    margin-left: 20.1px;
+}
+
+
 
