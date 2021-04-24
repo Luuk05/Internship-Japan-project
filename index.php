@@ -25,14 +25,20 @@
         <h1 class="home-h1">Internship in Japan</h1>
         <h2 class="home-h2">Your journey starts here!</h2>
         <form action="" method="post">
-            <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen">
-            <input type="text" placeholder="locatie..." name="locatie" class="input-veld-locatie input-algemeen">
-            <input type="submit" name="go-knop" value="Go!" class="goknop">
+            <div class="rij1">
+                <div class="input-velden">
+                    <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen">
+                    <input type="text" placeholder="locatie..." name="locatie" class="input-veld-locatie input-algemeen">
+                </div>
+                <input type="submit" name="go-knop" value="Go!" class="goknop">
+            </div>
             <br/>
-            <input type="submit" name="knopvoorstel1" value="knopvoorstel" class="voorstel-stage-knop">
-            <input type="submit" name="knopvoorstel2" value="knopvoorstel" class="voorstel-stage-knop">
-            <input type="submit" name="knopvoorstel3" value="knopvoorstel" class="voorstel-stage-knop">
-            <input type="submit" name="knopvoorstel4" value="knopvoorstel" class="voorstel-stage-knop">
+            <div class="rij2">
+                <input type="submit" name="knopvoorstel1" value="knopvoorstel" class="voorstel-stage-knop">
+                <input type="submit" name="knopvoorstel2" value="knopvoorstel" class="voorstel-stage-knop">
+                <input type="submit" name="knopvoorstel3" value="knopvoorstel" class="voorstel-stage-knop">
+                <input type="submit" name="knopvoorstel4" value="knopvoorstel" class="voorstel-stage-knop">
+            </div>
         </form>
     </div>
     

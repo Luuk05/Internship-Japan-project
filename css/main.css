@@ -7,10 +7,11 @@
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
     background-image: url("../images/backgroundimg.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100% 100vh;
 }
 
 nav {
@@ -74,38 +75,63 @@ nav button {
 
 form {
     margin-top: 40px;
-    text-align: center;
+    /* text-align: center; */
     /* display: flex;
     align-items: center;
     justify-content: space-around; */
 }
 
+.rij1 {
+    display: flex;
+    justify-content: center;
+}
+
 .input-algemeen {
-    padding: 12px 0px 12px 8px;
+    padding: 12px 8px 12px 8px;
     font-size: 24px;
-    border: 0px solid black;
+    border: 0px solid transparent;
+    float: left;
+}
+
+.input-algemeen:focus {
+    outline: 0px solid transparent;
+}
+
+.input-velden {  /* Kijk naar kleine ruimte in de corners. misschiine border 2px zetten*/
+    width: 50%;
+    max-width: 960px;
+    border: 1px solid black; 
+    border-radius: 5px;
+}
+
+.input-velden:focus-within {
+    box-shadow: 0 0 2px 1px black;
 }
 
 .input-veld-opleiding {
-    width: 30%;
-    max-width: 580px;
     height: 70px;
+    width: 60%;
+    border-radius: 5px 0 0 5px;
 }
 
 .input-veld-locatie {
-    width: 20%;
-    max-width: 380px;
     height: 70px;
-    /* margin-left: 20px; */
-    margin-right: 20px;
+    width: 40%;
+    border-radius: 0 5px 5px 0;
 }
 
 .goknop {
+    margin-left: 10px;
     width: 10%;
     max-width: 200px;
     height: 70px;
     background-color: #D84C4C;
     vertical-align: top;
+}
+
+.rij2 {
+    display: flex;
+    justify-content: center;
 }
 
 .voorstel-stage-knop {
