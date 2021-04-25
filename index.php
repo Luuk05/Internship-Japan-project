@@ -22,24 +22,25 @@
             </ul>
             <button>Sign in/up</button>
         </nav>
-        <h1 class="home-h1">Internship in Japan</h1>
-        <h2 class="home-h2">Your journey starts here!</h2>
-        <form action="" method="post">
-            <div class="rij1">
-                <div class="input-velden">
-                    <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen">
-                    <input type="text" placeholder="locatie..." name="locatie" class="input-veld-locatie input-algemeen">
+        <div class="een-geheel">
+            <h1 class="home-h1">Internship in Japan</h1>
+            <h2 class="home-h2">Your journey starts here!</h2>
+            <form action="" method="post">
+                <div class="rij1">
+                    <div class="input-velden rij1-voorstel-knoppen">
+                        <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen">
+                        <input type="text" placeholder="locatie..." name="locatie" class="input-veld-locatie input-algemeen">
+                    </div>
+                    <input type="submit" name="go-knop" value="Go!" class="go-knop">
                 </div>
-                <input type="submit" name="go-knop" value="Go!" class="goknop">
-            </div>
-            <br/>
-            <div class="rij2">
-                <input type="submit" name="knopvoorstel1" value="knopvoorstel" class="voorstel-stage-knop">
-                <input type="submit" name="knopvoorstel2" value="knopvoorstel" class="voorstel-stage-knop">
-                <input type="submit" name="knopvoorstel3" value="knopvoorstel" class="voorstel-stage-knop">
-                <input type="submit" name="knopvoorstel4" value="knopvoorstel" class="voorstel-stage-knop">
-            </div>
-        </form>
+                <div class="rij2">
+                    <input type="submit" name="knopvoorstel1" value="Knop-voorstel-stage" class="voorstel-stage-knop rij1-voorstel-knoppen">
+                    <input type="submit" name="knopvoorstel2" value="Knop-voorstel-stage" class="voorstel-stage-knop rij1-voorstel-knoppen">
+                    <input type="submit" name="knopvoorstel3" value="Knop-voorstel-stage" class="voorstel-stage-knop rij1-voorstel-knoppen">
+                    <input type="submit" name="knopvoorstel4" value="Knop-voorstel-stage" class="voorstel-stage-knop rij1-voorstel-knoppen">
+                </div>
+            </form>
+        </div>
     </div>
     
 </body>
