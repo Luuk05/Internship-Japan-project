@@ -15,12 +15,12 @@
 }
 
 nav {
-    height: 100px;
+    height: 150px; /* 100 */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 3px solid black;
+    /* border: 3px solid black; */
 }
 
 nav ul {
@@ -28,6 +28,10 @@ nav ul {
     display: flex;
     justify-content: space-around;
     width: 35%;
+}
+
+nav ul img {
+    cursor: pointer;
 }
 
 nav ul li {
@@ -45,6 +49,11 @@ nav ul li a {
     color: #271f1f;
 }
 
+nav ul li a:hover {
+    color: #D84C4C;
+    text-shadow: 0 0 2px black;
+}
+
 nav button {
     padding: 12px 40px 12px 40px;
     background-color: transparent;
@@ -55,11 +64,19 @@ nav button {
     font-size: 18px;
     font-weight: bold;
     color: #271f1f;
+    cursor: pointer;
+}
+
+nav button:hover {
+    color: #D84C4C;
+    border: 2px solid #D84C4C;
+    text-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px black;;
 }
 
 .home-h1 {
     text-align: center;
-    margin-top: 140px;
+    margin-top: 90px; /* 140 */
     color: #3F3838;
     text-shadow: 0px 3px 6px #00000025;
     font-size: 70px;
@@ -89,12 +106,17 @@ form {
 .input-velden {
     width: 50%;
     max-width: 960px;
-    /* border: 1px solid black; 
-    border-radius: 5px; */
+    border: 1px solid #9B9B9B; 
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #000000;
+}
+
+.input-velden:hover {
+    box-shadow: 0 0 5px black;
 }
 
 .input-velden:focus-within {
-    box-shadow: 0 0 2px 1px black;
+    box-shadow: 0 0 4px 1px black;
 }
 
 .input-algemeen {
@@ -133,10 +155,12 @@ form {
     box-shadow: 0px 2px 3px #543838;
     font-size: 26px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .go-knop:hover {
-    box-shadow: 0 0 2px 1px black;
+    box-shadow: 0 0 4px black;
+    background-color: #d04c4c;
 }
 
 .rij2 {
@@ -153,18 +177,20 @@ form {
     width: 277.5px;
     height: 70px;
     margin-left: 20px;
-    font-size: 24px;
+    font-size: 22px;
+    color: #362828;
+    font-weight: bold;
     background-color: #ffffff;
-}
-
-.rij1-voorstel-knoppen {
     border: 1px solid #9B9B9B; 
     border-radius: 5px;
     box-shadow: 0px 0px 2px #000000;
+    cursor: pointer;
 }
 
-.rij1-voorstel-knoppen:hover {
-    box-shadow: 0 0 2px 1px black;
+.voorstel-stage-knop:hover {
+    box-shadow: 0 0 5px black;
+    background-color: #f2efef;
+    
 }
 
 
