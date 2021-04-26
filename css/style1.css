@@ -101,6 +101,11 @@ form {
 .rij1 {
     display: flex;
     justify-content: center;
+
+    
+
+    /* width: 60%;
+    max-width: 1170px; */
 }
 
 .input-velden {

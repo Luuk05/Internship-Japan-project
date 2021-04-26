@@ -28,7 +28,7 @@
             <div class="rij1">
                 <div class="input-velden">
                     <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen">
-                    <input type="text" placeholder="locatie..." name="locatie" class="input-veld-locatie input-algemeen">
+                    <input type="text" placeholder="Locatie..." name="locatie" class="input-veld-locatie input-algemeen">
                 </div>
                 <input type="submit" name="go-knop" value="Go!" class="go-knop">
             </div>
