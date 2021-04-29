@@ -12,7 +12,7 @@
     <div class="container-1">
         <nav>
             <ul>
-                <img src="images/internshiplogo.png" alt="Intership Japan">
+                <!-- <img src="images/internshiplogo.png" alt="Intership Japan"> -->
                 <li><a href="">For Employers</a></li>
                 <li><a href="">About us</a></li>
                 <li><a href="">F.A.Q.</a></li>
@@ -36,13 +36,12 @@
                     <div class="textbox">
                         <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
                         <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
-                        <p>Hallo ik ben ben en ben is ben en hoeveel kan er op deze lijst want dat willen we w<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
+                        <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
                     </div> 
                 </div>
+                
             </div>
         </div>
-        
-        
     </div>
 </body>
 </html>
