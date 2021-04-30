@@ -33,14 +33,17 @@
                         <div class="line"></div>
                         <h3>Sign up</h3>
                     </div>
-                    
-                    <!-- <div class="rij2">
-                        <input type="submit" name="knopvoorstel1" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                        <input type="submit" name="knopvoorstel2" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                        <input type="submit" name="knopvoorstel3" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                        <input type="submit" name="knopvoorstel4" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                    </div> -->
+                    <h2 class="voorgestelde-stages-header">Voorgestelde stages:</h2>
+                    <input type="submit" name="knopvoorstel1" value="Knop-voorstel-stage" class="voorstel-stage-knop">
+                    <input type="submit" name="knopvoorstel2" value="Knop-voorstel-stage" class="voorstel-stage-knop">
+                    <input type="submit" name="knopvoorstel3" value="Knop-voorstel-stage" class="voorstel-stage-knop">
                 </form>
+            </div>
+            <div class="box2">
+                <div class="recente-stages">
+                    <h2>Recent opportunities:</h2>
+                </div>
+                <div class="stage-plek"></div>
             </div>
         </div>
     </div>

@@ -94,24 +94,22 @@ nav button:hover {
 .container-2 {
     height: auto;
     display: grid;
-    grid-template-columns: 50% 48%;
-    grid-column-gap: 2%;
-    margin: 40px 10% 0 10%;
+    grid-template-columns: 53% 40%;
+    grid-column-gap: 7%;
+    margin: 80px 10% 0 10%;
 }
 
 .box1 {
     width: 100%;
-    height: 600px;
-    margin-top: 40px;
-    padding: 50px 60px;
-    background-color: white;
+    height: auto;
+    padding: 6% 10%;
+    background-color: #fafbfd;
     border-radius: 10px;
     box-shadow: 0 0 5px black;
-
 }
 
 .box1 h2 {
-
+    font-size: 20px;
 }
 
 .input-algemeen {
@@ -121,7 +119,7 @@ nav button:hover {
     font-size: 24px;
     border: 1px solid #767575;
     border-radius: 4px;
-    box-shadow: 0 0 3px #4f4f4f;
+    box-shadow: 0 0 2px #4f4f4f;
     
 }
 
@@ -141,7 +139,7 @@ nav button:hover {
 .search-knop {
     width: 50%;
     height: 65px;
-    margin-top: 20px;
+    margin-top: 15px;
     float: left;
 
     color: #f0f3f5;
@@ -149,22 +147,22 @@ nav button:hover {
     vertical-align: top;
     border: 1px solid #354b96; 
     border-radius: 5px;
-    box-shadow: 0px 0px 3px #543838;
+    box-shadow: 0px 0px 1px #543838;
     font-size: 26px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .search-knop:hover {
-    box-shadow: 0 0 4px black;
+    box-shadow: 0 0 2px black;
     color: #271f1f;
     background-color: #607ddc;
     border: 1px solid #607ddc; 
 }
 
 .sign-box {
-    height: 60px;
-    margin-top: 20px;
+    height: 65px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     
@@ -177,43 +175,66 @@ nav button:hover {
 
 .line {
     float: left;
-    margin: 15px 20px;
-    height: 34px;
+    margin: 8px 20px;
+    height: 51px;
     width: 3px;
     border-radius: 3px;
     background-color: #707070;
 }
 
-.rij2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.voorgestelde-stages-header {
+    margin: 15px 0 10px 0;
+    font-size: 18px;
 }
 
 .voorstel-stage-knop {
-    max-width: 280px;
-    width: 14.5%;
-    margin-left: 1%;
+    width: 32%;
+    margin-right: 1%;
 
     height: 70px;
-    font-size: 22px;
+    font-size: 16px;
     color: #362828;
     font-weight: bold;
-    background-color: #ffffff;
+    background-color: #fdfafa;
     border: 1px solid #9B9B9B; 
     border-radius: 5px;
-    box-shadow: 0px 0px 2px #000000;
+    box-shadow: 0px 0px 1px #000000;
     cursor: pointer;
 }
 
-.voorstel-stage-knop:nth-child(1) {
-    margin-left: 0px;
+.voorstel-stage-knop:nth-last-child(1) {
+    margin-right: 0px;
 }
 
 .voorstel-stage-knop:hover {
+    box-shadow: 0 0 2px black;
+    background-color: #3E58AA;
+    border: 1px solid #354b96;     
+    color: #f0f3f5;
+}
+
+.box2 {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
     box-shadow: 0 0 5px black;
-    background-color: #f2efef;
-    
+}
+
+.recente-stages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.stage-plek {
+    margin-top: 5%;
+    width: 100%;
+    height: 25%;
+    background-color: white;
 }
 
 
