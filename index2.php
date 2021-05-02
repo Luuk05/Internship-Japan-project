@@ -40,10 +40,37 @@
                 </form>
             </div>
             <div class="box2">
-                <div class="recente-stages">
+                <div class="recente-stages-balk">
                     <h2>Recent opportunities:</h2>
                 </div>
-                <div class="stage-plek"></div>
+                <div class="alle-stages">
+                    <div class="recente-stage-plek">
+                        <img src="images/placeholder-100x100.png" alt="">
+                        <div class="textbox">
+                            <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
+                            <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
+                            <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
+                        </div>
+                    </div>
+                    <div class="recente-stage-plek">
+                        <img src="images/placeholder-100x100.png" alt="">
+                        <div class="textbox">
+                            <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
+                            <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
+                            <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
+                        </div>
+                    </div>
+                    <div class="recente-stage-plek">
+                        <img src="images/placeholder-100x100.png" alt="">
+                        <div class="textbox">
+                            <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
+                            <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
+                            <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
             </div>
         </div>
     </div>

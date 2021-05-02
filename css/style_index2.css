@@ -21,6 +21,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 0 8px black;
     /* border: 3px solid black; */
 }
 
@@ -109,7 +110,7 @@ nav button:hover {
 }
 
 .box1 h2 {
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .input-algemeen {
@@ -183,7 +184,7 @@ nav button:hover {
 }
 
 .voorgestelde-stages-header {
-    margin: 15px 0 10px 0;
+    margin: 5% 0 10px 0;/* margin: 15px 0 10px 0; */
     font-size: 18px;
 }
 
@@ -217,10 +218,9 @@ nav button:hover {
     width: 100%;
     height: auto;
     background-color: transparent;
-    box-shadow: 0 0 5px black;
 }
 
-.recente-stages {
+.recente-stages-balk {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,11 +230,48 @@ nav button:hover {
     border-radius: 10px 10px 0 0;
 }
 
-.stage-plek {
-    margin-top: 5%;
+.alle-stages {
+    height: 85%;
+}
+
+
+.recente-stage-plek {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
     width: 100%;
-    height: 25%;
+    height: auto;
+    padding: 3%;
     background-color: white;
+}
+
+.recente-stage-plek img {
+    float: left;
+    height: 94%;
+    width: auto;
+}
+
+.textbox {
+    float: left;
+    width: auto;
+    height: auto;
+    margin-left: 3%;
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+
+.textbox h1 {
+   font-size: 24px;
+}
+
+.textbox h2 {
+    font-size: 18px;
+    margin-top: 1%;
+}
+
+.textbox p {
+    margin-top: 2%;
 }
 
 

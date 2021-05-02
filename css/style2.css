@@ -147,16 +147,16 @@ nav button:hover {
     height: 150px;
 }
 
-.resultaat-boxen h1 {
+.textbox h1 {
    font-size: 24px;
 }
 
-.resultaat-boxen h2 {
+.textbox h2 {
     font-size: 18px;
     margin-top: 5px;
 }
 
-.resultaat-boxen p {
+.textbox p {
     margin-top: 10px;
 }
 
