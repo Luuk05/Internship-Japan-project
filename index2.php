@@ -28,21 +28,25 @@
                     <input type="text" placeholder="Locatie..." name="locatie" class="input-veld-locatie input-algemeen">
                     <br>
                     <input type="submit" name="search-knop" value="Search!" class="search-knop">
+                
                     <div class="sign-box">
                         <h3>Sign in</h3>
                         <div class="line"></div>
                         <h3>Sign up</h3>
                     </div>
                     <h2 class="voorgestelde-stages-header">Voorgestelde stages:</h2>
-                    <input type="submit" name="knopvoorstel1" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                    <input type="submit" name="knopvoorstel2" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                    <input type="submit" name="knopvoorstel3" value="Knop-voorstel-stage" class="voorstel-stage-knop">
-                </form>
+                    <div class="voorgestelde-stages">
+                        <input type="submit" name="knopvoorstel1" value="Knop-voorstel-stage" class="voorstel-stage-knop">
+                        <input type="submit" name="knopvoorstel2" value="Knop-voorstel-stage" class="voorstel-stage-knop">
+                        <input type="submit" name="knopvoorstel3" value="Knop-voorstel-stage" class="voorstel-stage-knop">
+                    </div>
+                </form> 
             </div>
             <div class="box2">
                 <div class="recente-stages-balk">
                     <h2>Recent opportunities:</h2>
                 </div>
+                <div class="lege-ruimte"></div>
                 <div class="alle-stages">
                     <div class="recente-stage-plek">
                         <img src="images/placeholder-100x100.png" alt="">

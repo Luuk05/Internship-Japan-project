@@ -188,10 +188,14 @@ nav button:hover {
     font-size: 18px;
 }
 
-.voorstel-stage-knop {
-    width: 32%;
-    margin-right: 1%;
+.voorgestelde-stages {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
+.voorstel-stage-knop {
+    width: 31%;
     height: 70px;
     font-size: 16px;
     color: #362828;
@@ -201,10 +205,6 @@ nav button:hover {
     border-radius: 5px;
     box-shadow: 0px 0px 1px #000000;
     cursor: pointer;
-}
-
-.voorstel-stage-knop:nth-last-child(1) {
-    margin-right: 0px;
 }
 
 .voorstel-stage-knop:hover {
@@ -230,17 +230,25 @@ nav button:hover {
     border-radius: 10px 10px 0 0;
 }
 
-.alle-stages {
-    height: 85%;
+.lege-ruimte {
+    height: 5%;
+    width: 100%;
+    background-color: transparent;
 }
 
+.alle-stages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 80%;
+}
 
 .recente-stage-plek {
     display: flex;
     align-items: center;
-    margin-top: 3%;
     width: 100%;
-    height: auto;
+    height: 30%;
     padding: 3%;
     background-color: white;
 }
