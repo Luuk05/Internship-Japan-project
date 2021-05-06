@@ -92,10 +92,6 @@ nav button:hover {
 
 form {
     margin-top: 40px;
-    /* text-align: center; */
-    /* display: flex;
-    align-items: center;
-    justify-content: space-around; */
 }
 
 .rij1 {
@@ -164,7 +160,8 @@ form {
 .go-knop:hover {
     box-shadow: 0 0 4px black;
     color: #271f1f;
-    background-color: #d5dfff;
+    background-color: #6177c0;
+    border: 1px solid #6177c0; 
 }
 
 .rij2 {

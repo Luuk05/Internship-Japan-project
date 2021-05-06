@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    if (!empty($_POST["zoek-knop"])) {
+        $border_color = "#767575";
+        $box_shadow = "0 0 2px #4f4f4f";
+
+        if (!empty($_POST["opleiding"])) {
+            $opleiding = $_POST["opleiding"];
+        } else {
+            $border_color = "red";
+            $box_shadow = "0 0 3px red";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +38,11 @@
             <div class="box1">
                 <form action="" method="post">
                     <h2>Search:</h2>
-                    <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen">
+                    <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
                     <br>
                     <input type="text" placeholder="Locatie..." name="locatie" class="input-veld-locatie input-algemeen">
                     <br>
-                    <input type="submit" name="search-knop" value="Search!" class="search-knop">
+                    <input type="submit" name="zoek-knop" value="Search!" class="search-knop">
                 
                     <div class="sign-box">
                         <h3>Sign in</h3>
@@ -80,3 +95,4 @@
     </div>
 </body>
 </html>
+
