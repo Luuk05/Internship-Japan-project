@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "pdo_test2";
+$dbname = "pdo_testing";
 $user = "root";
 $password = "";
 //set DSN Data Source Name  hiermee kun je met db verbinden

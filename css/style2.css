@@ -8,13 +8,14 @@
 .container-1 {
     width: 100%;
     height: auto; 
+    min-height: 100vh;
     background-color: #e5eaf1;
 }
 
 .container-2 {
     height: auto;
     display: grid;
-    grid-template-columns: 19% 79%;
+    grid-template-columns: 23% 75%;
     grid-column-gap: 2%;
     margin: 40px 10% 0 10%;
 }
@@ -62,7 +63,7 @@
     background-color: #d5dfff;
 }
 
-.resultaten {
+#resultaten {
     display: grid;
     height: auto;
 }
@@ -109,11 +110,19 @@
 
 }
 
-
 .textbox p {
     margin-top: 10px;
 }
 
 .resultaat-boxen:last-child {
     margin-bottom: 0px;
+}
+
+#error-geen-resultaten {
+    font-size: 22px;
+    margin-top: 100px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #1d1b1b;
+    text-shadow: 0 0 1px #575252;
 }
