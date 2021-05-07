@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include_once "pdo_verbinding.php";
+
 
     if (!empty($_POST["zoek-knop"])) {
         $border_color = "#767575";
@@ -7,10 +9,18 @@
 
         if (!empty($_POST["opleiding"])) {
             $opleiding = $_POST["opleiding"];
+            $locatie = $_POST["locatie"];
+
+            $_SESSION["opleiding"] = $opleiding;
+            $_SESSION["locatie"] = $locatie;
+
+            header("Location: page2.php");
         } else {
             $border_color = "red";
             $box_shadow = "0 0 3px red";
         }
+
+
     }
 ?>
 <!DOCTYPE html>
@@ -25,15 +35,7 @@
 </head>
 <body>
     <div class="container-1">
-        <nav>
-            <ul>
-                <!-- <img src="images/internshiplogo.png" alt="Intership Japan"> -->
-                <li><a href="">For Employers</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">F.A.Q.</a></li>
-            </ul>
-            <button>Sign in/up</button>
-        </nav>
+        <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
         <div class="container-2">
             <div class="box1">
                 <form action="" method="post">

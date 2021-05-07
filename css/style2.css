@@ -11,66 +11,6 @@
     background-color: #e5eaf1;
 }
 
-nav {
-    height: 150px; /* 100 */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* border: 3px solid black; */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 35%;
-}
-
-nav ul img {
-    cursor: pointer;
-}
-
-nav ul li {
-    display: flex;
-    align-items: center;
-    float: left;
-}
-
-nav ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    text-shadow: 0px 2px 14px #00000025;
-    font-size: 18px;
-    font-weight: bold;
-    color: #271f1f;
-}
-
-nav ul li a:hover {
-    color: #3E58AA;
-    text-shadow: 0 0 1px #271f1f;
-}
-
-nav button {
-    padding: 12px 40px 12px 40px;
-    background-color: transparent;
-    border: 2px solid #271f1f;
-    border-radius: 40px;
-    text-transform: uppercase;
-    text-shadow: 0px 2px 14px #00000025;
-    font-size: 18px;
-    font-weight: bold;
-    color: #271f1f;
-    cursor: pointer;
-}
-
-nav button:hover {
-    color: #3E58AA;
-    text-shadow: 0 0 1px #271f1f;
-    border: 2px solid #3E58AA;
-    box-shadow: 0 0 1px #271f1f;
-}
-
 .container-2 {
     height: auto;
     display: grid;
@@ -82,7 +22,9 @@ nav button:hover {
 .filter-box {
     /* width: 20%; */
     height: 450px;
-    border: 1px solid black;
+    background-color: #fafbfd;
+    border-radius: 10px;
+    box-shadow: 0 0 4px black;
     padding: 30px;
 }
 
@@ -128,7 +70,9 @@ nav button:hover {
 .resultaat-boxen {
     height: 200px;
     width: 100%;
-    border: 1px solid black;
+    background-color: #fafbfd;
+    border-radius: 10px;
+    box-shadow: 0 0 4px black;
     padding: 0 25px 0 25px;
     margin-bottom: 20px;
 }
@@ -152,9 +96,19 @@ nav button:hover {
 }
 
 .textbox h2 {
+    display: inline-block;
     font-size: 18px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
+
+.textbox h3 {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+
 
 .textbox p {
     margin-top: 10px;
