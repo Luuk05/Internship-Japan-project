@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style_page2.css">
     <title>Zoekresultaten</title>
 </head>
 <body>
@@ -33,7 +33,7 @@
                     <input type="submit" name="filter-knop" value="Filter" class="filter-knop">
                 </form>
             </div>
-            <div id="resultaten">
+            <div id="resultaten-box">
                 <?php 
                     if (empty($_SESSION["opleiding"])) {
                     } else {
@@ -57,7 +57,7 @@
                                 </div>";
                         }
                     }
-                    session_unset();
+                    // session_unset();
         
                     
                 ?>

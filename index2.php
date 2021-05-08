@@ -7,9 +7,9 @@
         $border_color = "#767575";
         $box_shadow = "0 0 2px #4f4f4f";
 
-        if (!empty($_POST["opleiding"])) {
-            $opleiding = $_POST["opleiding"];
-            $locatie = $_POST["locatie"];
+        if (!empty($_POST["opleiding"]) && strlen(trim($_POST['opleiding'])) > 0) {
+            $opleiding = trim($_POST["opleiding"]);
+            $locatie = trim($_POST["locatie"]);
 
             $_SESSION["opleiding"] = $opleiding;
             $_SESSION["locatie"] = $locatie;
@@ -37,7 +37,7 @@
     <div class="container-1">
         <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
         <div class="container-2">
-            <div class="box1">
+            <div class="input-velden-box">
                 <form action="" method="post">
                     <h2>Search:</h2>
                     <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
@@ -59,7 +59,7 @@
                     </div>
                 </form> 
             </div>
-            <div class="box2">
+            <div class="recente-stages-box">
                 <div class="recente-stages-balk">
                     <h2>Recent opportunities:</h2>
                 </div>

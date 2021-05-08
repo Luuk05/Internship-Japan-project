@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.container-1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/backgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.container-2 {
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 40px 30% 40px 30%;
+}
+
+.box-registreer {
+    height: 750px;    /* auto */
+    width: 100%;
+    background-color: #fafbfd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+}

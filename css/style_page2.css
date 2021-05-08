@@ -58,12 +58,13 @@
 }
 
 .filter-knop:hover {
-    box-shadow: 0 0 4px black;
+    box-shadow: 0 0 2px black;
     color: #271f1f;
-    background-color: #d5dfff;
+    background-color: #607ddc;
+    border: 1px solid #607ddc; 
 }
 
-#resultaten {
+#resultaten-box {
     display: grid;
     height: auto;
 }

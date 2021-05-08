@@ -38,7 +38,7 @@
     margin: 80px 10% 0 10%;
 }
 
-.box1 {
+.input-velden-box {
     width: 100%;
     height: auto;
     padding: 6% 10%;
@@ -47,7 +47,7 @@
     box-shadow: 0 0 5px black;
 }
 
-.box1 h2 {
+.input-velden-box h2 {
     font-size: 28px;
 }
 
@@ -151,7 +151,7 @@
     color: #f0f3f5;
 }
 
-.box2 {
+.recente-stages-box {
     width: 100%;
     height: auto;
     background-color: transparent;
