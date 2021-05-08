@@ -16,9 +16,9 @@ function error_geen_resultaten() {
     // divtag.appendChild(br);
     divtag.appendChild(h3tag2);
 
-    document.getElementById("resultaten").appendChild(divtag);
+    document.getElementById("resultaten-box").appendChild(divtag);
 }
 
-if (document.getElementById("resultaten").innerText == "") {
+if (document.getElementById("resultaten-box").innerText == "") {
     error_geen_resultaten();
 }
