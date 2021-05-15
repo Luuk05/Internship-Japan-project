@@ -1,3 +1,7 @@
+<?php 
+    include_once "pdo_verbinding.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

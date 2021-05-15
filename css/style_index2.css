@@ -14,22 +14,6 @@
     background-size: cover;
 }
 
-.home-h1 {
-    text-align: center;
-    margin-top: 50px; /* 140 / 90*/
-    color: #3F3838;
-    text-shadow: 0px 3px 6px #00000025;
-    font-size: 70px;
-}
-
-.home-h2 {
-    text-align: center;
-    margin-top: 5px;
-    color: #D84C4C;
-    text-shadow: 0px 2px 14px #00000025;
-    font-size: 68px;
-}
-
 .container-2 {
     height: auto;
     display: grid;
@@ -59,7 +43,6 @@
     border: 1px solid #767575;
     border-radius: 4px;
     box-shadow: 0 0 2px #4f4f4f;
-    
 }
 
 .input-algemeen:focus {

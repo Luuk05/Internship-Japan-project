@@ -51,6 +51,7 @@
                         <div class="line"></div>
                         <h3>Sign up</h3>
                     </div>
+                    
                     <h2 class="voorgestelde-stages-header">Voorgestelde stages:</h2>
                     <div class="voorgestelde-stages">
                         <input type="submit" name="knopvoorstel1" value="Knop-voorstel-stage" class="voorstel-stage-knop">
