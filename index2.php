@@ -3,7 +3,7 @@
     include_once "pdo_verbinding.php";
 
 
-    if (!empty($_POST["zoek-knop"])) {
+    if (isset($_POST["zoek-knop"])) {
         $border_color = "#767575";
         $box_shadow = "0 0 2px #4f4f4f";
 

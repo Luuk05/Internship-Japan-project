@@ -1,28 +1,31 @@
 <?php 
     include_once "pdo_verbinding.php";
 
+    $border_color = array("#767575", "#767575");
+    $box_shadow = array("0 0 2px #4f4f4f", "0 0 2px #4f4f4f");
 
-
-    if (!empty($_POST["login-knop"])) {
-        $border_color = "#767575";
-        $box_shadow = "0 0 2px #4f4f4f";
+    if (isset($_POST["login-knop"])) {
 
         if (!empty($_POST["email"])) {
             $email = $_POST["email"];
-            $_SESSION["opleiding"] = $opleiding;
-            
-            header("Location: page2.php");
+            $_SESSION["email"] = $email;
+
         } else {
-            $border_color = "red";
-            $box_shadow = "0 0 3px red";
+            $border_color[0] = "red";
+            $box_shadow[0] = "0 0 3px red";
         }
 
         if (!empty($_POST["wachtwoord"])) {
             $wachtwoord = $_POST["wachtwoord"];
-            $_SESSION["locatie"] = $locatie;
+            $_SESSION["wachtwoord"] = $wachtwoord;
+
         } else {
-            $border_color = "red";
-            $box_shadow = "0 0 3px red";
+            $border_color[1] = "red";
+            $box_shadow[1] = "0 0 3px red";
+        }
+
+        if (!empty($_POST["email"]) && !empty($_POST["wachtwoord"])) {
+            // header("Location: page2.php");
         }
 
     }
@@ -44,11 +47,15 @@
             <div class="box-login">
                 <form action="" method="post">
                     <h2>Sign in:</h2>
-                    <input type="text" placeholder="E-mail adress..." name="email" class="input-algemeen input-veld-username" style= "border-color: <?php //echo $border_color; ?>;  box-shadow: <?php //echo $box_shadow; ?>;">
+                    <input type="text" placeholder="E-mail adress..." name="email" class="input-algemeen input-veld-username" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
                     <br>
-                    <input type="password" placeholder="Password..." name="wachtwoord" class="input-algemeen input-veld-password">
+                    <input type="password" placeholder="Password..." name="wachtwoord" class="input-algemeen input-veld-password" style= "border-color: <?php echo $border_color[1]; ?>;  box-shadow: <?php echo $box_shadow[1]; ?>;">
                     <br>
                     <input type="submit" name="login-knop" value="Sign in" class="login-knop">
+                    <h3><a href="">I don't remember my password.</a></h3>
+                    <h3><a href="">I don't have an account yet.</a></h3>
+
+                    
                 </form>
             </div>
         </div>

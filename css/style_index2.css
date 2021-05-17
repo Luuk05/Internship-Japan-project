@@ -90,13 +90,16 @@
 }
 
 .sign-box h3 {
-    margin-top: 20px;
+    align-self: center;
+    /* margin-top: 20px; */
     float: left;
 }
 
 .line {
     float: left;
-    margin: 8px 20px;
+    align-self: center;
+    /* margin: 8px 20px; */
+    margin: 0px 20px;
     height: 51px;
     width: 3px;
     border-radius: 3px;
