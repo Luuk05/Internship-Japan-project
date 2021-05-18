@@ -1,8 +1,8 @@
 <?php 
     include_once "pdo_verbinding.php";
 
-    $border_color = array("#767575", "#767575");
-    $box_shadow = array("0 0 2px #4f4f4f", "0 0 2px #4f4f4f");
+    $border_color = array("#7675758c", "#7675758c");
+    $box_shadow = array("0 0 1px #4f4f4f", "0 0 1px #4f4f4f");
 
     if (isset($_POST["login-knop"])) {
 

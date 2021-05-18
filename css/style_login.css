@@ -49,14 +49,14 @@ h2 {
     width: 100%;
     padding: 12px 8px 12px 8px;
     font-size: 24px;
-    border: 1px solid #767575;
+    border: 1px solid #7675758c;
     border-radius: 4px;
     box-shadow: 0 0 2px #4f4f4f;
 }
 
 .input-algemeen:focus {
     outline: 0px solid black;
-    border: 1px solid #333333;
+    border: 1px solid #333333a6;
 }
 
 .input-veld-username {

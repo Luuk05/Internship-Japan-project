@@ -4,16 +4,17 @@ nav {
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    box-shadow: 0 0 8px black;
+    padding: 0px 10% 0 10%;
+    justify-content: space-between;
+    box-shadow: 0 0 4px black;
     /* border: 3px solid black; */
 }
 
 nav ul {
     list-style: none;
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    width: 25%;
+    width: 25%; */
 }
 
 nav ul img {
@@ -24,13 +25,19 @@ nav ul li {
     display: flex;
     align-items: center;
     float: left;
+
+    margin-right: 80px;
+}
+
+nav ul li:nth-last-child(1) {
+    margin-right: 0px;
 }
 
 nav ul li a {
     text-decoration: none;
     text-transform: uppercase;
     text-shadow: 0px 2px 14px #00000025;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #271f1f;
 }
@@ -41,13 +48,13 @@ nav ul li a:hover {
 }
 
 nav button {
-    padding: 12px 40px 12px 40px;
+    padding: 12px 36px 12px 36px;
     background-color: transparent;
     border: 2px solid #271f1f;
     border-radius: 40px;
     text-transform: uppercase;
     text-shadow: 0px 2px 14px #00000025;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #271f1f;
     cursor: pointer;
