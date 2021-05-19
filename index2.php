@@ -36,8 +36,8 @@
 <body>
     <div class="container-1">
         <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
-        <div class="container-3">
-            <div class="container-2">
+        <div class="container-2">
+            <div class="container-3">
                 <div class="input-velden-box">
                     <form action="" method="post">
                         <h2>Search:</h2>
@@ -91,12 +91,13 @@
                                 <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
                             </div>
                         </div>
-                        
-                        
                     </div>
                 </div>
             </div>
         </div>
+        <footer>
+                
+        </footer>
     </div>
 </body>
 </html>
