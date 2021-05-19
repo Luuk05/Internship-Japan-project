@@ -26,9 +26,9 @@
 .container-3 {
     height: auto;
     display: grid;
-    grid-template-columns: 38% 43%;
-    grid-column-gap: 11%;
-    margin: 0px 14% 0 14%; /* 80px */
+    grid-template-columns: 50% 40%;
+    grid-column-gap: 10%;
+    margin: 0px 15% 0 15%; /* 80px */
 }
 
 .input-velden-box {
@@ -52,6 +52,7 @@
     border: 1px solid #7675758c;
     border-radius: 4px;
     box-shadow: 0 0 1px #4f4f4f;
+    letter-spacing: 1px;
 }
 
 .input-algemeen:focus {
@@ -150,7 +151,6 @@
 .recente-stages-box {
     width: 100%;
     height: auto;
-    background-color: transparent;
 }
 
 .recente-stages-balk {
@@ -158,68 +158,76 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 15%;
+    height: 45px;
     background-color: white;
     border-radius: 10px 10px 0 0;
+}
+
+.recente-stages-balk h2 {
+    font-size: 20px;
 }
 
 .lege-ruimte {
     height: 5%;
     width: 100%;
-    background-color: transparent;
 }
 
 .alle-stages {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    height: 80%;
+    height: calc(100% - 5% - 45px);
 }
 
 .recente-stage-plek {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 30%;
-    padding: 3%;
+    height: calc((100% - 10%) / 3);
     background-color: white;
+}
+
+.alle-info {
+    width: 90%;
+    height: 90%;
+    display: flex;
 }
 
 .recente-stage-plek img {
     float: left;
-    height: 94%;
+    height: 80%;
     width: auto;
+    margin-left: 3%;
 }
 
 .textbox {
     float: left;
     width: auto;
     height: auto;
-    margin-left: 3%;
     overflow: hidden;
     white-space: nowrap;
-    
+    margin-left: 3%;
+    /* margin-top: 10px; */
 }
 
 .textbox h1 {
-   font-size: 24px;
+   font-size: 22px;   /* 22px */
 }
 
 .textbox h2 {
-    font-size: 18px;
-    margin-top: 1%;
+    font-size: 18px; /*18px*/
+    margin-top: 1%; /*1%*/
 }
 
 .textbox p {
-    margin-top: 2%;
+    margin-top: 1%; /*1%*/
 }
 
 footer {
     width: 100%;
     height: 70px;
     background-color: white;
-    box-shadow: 0 0 4px black;
+    box-shadow: 0 0 2px black;
 
 }
 

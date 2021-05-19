@@ -4,9 +4,9 @@ nav {
     background-color: white;
     display: flex;
     align-items: center;
-    padding: 0px 10% 0 10%;
+    padding: 0px 15% 0 15%;
     justify-content: space-between;
-    box-shadow: 0 0 4px black;
+    box-shadow: 0 0 2px black;
     /* border: 3px solid black; */
 }
 

@@ -39,23 +39,24 @@
                     } else {
                         $opleiding = $_SESSION["opleiding"];
                         $locatie = $_SESSION["locatie"];
-
+                        
+                        
                         $sql = "SELECT * FROM mytable WHERE opleiding like :opleiding AND locatie like :locatie";
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute([":opleiding" => "%" . $opleiding . "%", ":locatie" => "%" . $locatie . "%"]);
-            
+        
                         foreach($stmt as $row) {
                             echo 
-                                "<div class='resultaat-boxen'>
-                                    <img src='images/placeholder-100x100.png' alt='img'>
-                                    <div class='textbox'>
-                                        <h1>"; echo $row["opleiding"]; echo "</h1>
-                                        <h2>"; echo $row["bedrijf"]; echo "</h2>
-                                        <h3>"; echo $row["locatie"]; echo "</h3>
-                                        <p>"; echo $row["bedrijfs_informatie"]; echo "</p>
-                                    </div> 
-                                </div>";
-                        }
+                            "<div class='resultaat-boxen'>
+                                <img src='images/placeholder-100x100.png' alt='img'>
+                                <div class='textbox'>
+                                    <h1>"; echo $row["opleiding"]; echo "</h1>
+                                    <h2>"; echo $row["bedrijf"]; echo "</h2>
+                                    <h3>"; echo $row["locatie"]; echo "</h3>
+                                    <p>"; echo $row["bedrijfs_informatie"]; echo "</p>
+                                </div> 
+                            </div>";
+                        }  
                     }
                     // session_unset();
         

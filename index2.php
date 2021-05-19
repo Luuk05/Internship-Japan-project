@@ -68,12 +68,14 @@
                     <div class="lege-ruimte"></div>
                     <div class="alle-stages">
                         <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
-                                <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
-                            </div>
+                            <!-- <div class="alle-info"> -->
+                                <img src="images/placeholder-100x100.png" alt="">
+                                <div class="textbox">
+                                    <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
+                                    <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
+                                    <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
+                                </div>
+                            <!-- </div> -->
                         </div>
                         <div class="recente-stage-plek">
                             <img src="images/placeholder-100x100.png" alt="">
@@ -96,7 +98,7 @@
             </div>
         </div>
         <footer>
-                
+                <!-- info over hoeveel mensen gerigistreed zijn en hoeveel bedrijven -->
         </footer>
     </div>
 </body>
