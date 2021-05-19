@@ -26,9 +26,9 @@
 .container-3 {
     height: auto;
     display: grid;
-    grid-template-columns: 53% 40%;
-    grid-column-gap: 7%;
-    margin: 0px 10% 0 10%; /* 80px */
+    grid-template-columns: 38% 43%;
+    grid-column-gap: 11%;
+    margin: 0px 14% 0 14%; /* 80px */
 }
 
 .input-velden-box {
@@ -45,7 +45,7 @@
 }
 
 .input-algemeen {
-    height: 60px;
+    height: 55px;
     width: 100%;
     padding: 12px 8px 12px 8px;
     font-size: 18px;
@@ -69,7 +69,7 @@
 
 .search-knop {
     width: 50%;
-    height: 55px;
+    height: 50px;
     margin-top: 15px;
     float: left;
 
@@ -92,7 +92,7 @@
 }
 
 .sign-box {
-    height: 55px;
+    height: 50px;
     margin-top: 15px;
     display: flex;
     justify-content: center;
@@ -219,5 +219,7 @@ footer {
     width: 100%;
     height: 70px;
     background-color: white;
+    box-shadow: 0 0 4px black;
+
 }
 
