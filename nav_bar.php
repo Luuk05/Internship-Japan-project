@@ -6,5 +6,5 @@
         <li><a href="">About us</a></li>
         <li><a href="">F.A.Q.</a></li>
     </ul>
-    <button>Sign in/up</button>
+    <a href="login.php"><button>Sign in/up</button></a>
 </nav>

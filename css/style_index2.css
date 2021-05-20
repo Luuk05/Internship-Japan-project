@@ -37,7 +37,7 @@
     padding: 6% 10%;
     background-color: #fafbfd;
     border-radius: 10px;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 1px black;
 }
 
 .input-velden-box h2 {
@@ -161,6 +161,7 @@
     height: 45px;
     background-color: white;
     border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 1px black;
 }
 
 .recente-stages-balk h2 {
@@ -185,12 +186,8 @@
     width: 100%;
     height: calc((100% - 10%) / 3);
     background-color: white;
-}
-
-.alle-info {
-    width: 90%;
-    height: 90%;
-    display: flex;
+    cursor: pointer;
+    box-shadow: 0 0 1px black;
 }
 
 .recente-stage-plek img {
@@ -211,7 +208,7 @@
 }
 
 .textbox h1 {
-   font-size: 22px;   /* 22px */
+   font-size: 20px;   /* 22px */
 }
 
 .textbox h2 {
@@ -220,6 +217,7 @@
 }
 
 .textbox p {
+    font-size: 16px;
     margin-top: 1%; /*1%*/
 }
 

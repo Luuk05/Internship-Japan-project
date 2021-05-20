@@ -2,9 +2,12 @@
     session_start();
     include_once "pdo_verbinding.php";
 
-    if (!isset($_SESSION["opleiding"])) {
-        $_SESSION["opleiding"] = "";
-        $_SESSION["locatie"] = "";
+    if (isset($_POST["filter-knop"])) {
+        $opleiding = trim($_POST["opleiding"]);
+        $locatie = trim($_POST["locatie"]);
+
+        $_SESSION["opleiding"] = $opleiding;
+        $_SESSION["locatie"] = $locatie;
     }
 
 ?>
@@ -41,7 +44,7 @@
                         $locatie = $_SESSION["locatie"];
                         
                         
-                        $sql = "SELECT * FROM mytable WHERE opleiding like :opleiding AND locatie like :locatie";
+                        $sql = "SELECT * FROM test2 WHERE opleiding like :opleiding AND locatie like :locatie";
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute([":opleiding" => "%" . $opleiding . "%", ":locatie" => "%" . $locatie . "%"]);
         
@@ -57,6 +60,9 @@
                                 </div> 
                             </div>";
                         }  
+                        
+
+                        
                     }
                     // session_unset();
         

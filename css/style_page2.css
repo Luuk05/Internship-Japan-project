@@ -17,34 +17,40 @@
     display: grid;
     grid-template-columns: 23% 75%;
     grid-column-gap: 2%;
-    margin: 40px 10% 0 10%;
+    margin: 40px 15% 0 15%;
 }
 
 .filter-box {
     /* width: 20%; */
-    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 280px;
     background-color: #fafbfd;
-    border-radius: 10px;
-    box-shadow: 0 0 4px black;
-    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px black;
+    padding: 25px;
 }
 
 .filter-box h1 {
-    font-size: 24px;
-}
-
-.filter-input-algemeen {
-    width: 90%;
-    height: 50px;
-    margin-top: 20px;
-    padding: 10px;
     font-size: 20px;
 }
 
+.filter-input-algemeen {
+    margin-top: 10px;
+    height: 55px;
+    width: 100%;
+    padding: 12px 8px 12px 8px;
+    font-size: 17px;
+    border: 1px solid #7675758c;
+    border-radius: 4px;
+    box-shadow: 0 0 1px #4f4f4f;
+}
+
 .filter-knop {
-    width: 70%;
+    width: 60%;
     height: 50px;
-    margin-top: 20px;
+    margin-top: 15px;
     
     color: #f0f3f5;
     background-color: #3E58AA;
@@ -52,7 +58,7 @@
     border: 1px solid #354b96; 
     border-radius: 5px;
     box-shadow: 0px 0px 3px #543838;
-    font-size: 26px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -64,33 +70,31 @@
     border: 1px solid #607ddc; 
 }
 
-#resultaten-box {
-    display: grid;
-    height: auto;
-}
-
 .resultaat-boxen {
-    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 150px;
     width: 100%;
     background-color: #fafbfd;
     border-radius: 10px;
-    box-shadow: 0 0 4px black;
-    padding: 0 25px 0 25px;
+    box-shadow: 0 0 1px black;
+    padding: 0 0px 0 0px;
     margin-bottom: 20px;
 }
 
 .resultaat-boxen img {
-    width: 150px;
-    height: 150px;
-    margin: 25px 0 25px 0;
+    height: 80%;
+    width: auto;
     float: left;
 }
 
 .textbox {
-    margin: 25px 0 25px 25px;
     float: left;
-    width: 60%;
-    height: 150px;
+    width: 70%;
+    height: 100px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .textbox h1 {

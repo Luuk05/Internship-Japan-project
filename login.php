@@ -37,12 +37,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style_login.css">
     <title>Sign in</title>
 </head>
 <body>
     <div class="container-1">
-    <?php include_once "nav_bar.php";  ?>
+    <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
         <div class="container-2">
             <div class="box-login">
                 <form action="" method="post">
