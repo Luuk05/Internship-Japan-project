@@ -55,8 +55,6 @@
                     <input type="submit" name="login-knop" value="Sign in" class="login-knop">
                     <h3><a href="">I don't remember my password.</a></h3>
                     <h3><a href="">I don't have an account yet.</a></h3>
-
-                    
                 </form>
             </div>
         </div>

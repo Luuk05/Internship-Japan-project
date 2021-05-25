@@ -25,11 +25,12 @@
     align-self: center;
     justify-self: center;
     height: auto;
-    width: 550px;
-    padding: 3% 3%;
+    width: 500px;
+    padding: 1% 2%;
     background-color: #fafbfd;
     border-radius: 10px;
     box-shadow: 0 0 1px black;
+    margin-bottom: 80px;   /* weghalen als ik wil centeren */
 }
 
 form {
@@ -76,6 +77,13 @@ h2 {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.login-knop:hover {
+    box-shadow: 0 0 2px black;
+    color: black;
+    background-color: #607ddc;
+    border: 1px solid #607ddc; 
 }
 
 h3:nth-last-child(2) {

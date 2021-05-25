@@ -18,6 +18,7 @@
     grid-template-columns: 23% 75%;
     grid-column-gap: 2%;
     margin: 40px 15% 0 15%;
+    /* padding: 0 0 40px 0; */
 }
 
 .filter-box {
@@ -65,7 +66,7 @@
 
 .filter-knop:hover {
     box-shadow: 0 0 2px black;
-    color: #271f1f;
+    color: black;
     background-color: #607ddc;
     border: 1px solid #607ddc; 
 }
@@ -73,26 +74,25 @@
 .resultaat-boxen {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     height: 150px;
     width: 100%;
     background-color: #fafbfd;
     border-radius: 10px;
     box-shadow: 0 0 1px black;
-    padding: 0 0px 0 0px;
     margin-bottom: 20px;
 }
 
 .resultaat-boxen img {
     height: 80%;
+    margin-left: 15px;
     width: auto;
     float: left;
 }
 
 .textbox {
-    float: left;
-    width: 70%;
     height: 100px;
+    margin: 0 15px 0 15px;
+    float: left;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -120,7 +120,7 @@
 }
 
 .resultaat-boxen:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 #error-geen-resultaten {

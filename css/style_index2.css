@@ -28,7 +28,7 @@
     display: grid;
     grid-template-columns: 50% 40%;
     grid-column-gap: 10%;
-    margin: 0px 15% 0 15%; /* 80px */
+    margin: 0 15% 80px 15%; /* weghalen als ik wil centeren */
 }
 
 .input-velden-box {
@@ -87,7 +87,7 @@
 
 .search-knop:hover {
     box-shadow: 0 0 2px black;
-    color: #271f1f;
+    color: black;
     background-color: #607ddc;
     border: 1px solid #607ddc; 
 }
