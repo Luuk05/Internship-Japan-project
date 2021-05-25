@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "test";
+$dbname = "internship_japan_db";
 $user = "root";
 $password = "";
 //set DSN Data Source Name  hiermee kun je met db verbinden

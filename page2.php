@@ -3,11 +3,20 @@
     include_once "pdo_verbinding.php";
 
     if (isset($_POST["filter-knop"])) {
-        $opleiding = trim($_POST["opleiding"]);
-        $locatie = trim($_POST["locatie"]);
+        $border_color = "#767575";
+        $box_shadow = "0 0 2px #4f4f4f";
 
-        $_SESSION["opleiding"] = $opleiding;
-        $_SESSION["locatie"] = $locatie;
+        if (!empty($_POST["opleiding"]) && strlen(trim($_POST['opleiding'])) > 0) {
+            $opleiding = trim($_POST["opleiding"]);
+            $locatie = trim($_POST["locatie"]);
+    
+            $_SESSION["opleiding"] = $opleiding;
+            $_SESSION["locatie"] = $locatie;
+        } else {
+            $border_color = "red";
+            $box_shadow = "0 0 3px red";
+        }
+        
     }
 
 ?>
@@ -29,7 +38,7 @@
             <div class="filter-box">
                 <h1>Filter</h1>
                 <form action="" method="post">
-                    <input type="text" placeholder="Opleiding..." name="opleiding" class="filter-input-algemeen">
+                    <input type="text" placeholder="Opleiding..." name="opleiding" class="filter-input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
                     <br>
                     <input type="text" placeholder="Locatie..." name="locatie" class="filter-input-algemeen">
                     <br>
@@ -44,19 +53,22 @@
                         $locatie = $_SESSION["locatie"];
                         
                         
-                        $sql = "SELECT * FROM test2 WHERE opleiding like :opleiding AND locatie like :locatie";
+                        $sql = "SELECT * FROM company WHERE position like :position AND city like :city";
                         $stmt = $pdo->prepare($sql);
-                        $stmt->execute([":opleiding" => "%" . $opleiding . "%", ":locatie" => "%" . $locatie . "%"]);
+                        $stmt->execute([":position" => "%" . $opleiding . "%", ":city" => "%" . $locatie . "%"]);
+
+                        $rows = $stmt->fetchAll();
+                        // print("<pre>".print_r($rows, true)."</pre>");
         
-                        foreach($stmt as $row) {
+                        foreach($rows as $row) {
                             echo 
                             "<div class='resultaat-boxen'>
                                 <img src='images/placeholder-100x100.png' alt='img'>
                                 <div class='textbox'>
-                                    <h1>"; echo $row["opleiding"]; echo "</h1>
-                                    <h2>"; echo $row["bedrijf"]; echo "</h2>
-                                    <h3>"; echo $row["locatie"]; echo "</h3>
-                                    <p>"; echo $row["bedrijfs_informatie"]; echo "</p>
+                                    <h1>"; echo $row["position"]; echo "</h1>
+                                    <h2>"; echo $row["companyname"]; echo "</h2>
+                                    <h3>"; echo $row["city"]; echo "</h3>
+                                    <p>"; echo $row["positiontext"]; echo "</p>
                                 </div> 
                             </div>";
                         }  
