@@ -1,8 +1,8 @@
 <?php 
     include_once "pdo_verbinding.php";
 
-    $border_color = array("#7675758c", "#7675758c");
-    $box_shadow = array("0 0 1px #4f4f4f", "0 0 1px #4f4f4f");
+    $border_color = array("#767575a9", "#767575a9");
+    $box_shadow = array("0 0 0 #4f4f4f", "0 0 0 #4f4f4f");
 
     if (isset($_POST["login-knop"])) {
 
@@ -46,16 +46,19 @@
     <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
         <div class="container-2">
             <div class="box-login">
+                <a class="inloggen" href="">Sign in</a>
+                <a class="inloggen" href="registreer.php">Sign up</a>
                 <form action="" method="post">
-                    <h2>Sign in:</h2>
+                    <h2>Welcome back!</h2>
+                    <p>Log in to your account.</p>
                     <input type="text" placeholder="E-mail adress..." name="email" class="input-algemeen input-veld-username" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
                     <br>
-                    <input type="password" placeholder="Password..." name="wachtwoord" class="input-algemeen input-veld-password" style= "border-color: <?php echo $border_color[1]; ?>;  box-shadow: <?php echo $box_shadow[1]; ?>;">
+                    <input type="password" placeholder="Password..." name="wachtwoord" class="input-algemeen input-veld-password" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
                     <br>
                     <input type="submit" name="login-knop" value="Sign in" class="login-knop">
-                    <h3><a href="">I don't remember my password.</a></h3>
-                    <h3><a href="">I don't have an account yet.</a></h3>
+                    <h3><a href="registreer.php">Create account</a></h3>
                 </form>
+            
             </div>
         </div>
     </div>
