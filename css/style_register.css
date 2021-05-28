@@ -12,7 +12,6 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    /* background-attachment: fixed; */
 }
 
 .container-2 {
@@ -27,6 +26,8 @@
     justify-self: center;
     flex-wrap: wrap;
     height: auto;
+    max-height: 650px;
+    overflow: auto;
     width: 500px;
     background-color: #fafbfd;
     border-radius: 3px;
