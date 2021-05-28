@@ -54,84 +54,23 @@
                     <input type="text" placeholder="Username" name="username" class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[0]; ?>;  box-shadow: <?php //echo $box_shadow[0]; ?>;" -->
                     <input type="password" placeholder="Password" name="wachtwoord" class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[1]; ?>;  box-shadow: <?php //echo $box_shadow[1]; ?>;" -->
                     <input type="password" placeholder="Repeat password" name="herhaal_wachtwoord" class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[1]; ?>;  box-shadow: <?php //echo $box_shadow[1]; ?>;" -->
-                    <h3>I am a:</h3>
                     <select name="role" id="role" class="input-algemeen input-veld-role">
+                        <option value="">Register as:</option>
                         <option value="intern">Intern</option>
                         <option value="company">Company</option>
                         <option value="education">Education</option>
                     </select>
                     <hr>
-                    <input type="email" placeholder="Email" name="email" class="input-algemeen">
-                    <div id="names">
-                        <input type="text" placeholder="Firstname" name="firstname" class="input-algemeen input-helft">
-                        <input type="text" placeholder="Lastname" name="lastname" class="input-algemeen input-helft">
+                    <div id="andere-input-velden">
+                        <?php include_once "register_inputfields.php";?>
                     </div>
-                    <input type="date" placeholder="Date of birth" name="dateofbirth" class="input-algemeen input-helft">
-                    <br>
-                    <select name="nationalityid" id="nationality" class="input-algemeen input-helft">
-                        <option value="" disabled selected>Nationality</option>
-                        <option value="">Etwas anderes</option>
-                    </select>
-                    <hr>
-                    <select name="countryid" id="country" class="input-algemeen input-helft">
-                        <option value="" disabled selected>Country</option>
-                        <option value="">Etwas anderes</option>
-                    </select>
-                    <input type="text" placeholder="Adress" name="streetadress" class="input-algemeen">
-                    <div id="input-postal-city">
-                        <input type="text" placeholder="Postal code" name="postalcode" class="input-algemeen input-helft">
-                        <input type="text" placeholder="City" name="city" class="input-algemeen input-helft">
-                    </div>
-                    <hr>
-                    <input type="text" placeholder="Study" name="study" class="input-algemeen">
-                    <input type="text" placeholder="Field of studies" name="fieldofstudies" class="input-algemeen">
-                    <input type="text" placeholder="Graduated from" name="graduatedfrom" class="input-algemeen">
-                    <select name="currentlystudent" id="" class="input-algemeen input-helft">
-                        <option value="" disabled selected>Currently student?</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                    <br>
-                    <select name="seekinginternship" id="" class="input-algemeen input-helft">
-                        <option value="" disabled selected>Seeking internship?</option>
-                        <option value="yes on-site">Yes, on-site</option>
-                        <option value="yes remote">Remote</option>
-                        <option value="yes temporarily remote">Temporarily remote</option>
-                        <option value="no">No</option>
-                    </select>
-                    <br>
-                    <select name="openforrealemplyoment" id="" class="input-algemeen input-helft">
-                        <option value="" disabled selected>Open for real employment?</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                    
-                    <br>
-                    <select name="languages" id="" class="input-algemeen input-helft">
-                        <option value="" disabled selected>Languages</option>
-                        <option value="">Etwas anderes</option>
-                    </select>
-                    <hr>
-                    <textarea placeholder="Profile text" name="profiletext" class="input-algemeen input-profile-text"></textarea>
-                    <input type="text" placeholder="Profile image link" name="profileimage" class="input-algemeen">
-                    <input type="text" placeholder="Profile Video link" name="profilevideo" class="input-algemeen">
-                    <input type="text" placeholder="Social media link &emsp; e.g. LinkedIn" name="socialmedia" class="input-algemeen">
-                   
-                   
-                    <br>
+
+
                     <input type="submit" name="login-knop" value="Sign in" class="registreer-knop">
                 </form>
             
                 <script> 
-                        x = document.getElementById("role");
-                        if (x.value == "intern") {
-                            
-                        }
-
-                        x.onchange = function() {
-                            
-                        };
-
+                       
                 </script>
             </div>
         </div>
