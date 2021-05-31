@@ -39,11 +39,6 @@
     //     }
     // }
 
-
-    if (isset($_POST["username"])) {
-        $username = $_POST["username"];
-        $lastname = $_POST["username"];
-    }
 ?>
 
 <!DOCTYPE html>
@@ -86,14 +81,17 @@
                 </form>
             
                 <script>
+                       $("#username").on("input", function() {
+                            $("#username").removeAttr("style");
+                       });
+                     
+                
                        $("#submit-button").on("click", function(event) {
                             event.preventDefault();
                             if ($("#username").val() != "" ) {
                                 console.log("1");
                                 var username = $("#username").val();
                                 var password = $("#password").val();
-
-
 
                                 $.ajax({
                                     url: "test.php",
@@ -104,7 +102,8 @@
                                          "password": password
                                         },
                                     success: function(data) {
-                                        console.log(data);
+                                        myObj = JSON.parse(data);
+                                        console.log(myObj[0]);
                                     }, 
                                 });
                             } else {
