@@ -94,6 +94,6 @@
             </div>
         </div>
     </div>
-    <script src="js/error_geen_resultaten.js"></script>
+    <script src="js/error_geen_resultaten_page2.js"></script>
 </body>
 </html>

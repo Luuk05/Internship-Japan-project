@@ -26,13 +26,13 @@
     justify-self: center;
     flex-wrap: wrap;
     height: auto;
-    max-height: 650px;
+    max-height: 70vh;
     overflow: auto;
     width: 500px;
     background-color: #fafbfd;
     border-radius: 3px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);  /*rgb(0 0 0 / 15%)*/
-    margin-bottom: 80px;   /* weghalen als ik wil centeren */
+    margin-bottom: 30px;   /* weghalen als ik wil centeren */
 }
 
 .inloggen {
