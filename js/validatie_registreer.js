@@ -6,15 +6,10 @@ $("#username").on("input", function() {
 $("#submit-button").on("click", function(event) {
     event.preventDefault();
 
-    var userName = validateUserName();
+    valideer();
 
-    function validateUserName() {
+    function valideer() {
         var userName = $("#username").val();
-        validate(userName);  
-    }
-
-    function validate(userName) {
-        var userName2;
         $.ajax({
             url: "check_username_exists.php",
             type: "POST",
@@ -23,21 +18,28 @@ $("#submit-button").on("click", function(event) {
                     "userName": userName
                 }
                 ,
-                success: function(data) {
-                    console.log("Succes");
-                    if (data != " ") {
-                        userName2 = data;
-                    } else {
-                        userName2 = "Name already exists";
-                    }
+                success: function(PHPecho) {
+                    console.log("1");
+                    var userName = valideerNaam(PHPecho);
+                    doDelay();
+                    console.log(userName);
+                    // valideerPassword();
                 }
         });
-        console.log(userName2);
-        return userName2;
+        
     }
-    
-    console.log(userName);
 
+    function valideerNaam(PHPecho) {
+        var userName = PHPecho;
+        if (userName != " ") {
+            console.log("2");
+            console.log(userName);
+        } else {
+            console.log("gebruiker bestaat al");
+            //laat gebruiker weten dat de username al bestaat
+        }
+        return userName;
+    }
 
     
     // $.ajax({
