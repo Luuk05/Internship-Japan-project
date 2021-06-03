@@ -26,8 +26,23 @@ $("#submit-button").on("click", function(event) {
                 success: function(PHPechoUsername) {
                     var username = valideerNaam(PHPechoUsername);
                     var password = valideerPassword(passWord, repeatPassWord);
-                    valideerRoles(roles);
-                    // var roleAndInformation = 
+                    var roleAndInformation = valideerRoles(roles);
+
+                    if (username != "" && password != "") {
+                        var counter = 0;
+                        for (i = 0; i < roleAndInformation.length; i++) {
+                            if (!roleAndInformation[i] == "") {
+                                counter++;
+                            } else {
+                                break;
+                            }
+                        }
+
+                        if (counter == roleAndInformation.length) {
+                            console.log("noice");
+                            maakAccount(username, password, roleAndInformation);
+                        }
+                    }
                 }
         });
     }
@@ -38,7 +53,7 @@ $("#submit-button").on("click", function(event) {
             return userName;
         } else {
             maakInputRood("#username");
-            return "";
+            return userName;
         }
     }
 
@@ -47,7 +62,7 @@ $("#submit-button").on("click", function(event) {
         var repeatPassWord = repeatPassWord;
 
         if (passWord != "" && repeatPassWord == passWord) {
-            return password;
+            return passWord;
         } else {
             if (passWord != "" && repeatPassWord != passWord) {
                 maakInputRood("#repeat-password");
@@ -55,25 +70,27 @@ $("#submit-button").on("click", function(event) {
                 maakInputRood("#password");
                 maakInputRood("#repeat-password");
             }
-            return "";
+            return passWord;
         }
     }
 
     function valideerRoles(roles) {
        var role = roles;
        if (role == "intern") {
-            valideerIntern();
+            return valideerIntern(1);
             // return 
        } else if (role == "company") {
-            return valideerCompany();
+            return valideerCompany(2);
        } else if (role == "education") {
-            return valideerEducation();
+            return valideerEducation(3);
        } else {
             maakInputRood("#role");
        }
     }
 
-    function valideerIntern() {
+    function valideerIntern(role) {
+        var roleVal = role;
+
         var emailVal = $("#email").val();
         var emailId = $("#email");
         checkIfEmpty(emailVal, emailId);
@@ -171,7 +188,8 @@ $("#submit-button").on("click", function(event) {
         var socialMediaId = $("#social-media");
         checkIfEmpty(socialMediaVal, socialMediaId);
 
-        var internInformation = [emailVal, firstNameVal, lastNameVal, dateOfBirthVal, nationalityVal, countryIdVal, streetAdressVal, postalCodeVal, cityVal, studyVal, fieldOfStudiesVal, graduatedFromVal, currentlyStudentVal, seekingInternshipVal, openForRealEmploymentVal, languagesVal, profileTextVal, profileImageVal, profileVideoVal, socialMediaVal];
+        var internInformation = [roleVal, emailVal, firstNameVal, lastNameVal, dateOfBirthVal, nationalityVal, countryIdVal, streetAdressVal, postalCodeVal, cityVal, studyVal, fieldOfStudiesVal, graduatedFromVal, currentlyStudentVal, seekingInternshipVal, openForRealEmploymentVal, languagesVal, profileTextVal, profileImageVal, profileVideoVal, socialMediaVal];
+        return internInformation;
         //nu for loop en kijk of het er in zit
         // return ArrayMetWaardes;
     }
@@ -209,50 +227,25 @@ $("#submit-button").on("click", function(event) {
         }
     }
 
-    
-    // $.ajax({
-    //     url: "check_username_exists.php",
-    //     type: "POST",
-    //     data: 
-    //         {
-    //             "userName": userName
-    //         },
-    //     success: function(data) {
-    //         console.log("Data ophalen voor username gelukt.");
-    //         if (data != " ") {
-    //             userName = data;
-    //         } else {
-    //             userName = "Naam bestaat al";
-    //         }
-    //     }
-    // });
+    function maakAccount(username, password, roleAndInformation) {
+        var username = username;
+        var password = password;
+        var roleAndInformation = roleAndInformation;
+
+        $.ajax({
+            url: "maak_account.php",
+            type: "POST",
+            data: 
+                {
+                    "userName": username,
+                    "passWord": password,
+                    "roleAndInformation": roleAndInformation
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+        });
+    }
 
 
-
-
-
-
-    // if ($("#username").val() != "" ) {
-    //     console.log("1");
-    //     var username = $("#username").val();
-    //     var password = $("#password").val();
-
-    //     $.ajax({
-    //         url: "test.php",
-    //         type: "POST",
-    //         data: 
-    //             {
-    //              "name": username,
-    //              "password": password
-    //             },
-    //         success: function(data) {
-    //             // myObj = JSON.parse(data);
-    //             // console.log(myObj[0]);
-    //             console.log("Gelukt");
-    //         },
-    //     });
-    // } else {
-    //     $("#username").css("border-color", "red");
-    //     $(".box-login").scrollTop(0);
-    // }
 });
