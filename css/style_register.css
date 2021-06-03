@@ -20,7 +20,7 @@
     grid-template-columns: 100%;
 }
 
-.box-login {
+#box-login {
     display: flex;
     align-self: center;
     justify-self: center;

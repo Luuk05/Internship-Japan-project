@@ -8,7 +8,6 @@
     // }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +23,14 @@
     <div class="container-1">
     <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
         <div class="container-2">
-            <div class="box-login">
+            <div id="box-login">
                 <a class="inloggen" href="login.php">Sign in</a>
                 <a class="inloggen" href="">Sign up</a>
                 <form action="" method="post">
                     <h2>Welcome!</h2>
                     <p>Create your free account.</p>
                     <input type="text" placeholder="Username" name="username" id="username" class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[0]; ?>;  box-shadow: <?php //echo $box_shadow[0]; ?>;" -->
-                    <input type="password" placeholder="Password" name="password" id="password"class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[1]; ?>;  box-shadow: <?php //echo $box_shadow[1]; ?>;" -->
+                    <input type="password" placeholder="Password" name="password" id="password" class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[1]; ?>;  box-shadow: <?php //echo $box_shadow[1]; ?>;" -->
                     <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   <!-- style= "border-color: <?php //echo $border_color[1]; ?>;  box-shadow: <?php //echo $box_shadow[1]; ?>;" -->
                     <select name="role" id="role" class="input-algemeen input-veld-role">
                         <option value="">Register as:</option>
