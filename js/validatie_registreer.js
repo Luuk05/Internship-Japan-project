@@ -18,7 +18,7 @@ $("#role ").on("change", function() {
 $("#submit-button").on("click", function(event) {
     event.preventDefault();
 
-    sessionStorage.setItem("reloadWhenDone", "false");
+    sessionStorage.setItem("showMessageWhenDone", "false");
 
     var userName = $("#username").val();
     var passWord = $("#password").val();
@@ -116,10 +116,10 @@ $("#submit-button").on("click", function(event) {
                 },
                 success: function(data) {
                     if (data != "") {
-                        sessionStorage.setItem("reloadWhenDone", "true");
+                        sessionStorage.setItem("showMessageWhenDone", "true");
                         window.location.reload();
                     } else {
-                        sessionStorage.setItem("reloadWhenDone", "false");
+                        sessionStorage.setItem("showMessageWhenDone", "false");
                     }
                 }
         });
@@ -128,22 +128,22 @@ $("#submit-button").on("click", function(event) {
 });
 
 
-if (sessionStorage.getItem("reloadWhenDone") == "true") {
+if (sessionStorage.getItem("showMessageWhenDone") == "true") {
     $("#account-gemaakt").text("Account made!");
     setTimeout(function() { 
-        $("#account-gemaakt").text("Redirecting to profile page in 3");
+        $("#account-gemaakt").text("Redirecting to log-in in 3");
     }, 2000);
     setTimeout(function() { 
-        $("#account-gemaakt").text("Redirecting to profile page in 2");
+        $("#account-gemaakt").text("Redirecting to log-in in 2");
     }, 3000);
     setTimeout(function() { 
-        $("#account-gemaakt").text("Redirecting to profile page in 1");
+        $("#account-gemaakt").text("Redirecting to log-in in 1");
     }, 4000);
     setTimeout(function() { 
-        window.location.replace("registreer.php");
+        window.location.replace("login.php");
     }, 5000);
 
-    sessionStorage.setItem("reloadWhenDone", "false")
+    sessionStorage.setItem("showMessageWhenDone", "false")
 }
 
 

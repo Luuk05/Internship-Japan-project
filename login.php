@@ -6,26 +6,34 @@
 
     if (isset($_POST["login-knop"])) {
 
-        if (!empty($_POST["email"])) {
-            $email = $_POST["email"];
-            $_SESSION["email"] = $email;
+        if (!empty($_POST["username"])) {
+            $username = $_POST["username"];
 
         } else {
             $border_color[0] = "red";
             $box_shadow[0] = "0 0 3px red";
         }
 
-        if (!empty($_POST["wachtwoord"])) {
-            $wachtwoord = $_POST["wachtwoord"];
-            $_SESSION["wachtwoord"] = $wachtwoord;
+        if (!empty($_POST["password"])) {
+            $password = $_POST["password"]; 
 
         } else {
             $border_color[1] = "red";
             $box_shadow[1] = "0 0 3px red";
         }
 
-        if (!empty($_POST["email"]) && !empty($_POST["wachtwoord"])) {
-            // header("Location: page2.php");
+        if (!empty($_POST["username"]) && !empty($_POST["password"])) {
+            $sql = "SELECT * FROM users WHERE username like :username AND password like :password";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([":username" => $username, ":password" => $password]);
+
+            $count = $stmt->rowCount();
+            if ($count > 0) {
+                $_SESSION["username"] = $username;
+                $_SESSION["password"] = $password;
+
+                header("Location: profile_page.php");
+            }
         }
 
     }
@@ -51,9 +59,9 @@
                 <form action="" method="post">
                     <h2>Welcome back!</h2>
                     <p>Log in to your account.</p>
-                    <input type="text" placeholder="E-mail adress..." name="email" class="input-algemeen input-veld-username" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
+                    <input type="text" placeholder="Username" name="username" class="input-algemeen input-veld-username" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
                     <br>
-                    <input type="password" placeholder="Password..." name="wachtwoord" class="input-algemeen input-veld-password" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
+                    <input type="password" placeholder="Password..." name="password" class="input-algemeen input-veld-password" style= "border-color: <?php echo $border_color[0]; ?>;  box-shadow: <?php echo $box_shadow[0]; ?>;">
                     <br>
                     <input type="submit" name="login-knop" value="Sign in" class="login-knop">
                     <h3><a href="registreer.php">Create account</a></h3>

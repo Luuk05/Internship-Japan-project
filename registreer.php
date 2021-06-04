@@ -1,12 +1,6 @@
 <?php 
     include_once "pdo_verbinding.php";
 
-    // if (isset($_POST["name"])) {
-    //     $name = $_POST["name"];
-    //     echo $name;
-    //     exit();
-    // }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +33,6 @@
                         <option value="education">Education</option>
                     </select>
                     <hr>
-                    <div id="andere-input-velden">
-                        <?php include_once "register_inputfields.php";?>
-                    </div>
 
 
                     <input type="submit" name="registreer-knop" value="Sign in" class="registreer-knop" id="submit-button">
