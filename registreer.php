@@ -45,6 +45,7 @@
 
 
                     <input type="submit" name="registreer-knop" value="Sign in" class="registreer-knop" id="submit-button">
+                    <p id="account-gemaakt"></p>
                 </form>
             </div>
         </div>

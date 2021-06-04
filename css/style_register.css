@@ -27,7 +27,6 @@
     flex-wrap: wrap;
     height: auto;
     max-height: 70vh;
-    overflow: auto;
     width: 500px;
     background-color: #fafbfd;
     border-radius: 3px;
@@ -160,6 +159,17 @@ hr {
     color: black;
     background-color: #607ddc;
     border: 1px solid #607ddc; 
+}
+
+#account-gemaakt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    color: #249924;
+    float: right;
+    margin: 0px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
