@@ -6,5 +6,14 @@
         <li><a href="">About us</a></li>
         <li><a href="">F.A.Q.</a></li>
     </ul>
-    <a href="login.php"><button>Sign in/up</button></a>
+    <!-- <a href = ""><button id="logout-button">Logout</button></a> -->
+    <a href= 
+            <?php 
+                if (isset($_SESSION["username"])) {
+                    echo "profile_page.php";
+                } else {
+                    echo "login.php";
+                }
+            ?>    
+    ><button>Sign in/up</button></a>
 </nav>

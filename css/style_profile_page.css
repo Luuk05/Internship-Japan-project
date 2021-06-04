@@ -26,8 +26,13 @@
     justify-self: center;
     flex-wrap: wrap;
     
+    min-height: 40vh;
+    min-width: 40vw;
     height: auto;
-    width: 70vw;
+    width: auto;
+    max-height: 80vh;
+    max-width: 80vw;
+    overflow: auto;
     background-color: #fafbfd;
     border-radius: 3px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);  /*rgb(0 0 0 / 15%)*/
@@ -43,7 +48,7 @@ form {
 h2 {
     font-size: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0px;
 }
 
 p {

@@ -1,3 +1,20 @@
+<?php 
+    session_start();
+    include_once "pdo_verbinding.php";
+
+    if (!isset($_SESSION["username"])) {
+        header("Location: login.php");
+        // exit();
+    } 
+
+    if (!isset($_SESSION["permissionToEdit"])) {
+        $_SESSION["permissionToEdit"] = false;
+    }
+    if (!isset($_SESSION["personsRole"])) {
+        $_SESSION["personsRole"] = 0;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,17 +32,33 @@
         <div class="container-2">
             <div id="box-profile">
                 <form action="" method="post">
-                    <p>Modify your account</p>
-                    <input type="text" placeholder="Username" name="username" id="username" class="input-algemeen">
-                   
-                    <hr>
-                    <div id="andere-input-velden">
-                        <?php include_once "register_inputfields.php";?>
-                    </div>
+                    <?php echo "<h2>Modify your account</h2>"; ?>
+                    <input type="text" placeholder="Username" name="username" id="username" class="input-algemeen">  
+                    <input type="password" placeholder="Password" name="password" id="password" class="input-algemeen">
+                    <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   
+                    <?php 
+                        if ($_SESSION["permissionToEdit"]) {
+                            // if (isset())
+                            
+                            if ($_SESSION["personsRole"] == 1) {
+                                include_once "gegevens_intern.php";
 
+                            } else if ($_SESSION["personsRole"] == 2) {
+                                include_once "gegevens_company.php";
+
+
+                            } else {
+                                include_once "gegevens_education.php";
+
+                                
+                            }
+                        } else {
+                            // include_once "viewpage";
+                        }
+                    
+                    ?>
 
                     <input type="submit" value="Modify" class="registreer-knop" id="submit-button">
-                    <p id="account-gemaakt"></p>
                 </form>
             </div>
         </div>

@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include_once "pdo_verbinding.php";
 
     $border_color = array("#767575a9", "#767575a9");
@@ -23,14 +24,18 @@
         }
 
         if (!empty($_POST["username"]) && !empty($_POST["password"])) {
-            $sql = "SELECT * FROM users WHERE username like :username AND password like :password";
+            $sql = "SELECT * FROM user WHERE username like :username AND password like :password";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([":username" => $username, ":password" => $password]);
+            $row = $stmt->fetch();
+            $personsRole = $row["role"];
 
             $count = $stmt->rowCount();
             if ($count > 0) {
                 $_SESSION["username"] = $username;
                 $_SESSION["password"] = $password;
+                $_SESSION["permissionToEdit"] = true;
+                $_SESSION["personsRole"] = $personsRole;
 
                 header("Location: profile_page.php");
             }
