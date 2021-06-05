@@ -10,9 +10,6 @@
     if (!isset($_SESSION["permissionToEdit"])) {
         $_SESSION["permissionToEdit"] = false;
     }
-    if (!isset($_SESSION["personsRole"])) {
-        $_SESSION["personsRole"] = 0;
-    }
 ?>
 
 <!DOCTYPE html>
@@ -31,38 +28,22 @@
     <?php include_once "nav_bar.php";  //stijl = nav_bar_style.css?>
         <div class="container-2">
             <div id="box-profile">
-                <form action="" method="post">
-                    <?php echo "<h2>Modify your account</h2>"; ?>
-                    <input type="text" placeholder="Username" name="username" id="username" class="input-algemeen">  
-                    <input type="password" placeholder="Password" name="password" id="password" class="input-algemeen">
-                    <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   
+                <form id="form" action="" method="post">
+                    <h2>View this page</h2>
                     <?php 
-                        if ($_SESSION["permissionToEdit"]) {
-                            // if (isset())
-                            
-                            if ($_SESSION["personsRole"] == 1) {
-                                include_once "gegevens_intern.php";
-
-                            } else if ($_SESSION["personsRole"] == 2) {
-                                include_once "gegevens_company.php";
-
-
-                            } else {
-                                include_once "gegevens_education.php";
-
-                                
-                            }
-                        } else {
-                            // include_once "viewpage";
+                    include_once "view_profile_page.php";
+                    if ($_SESSION["permissionToEdit"]) {
+                        echo '<script>document.getElementById("form").innerHTML += \'<input type="submit" value="Modify account" name="redirect-button" id="redirect-button">\';</script>';
+                    
+                        if (isset($_POST["redirect-button"])) {
+                            header("Location: change_profile_page.php");
                         }
+                    } 
                     
                     ?>
-
-                    <input type="submit" value="Modify" class="registreer-knop" id="submit-button">
                 </form>
             </div>
         </div>
     </div>
-    <script src="js/validatie_userprofile.js"></script>
 </body>
 </html>
