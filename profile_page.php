@@ -33,7 +33,7 @@
                     <?php 
                     include_once "view_profile_page.php";
                     if ($_SESSION["permissionToEdit"]) {
-                        echo '<script>document.getElementById("form").innerHTML += \'<input type="submit" value="Modify account" name="redirect-button" id="redirect-button">\';</script>';
+                        echo '<script>document.getElementById("form").innerHTML += \'<div id="page-width"><div id="center-button"><input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"></div></div>\';</script>';
                     
                         if (isset($_POST["redirect-button"])) {
                             header("Location: change_profile_page.php");

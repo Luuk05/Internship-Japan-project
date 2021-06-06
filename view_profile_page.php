@@ -31,76 +31,67 @@
     
     
     ?>
-    
-    
-    <div id="general-data">
-        <div id="full-name">
-            <h4 class = "left">Full name:</h4> 
-            <p class = "left">Luuk Janssen</p>
+    <div id="picture">
+        <div id="center-img">
+            <img src="https://via.placeholder.com/150" alt="">
         </div>
-        <br>
-        <div id="email">
-            <h4 class = "left">Email:</h4> 
-            <p class = "left">0190487@student.banaan.com</p>
-        </div>
-        <br>
-        <div id="date-of-birth">
-            <h4 class = "left">Age:</h4> 
-            <p class = "left">04-04-2000</p>
-        </div>
-        <br>
-        <div id="city">
-            <h4 class = "left">city:</h4> 
-            <p class = "left">Nijmegen</p>
-        </div>
-        <br>
-        <div id="nationality">
-            <h4 class = "left">Nationality:</h4> 
-            <p class = "left">The Netherlands</p>
-        </div>
+        
     </div>
 
-    <div class="space"></div>
-    
     <div id="about-data">
-        <div id="profile-text">
+        <div id="center-about">
             <h3 class = "left">About me:</h3> 
             <p class = "left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi aperiam, iusto facilis similique accusantium fugiat explicabo, eos, enim ipsum reiciendis optio qui rem. Expedita dolores quibusdam quos! Voluptas, laboriosam dolore.</p>
         </div>
     </div>
-
-    <div class="space"></div>
-
-    <div id="study-data">
-        <div id="study">
-            <h4 class = "left">Study:</h4> 
-            <p class = "left">Software developer</p>
-        </div>
-        <br>
-        <div id="field-of-studies">
-            <h4 class = "left">Field of studies:</h4> 
-            <p class = "left">PHP, Java, Web3</p>
-        </div>
-        <br>
-        <div id="graduated-from">
-            <h4 class = "left">Graduated from:</h4> 
-            <p class = "left">Pax christi college druten</p>
-        </div>
-        <br>
-        <div id="currently-student">
-            <h4 class = "left">Currently student:</h4> 
-            <p class = "left">Yes</p>
-        </div>
-        <br>
-        <div id="seeking-internship">
-            <h4 class = "left">Seeking for internship:</h4> 
-            <p class = "left">Yes, remote</p>
-        </div>
-        <br>
-        <div id="open-for-real-employment">
-            <h4 class = "left">Open for real employment:</h4> 
-            <p class = "left">Yes</p>
+    <div class="clear"></div>
+    <hr>
+    
+    <div id="general-data">
+        <div id="center-general-data">
+            <div id="full-name" class="no-wrap">
+                
+                <p class = "left"><h4 class = "left">Full name:</h4> Luuk Janssen</p>
+            </div>
+            <div id="email" class="no-wrap">
+                <p class = "left"><h4 class = "left">Email:</h4> 0190487@student.banaan.com</p>
+            </div>
+            <div id="date-of-birth" class="no-wrap">
+                <p class = "left"><h4 class = "left">Age:</h4> 04-04-2000</p>
+            </div>
+            <div id="city" class="no-wrap">
+                <p class = "left"><h4 class = "left">City:</h4> Nijmegen</p>
+            </div>
+            <div id="nationality" class="no-wrap">
+                <p class = "left"><h4 class = "left">Nationality:</h4> The Netherlands</p>
+            </div>
         </div>
     </div>
+    
+
+    <div id="study-data">
+        <div id="center-study-data">
+            <div id="study" class="no-wrap">
+                <p class = "left"><h4 class = "left">Study:</h4> Software developer</p>
+            </div>
+            <div id="field-of-studies" class="no-wrap"> 
+                <p class = "left"><h4 class = "left">Field of studies:</h4>PHP, Java, Web3</p>
+            </div>
+            <div id="graduated-from" class="no-wrap">
+                <p class = "left"><h4 class = "left">Graduated from:</h4> Pax christi college druten</p>
+            </div>
+            <div id="currently-student" class="no-wrap"> 
+                <p class = "left"><h4 class = "left">Currently student:</h4>Yes</p>
+            </div>
+            <div id="seeking-internship" class="no-wrap"> 
+                <p class = "left"><h4 class = "left">Seeking for internship:</h4>Yes, remote</p>
+            </div>
+            <div id="open-for-real-employment" class="no-wrap">
+                <p class = "left"><h4 class = "left">Open for real employment:</h4> Yes</p>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br>
 
 </div>
