@@ -141,9 +141,11 @@ h4 {
 }
 
 #redirect-button {
-    width: 100%;
+    width: 15%;
     height: 50px;
     margin-top: 30px;
+    margin-left: 80px;
+    float: left;
 
     color: #f0f3f5;
     background-color: #3E58AA;
@@ -160,4 +162,28 @@ h4 {
     color: black;
     background-color: #607ddc;
     border: 1px solid #607ddc; 
+}
+
+#logout-button {
+    width: 15%;
+    height: 50px;
+    margin-top: 30px;
+    margin-right: 80px;
+    float: right;
+
+    color: #f0f3f5;
+    background-color: #b13131;
+    border: 1px solid #9e3d3d; 
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px #543838;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#logout-button:hover {
+    box-shadow: 0 0 2px black;
+    color: black;
+    background-color: #bf4747;
+    border: 1px solid #a04343; 
 }

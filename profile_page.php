@@ -33,14 +33,52 @@
                     <?php 
                     include_once "view_profile_page.php";
                     if ($_SESSION["permissionToEdit"]) {
-                        echo '<script>document.getElementById("form").innerHTML += \'<div id="page-width"><div id="center-button"><input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"></div></div>\';
+                        echo '<script>document.getElementById("form").innerHTML += \'<input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"><input type="submit" value="Log out" name="redirect-button" id="logout-button" class="no-wrap">\';
 
                         $("#redirect-button").click(function(event) {
                             event.preventDefault();
                             window.location.href = "change_profile_page.php";
                         });
+
+                        $("#logout-button").click(function(event) {
+                            event.preventDefault();
+                            $.ajax({
+                                url: "logout.php",
+                                type: "POST",
+                                success: function(data) {
+                                    console.log("Logout succes");
+                                }
+                            });
+                            window.location.href = "login.php";
+                        });
                         
                         </script>';
+
+                        // '\'
+                        // <input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap">
+                        
+                        // <input type="submit" value="Modify account" name="redirect-button" id="logout-button" class="no-wrap">
+                        // ;
+
+                        // $("#redirect-button").click(function(event) {
+                        //     event.preventDefault();
+                        //     window.location.href = "change_profile_page.php";
+                        // });
+
+                        // $("#logout-button").click(function(event) {
+                        //     event.preventDefault();
+                        //     $.ajax({
+                        //         url: "logout.php",
+                        //         type: "POST",
+                        //             ,
+                        //             success: function(data) {
+                        //                 console.log("Logout succes");
+                        //             }
+                        //     });
+                        //     window.location.href = "login.php";
+                        // });
+                        
+                        // </script>'\';
                     } 
                     
                     ?>
