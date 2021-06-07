@@ -25,13 +25,12 @@
     align-self: center;
     justify-self: center;
     flex-wrap: wrap;
-    
-    min-height: 70vh;
-    min-width: 70vw;
-    height: auto;
+    height: 70vh;  /* min- */
+    width: 50vw;  /* min- */
+    /* height: auto;
     width: auto;
     max-height: 80vh;
-    max-width: 80vw;
+    max-width: 80vw; */
     overflow: auto;
     background-color: #fafbfd;
     border-radius: 3px;
@@ -121,10 +120,9 @@ hr {
     min-width: 100%;
 }
 
-#redirect-button {
-    width: 25%;
+#submit-button {
+    width:25%;
     height: 50px;
-    /* margin-top: 15px; */
 
     color: #f0f3f5;
     background-color: #3E58AA;
@@ -136,7 +134,7 @@ hr {
     cursor: pointer;
 }
 
-#redirect-button:hover {
+#submit-button:hover {
     box-shadow: 0 0 2px black;
     color: black;
     background-color: #607ddc;

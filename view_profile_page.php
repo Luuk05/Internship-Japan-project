@@ -9,23 +9,23 @@
 ?>
 <div id="view-page">
     <?php 
-    $sql = "SELECT * FROM user WHERE username like :username";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([":username" => $_SESSION["username"]]);
-    $row = $stmt->fetch();
-    $user_id = $row["user_id"];
-    if ($_SESSION['personsRole'] == 1) {
-        $role = "intern";
-    } elseif ($_SESSION['personsRole'] == 2) {
-        $role = "company";
-    } else {
-        $role = "education";
-    }
+    // $sql = "SELECT * FROM user WHERE username like :username";
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->execute([":username" => $_SESSION["username"]]);
+    // $row = $stmt->fetch();
+    // $user_id = $row["user_id"];
+    // if ($_SESSION['personsRole'] == 1) {
+    //     $role = "intern";
+    // } elseif ($_SESSION['personsRole'] == 2) {
+    //     $role = "company";
+    // } else {
+    //     $role = "education";
+    // }
 
-    $sql = "SELECT * FROM $role WHERE username like :username">
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([":username" => $_SESSION["username"]]);
-    $row = $stmt->fetch();
+    // $sql = "SELECT * FROM $role WHERE username like :username">
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->execute([":username" => $_SESSION["username"]]);
+    // $row = $stmt->fetch();
 
 
     

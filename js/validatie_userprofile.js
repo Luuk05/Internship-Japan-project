@@ -33,7 +33,7 @@ $("#submit-button").on("click", function(event) {
                 }
                 ,
                 success: function(PHPechoUsername) {
-                    var username = valideerNaam(PHPechoUsername, userName);
+                    var username = valideerNaam(PHPechoUsername);
                     var password = valideerPassword(passWord, repeatPassWord);
                     
                     valideerRoles(username, password);
@@ -42,27 +42,23 @@ $("#submit-button").on("click", function(event) {
         });
     }
 
-    function valideerNaam(PHPechoUsername, userName) {
-        if (userName != "") {
-            if (userName.trim().length > 0) {
-                if (PHPechoUsername == "") {
-                    $("#username").val("");
-                    $("#username").attr("placeholder","This username already exists.");
-                    maakInputRood("#username");
-                } else {
-                    return PHPechoUsername;
-                }
-            }
-                
+    function valideerNaam(PHPechoUsername) {
+        
+           
+        if (PHPechoUsername == "Exists") {
+            $("#username").val("");
+            $("#username").attr("placeholder","This username already exists.");
+            maakInputRood("#username");
+        } else {
+            return PHPechoUsername;
         }
-        maakInputRood("#username");
         return "";
     }
 
     function valideerPassword(passWord, repeatPassWord) {
         var passWord = passWord;
         var repeatPassWord = repeatPassWord;
-
+        
         if (passWord != "" && repeatPassWord == passWord) {
             return passWord;
         } else {
@@ -81,6 +77,7 @@ $("#submit-button").on("click", function(event) {
             url: "check_roles.php",
             type: "POST",
                 success: function(data) {
+                    // var newData = [];
                     var role = data;
                     if (role == 1) {
                         var newData = valideerIntern();
@@ -91,26 +88,38 @@ $("#submit-button").on("click", function(event) {
                     }
 
 
-                    if (username != "" && password != "") {
-                        var newData = [];
-                        for (i = 0, counter = 0; i < newData.length; i++) {
-                            if (newData[i] != "") {
-                                if ( newData[i].trim().length > 0 ) {
-                                    newData[counter] = newData[i];
-                                    counter++;
-                                    console.log(newData[counter]);
-                                } 
-                            }   
-                        }
-                        if (newData.length > 0) {
+                    if (username == "") {
 
-                        }
-
-                        if (counter == newData.length) {
-                            console.log("noice");
-                            // veranderGegevens(username, password, newData);                        
-                        }
                     }
+
+                    if (password == "") {
+                        //maakrood
+                    }
+
+                    if (username != "" && password != "") {
+                        //succes
+                    }
+
+
+                    
+
+                        
+                    // for (i = 0, counter = 0; i < newData.length; i++) {
+                    //     if (newData[i] != "") {
+                    //         if ( newData[i].trim().length > 0 ) {
+                    //             actualData[counter] = newData[i];
+                    //             counter++;
+                    //         } 
+                    //     }   
+                    // }
+
+                    // console.log(newData.emailVal);
+
+                    // if (counter == newData.length) {
+                    //     console.log("noice");
+                    //     // veranderGegevens(username, password, newData);                        
+                    // }
+                    
                     
                 }
         });
@@ -216,7 +225,28 @@ $("#submit-button").on("click", function(event) {
         // var socialMediaId = $("#social-media");
         // checkIfEmpty(socialMediaVal, socialMediaId);
 
-        var newData = [emailVal, firstNameVal, lastNameVal, dateOfBirthVal, nationalityVal, countryIdVal, streetAdressVal, postalCodeVal, cityVal, studyVal, fieldOfStudiesVal, graduatedFromVal, currentlyStudentVal, seekingInternshipVal, openForRealEmploymentVal, languagesVal, profileTextVal, profileImageVal, profileVideoVal, socialMediaVal];
+        var newData = {
+            "emailVal": emailVal,
+            "firstNameVal": firstNameVal,
+            "lastNameVal": lastNameVal,
+            "dateOfBirthVal": dateOfBirthVal,
+            "nationalityVal": nationalityVal,
+            "countryIdVal": countryIdVal,
+            "streetAdressVal": streetAdressVal,
+            "postalCodeVal": postalCodeVal,
+            "cityVal": cityVal,
+            "studyVal": studyVal,
+            "fieldOfStudiesVal": fieldOfStudiesVal,
+            "graduatedFromVal": graduatedFromVal,
+            "currentlyStudentVal": currentlyStudentVal,
+            "seekingInternshipVal": seekingInternshipVal,
+            "openForRealEmploymentVal": openForRealEmploymentVal,
+            "languagesVal": languagesVal,
+            "profileTextVal": profileTextVal,
+            "profileImageVal": profileImageVal,
+            "profileVideoVal": profileVideoVal,
+            "socialMediaVal": socialMediaVal
+        };
         return newData;
     }
 
@@ -237,29 +267,29 @@ $("#submit-button").on("click", function(event) {
         $("#box-profile").scrollTop(0);
     }
 
-    function checkIfEmpty(inputValue, inputId) {
-        if (inputValue != "") {
+    // function checkIfEmpty(inputValue, inputId) {
+    //     if (inputValue != "") {
             
-        } else {
-            maakInputRood(inputId);
-        }
-    }
+    //     } else {
+    //         maakInputRood(inputId);
+    //     }
+    // }
 
-    function checkSelect(value, value2, id) {
-        if (value == value2) {
-            maakInputRood(id);
-        } else {
+    // function checkSelect(value, value2, id) {
+    //     if (value == value2) {
+    //         maakInputRood(id);
+    //     } else {
 
-        }
-    }
+    //     }
+    // }
 
-    // function maakAccount(username, password, roleAndInformation) {
+    // function veranderGegevens(username, password, roleAndInformation) {
     //     var username = username;
     //     var password = password;
     //     var roleAndInformation = roleAndInformation;
 
     //     $.ajax({
-    //         url: "maak_account.php",
+    //         url: "verander_gegevens.php",
     //         type: "POST",
     //         data: 
     //             {

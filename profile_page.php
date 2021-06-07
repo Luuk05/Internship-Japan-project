@@ -33,11 +33,14 @@
                     <?php 
                     include_once "view_profile_page.php";
                     if ($_SESSION["permissionToEdit"]) {
-                        echo '<script>document.getElementById("form").innerHTML += \'<div id="page-width"><div id="center-button"><input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"></div></div>\';</script>';
-                    
-                        if (isset($_POST["redirect-button"])) {
-                            header("Location: change_profile_page.php");
-                        }
+                        echo '<script>document.getElementById("form").innerHTML += \'<div id="page-width"><div id="center-button"><input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"></div></div>\';
+
+                        $("#redirect-button").click(function(event) {
+                            event.preventDefault();
+                            window.location.href = "change_profile_page.php";
+                        });
+                        
+                        </script>';
                     } 
                     
                     ?>

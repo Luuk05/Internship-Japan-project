@@ -23,7 +23,7 @@
         }
     
         if ($userNameExists) {
-            echo "";
+            echo "Exists";
         } else {
             echo $userName;
         }   

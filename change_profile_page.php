@@ -8,13 +8,11 @@
     } 
 
     if (!isset($_SESSION["permissionToEdit"])) {
-        $_SESSION["permissionToEdit"] = false;
-    } else {
         header("Location: profile_page.php");
-    }
-    if (!isset($_SESSION["personsRole"])) {
-        $_SESSION["personsRole"] = 0;
-    }
+    } 
+    // if (!isset($_SESSION["personsRole"])) {
+    //     $_SESSION["personsRole"] = 0;
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +38,6 @@
                     <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   
                     <?php 
                         if ($_SESSION["permissionToEdit"]) {
-                            // if (isset())
                             
                             if ($_SESSION["personsRole"] == 1) {
                                 include_once "gegevens_intern.php";
@@ -58,7 +55,7 @@
                     
                     ?>
 
-                    <input type="submit" value="Modify" class="registreer-knop" id="submit-button">
+                    <input type="submit" value="Save changes" id="submit-button">
                 </form>
             </div>
         </div>
