@@ -36,6 +36,7 @@
                     <input type="text" placeholder="Username" name="username" id="username" class="input-algemeen">  
                     <input type="password" placeholder="Password" name="password" id="password" class="input-algemeen">
                     <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   
+                    <hr>
                     <?php 
                         if ($_SESSION["permissionToEdit"]) {
                             

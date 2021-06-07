@@ -59,10 +59,10 @@ $("#submit-button").on("click", function(event) {
         var passWord = passWord;
         var repeatPassWord = repeatPassWord;
         
-        if (passWord != "" && repeatPassWord == passWord) {
+        if (password != "" && repeatPassWord == passWord) {
             return passWord;
         } else {
-            if (passWord != "" && repeatPassWord != passWord) {
+            if (repeatPassWord != passWord) {
                 maakInputRood("#repeat-password");
             } else {
                 maakInputRood("#password");
@@ -77,56 +77,22 @@ $("#submit-button").on("click", function(event) {
             url: "check_roles.php",
             type: "POST",
                 success: function(data) {
-                    // var newData = [];
                     var role = data;
                     if (role == 1) {
-                        var newData = valideerIntern();
+                        var newData = valideerIntern(username, password);
                     } else if (role == 2) {
-                        var newData = valideerCompany();
+                        var newData = valideerCompany(username, password);
                     } else if (role == 3) {
-                        var newData = valideerEducation();
+                        var newData = valideerEducation(username, password);
                     }
-
-
-                    if (username == "") {
-
-                    }
-
-                    if (password == "") {
-                        //maakrood
-                    }
-
-                    if (username != "" && password != "") {
-                        //succes
-                    }
-
-
-                    
-
-                        
-                    // for (i = 0, counter = 0; i < newData.length; i++) {
-                    //     if (newData[i] != "") {
-                    //         if ( newData[i].trim().length > 0 ) {
-                    //             actualData[counter] = newData[i];
-                    //             counter++;
-                    //         } 
-                    //     }   
-                    // }
-
-                    // console.log(newData.emailVal);
-
-                    // if (counter == newData.length) {
-                    //     console.log("noice");
-                    //     // veranderGegevens(username, password, newData);                        
-                    // }
-                    
-                    
+                
+                    veranderGegevens(newData);           
                 }
         });
        
     }
 
-    function valideerIntern() {
+    function valideerIntern(username, password) {
 
         var emailVal = $("#email").val();
         // var emailId = $("#email");
@@ -226,37 +192,39 @@ $("#submit-button").on("click", function(event) {
         // checkIfEmpty(socialMediaVal, socialMediaId);
 
         var newData = {
-            "emailVal": emailVal,
-            "firstNameVal": firstNameVal,
-            "lastNameVal": lastNameVal,
-            "dateOfBirthVal": dateOfBirthVal,
-            "nationalityVal": nationalityVal,
-            "countryIdVal": countryIdVal,
-            "streetAdressVal": streetAdressVal,
-            "postalCodeVal": postalCodeVal,
-            "cityVal": cityVal,
-            "studyVal": studyVal,
-            "fieldOfStudiesVal": fieldOfStudiesVal,
-            "graduatedFromVal": graduatedFromVal,
-            "currentlyStudentVal": currentlyStudentVal,
-            "seekingInternshipVal": seekingInternshipVal,
-            "openForRealEmploymentVal": openForRealEmploymentVal,
-            "languagesVal": languagesVal,
-            "profileTextVal": profileTextVal,
-            "profileImageVal": profileImageVal,
-            "profileVideoVal": profileVideoVal,
-            "socialMediaVal": socialMediaVal
+            "username": username,
+            "password": password,
+            "email": emailVal,
+            "firstname": firstNameVal,
+            "surname": lastNameVal,
+            "date_of_birth": dateOfBirthVal,
+            "nationality_id": nationalityVal,
+            "country_id": countryIdVal,
+            "street_adress": streetAdressVal,
+            "postal_code": postalCodeVal,
+            "city": cityVal,
+            "study": studyVal,
+            "field_of_studies": fieldOfStudiesVal,
+            "graduated_from": graduatedFromVal,
+            "currently_student": currentlyStudentVal,
+            "seeking_internship": seekingInternshipVal,
+            "openfor_real_employment": openForRealEmploymentVal,
+            "languages": languagesVal,
+            "profiletext": profileTextVal,
+            "profileimage": profileImageVal,
+            "video": profileVideoVal,
+            "social_media": socialMediaVal
         };
         return newData;
     }
 
-    function valideerCompany() {
+    function valideerCompany(username, password) {
         
 
         // return ArrayMetWaardes;
     }
 
-    function valideerEducation() {
+    function valideerEducation(username, password) {
         
 
         // return ArrayMetWaardes;
@@ -283,25 +251,21 @@ $("#submit-button").on("click", function(event) {
     //     }
     // }
 
-    // function veranderGegevens(username, password, roleAndInformation) {
-    //     var username = username;
-    //     var password = password;
-    //     var roleAndInformation = roleAndInformation;
+    function veranderGegevens(newData) {
+        var newData = newData;
 
-    //     $.ajax({
-    //         url: "verander_gegevens.php",
-    //         type: "POST",
-    //         data: 
-    //             {
-    //                 "userName": username,
-    //                 "passWord": password,
-    //                 "roleAndInformation": roleAndInformation
-    //             },
-    //             success: function(data) {
-    //                 console.log(data);
-    //             }
-    //     });
-    // }
+        $.ajax({
+            url: "verander_gegevens.php",
+            type: "POST",
+            data: 
+                {
+                    "newData": newData,
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+        });
+    }
 
 
 });
