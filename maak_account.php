@@ -15,19 +15,23 @@ if (isset($_POST["userName"])) {
         $roleName = "education";
     }
 
-    // echo "iets1";
+    $hashedPassword = password_hash($passWord, PASSWORD_DEFAULT);
+
+    // password_verify($_POST['password'], $existingHashFromDb)
+
+
+
     $sql = "INSERT INTO `user`(`username`, `password`, `role`) VALUES (:username, :password, :role)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(["username" => $userName, "password" => $passWord, "role" => $role]);
+    $stmt->execute(["username" => $userName, "password" => $hashedPassword, "role" => $role]); //passsWord
   
-    // echo "iets2";
     $sql = "SELECT * FROM user WHERE username like :username AND password like :password";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([":username" => $userName, ":password" => $passWord]);
+    $stmt->execute([":username" => $userName, ":password" => $hashedPassword]);    //passWord
     $row = $stmt->fetch();
 
+
     $user_id = $row["user_id"];
-    // echo $user_id;
     $standard_id = 252;
     $sql = "INSERT INTO $roleName(user_id, country_id, nationality_id) VALUES (:userid, :countryid, :nationalityid)";
     $stmt = $pdo->prepare($sql);

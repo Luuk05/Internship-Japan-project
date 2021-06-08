@@ -28,21 +28,26 @@
         }
 
         if (!empty($_POST["username"]) && !empty($_POST["password"])) {
-            $sql = "SELECT * FROM user WHERE username like :username AND password like :password";
+            $sql = "SELECT * FROM user WHERE username like :username";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([":username" => $username, ":password" => $password]);
+            $stmt->execute([":username" => $username]);
             $row = $stmt->fetch();
+            $existingHashFromDb = $row["password"];
 
-            $count = $stmt->rowCount();
-            if ($count > 0) {
-                $personsRole = $row["role"];
-                $_SESSION["username"] = $username;
-                $_SESSION["password"] = $password;
-                $_SESSION["permissionToEdit"] = true;
-                $_SESSION["personsRole"] = $personsRole;
-
-                header("Location: profile_page.php");
+            if (password_verify($password, $existingHashFromDb)) {
+                $count = $stmt->rowCount();
+                if ($count > 0) {
+                    $personsRole = $row["role"];
+                    $_SESSION["username"] = $username;
+                    $_SESSION["password"] = $password;
+                    $_SESSION["permissionToEdit"] = true;
+                    $_SESSION["personsRole"] = $personsRole;
+    
+                    header("Location: profile_page.php");
+                }
             }
+
+            
         }
 
     }
