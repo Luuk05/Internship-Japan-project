@@ -5,6 +5,10 @@
     $border_color = array("#767575a9", "#767575a9");
     $box_shadow = array("0 0 0 #4f4f4f", "0 0 0 #4f4f4f");
 
+    if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true) {
+        header("Location: profile_page.php");
+    }
+
     if (isset($_POST["login-knop"])) {
 
         if (!empty($_POST["username"])) {
@@ -28,10 +32,10 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute([":username" => $username, ":password" => $password]);
             $row = $stmt->fetch();
-            $personsRole = $row["role"];
 
             $count = $stmt->rowCount();
             if ($count > 0) {
+                $personsRole = $row["role"];
                 $_SESSION["username"] = $username;
                 $_SESSION["password"] = $password;
                 $_SESSION["permissionToEdit"] = true;

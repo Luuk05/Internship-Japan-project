@@ -5,16 +5,16 @@
 </div>
 <h3>Date of birth</h3>
 <input type="date" name="dateofbirth" id="date-of-birth" class="input-algemeen input-helft"> 
-<br> 
+<!-- <br> 
 <select name="nationalityid" id="nationality-id" class="input-algemeen input-helft"> 
     <option disabled selected>Nationality</option>
      <option value="land">Land</option> 
-</select> 
+</select>  -->
 <hr> 
-<select name="countryid" id="country-id" class="input-algemeen input-helft">
+<!-- <select name="countryid" id="country-id" class="input-algemeen input-helft">
     <option value="" disabled selected>Country</option>
     <option value="">Landen</option>
-</select>
+</select> -->
 <input type="text" placeholder="Adress" name="streetadress" id="street-adress"class="input-algemeen">
 <div id="input-postal-city">
 <input type="text" placeholder="Postal code" name="postalcode" id="postal-code"class="input-algemeen input-helft">
@@ -26,7 +26,8 @@
 <select name="currentlystudent" id="currently-student"class="input-algemeen input-helft">
     <option value="" disabled selected>Currently student?</option>
     <option value="yes">Yes</option>
-    <option value="no">No</option></select>
+    <option value="no">No</option>
+</select>
     <br>
     <select name="seekinginternship" id="seeking-internship" class="input-algemeen input-helft">
         <option value="" disabled selected>Seeking internship?</option>
@@ -42,12 +43,14 @@
         <option value="no">No</option>
     </select>
     <br>
-    <select name="languages" id="languages" class="input-algemeen input-helft"><option value="" disabled selected>Languages</option>
+<!-- <select name="languages" id="languages" class="input-algemeen input-helft">
+    <option value="" disabled selected>Languages</option>
     <option value="">Etwas anderes</option>
-</select>
+</select> -->
 <hr>
 <textarea placeholder="Profile text" name="profiletext" id="profile-text"class="input-algemeen input-textarea"></textarea>
 <input type="text" placeholder="Profile image link" name="profileimage" id="profile-image" class="input-algemeen">
 <input type="text" placeholder="Profile Video link" name="profilevideo" id="profile-video" class="input-algemeen">
 <input type="text" placeholder="Social media link &emsp; e.g. LinkedIn" name="socialmedia" id="social-media" class="input-algemeen">
-<hr> 
+<hr>
+<p id="data-veranderd"></p>

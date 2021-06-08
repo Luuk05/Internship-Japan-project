@@ -85,11 +85,11 @@ $("#submit-button").on("click", function(event) {
     function valideerRoles(roles) {
        var role = roles;
        if (role == "Intern") {
-            return 1;
+            return "1";
        } else if (role == "Company") {
-            return 2
+            return "2";
        } else if (role == "Education") {
-            return 3
+            return "3";
        } else {
             maakInputRood("#role");
             return "";
@@ -116,6 +116,7 @@ $("#submit-button").on("click", function(event) {
                 },
                 success: function(data) {
                     if (data != "") {
+                        console.log(data);
                         sessionStorage.setItem("showMessageWhenDone", "true");
                         window.location.reload();
                     } else {

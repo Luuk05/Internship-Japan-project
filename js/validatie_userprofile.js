@@ -18,6 +18,8 @@ $("#role ").on("change", function() {
 $("#submit-button").on("click", function(event) {
     event.preventDefault();
 
+    sessionStorage.setItem("showMessageWhenDone", "false");
+
     var userName = $("#username").val();
     var passWord = $("#password").val();
     var repeatPassWord = $("#repeat-password").val();
@@ -43,7 +45,6 @@ $("#submit-button").on("click", function(event) {
     }
 
     function valideerNaam(PHPechoUsername) {
-        
            
         if (PHPechoUsername == "Exists") {
             $("#username").val("");
@@ -95,101 +96,44 @@ $("#submit-button").on("click", function(event) {
     function valideerIntern(username, password) {
 
         var emailVal = $("#email").val();
-        // var emailId = $("#email");
-        // checkIfEmpty(emailVal, emailId);
-
 
         var firstNameVal = $("#first-name").val();
-        // var firstNameId = $("#first-name");
-        // checkIfEmpty(firstNameVal, firstNameId);
-
         
         var lastNameVal = $("#last-name").val();
-        // var lastNameId = $("#last-name");
-        // checkIfEmpty(lastNameVal, lastNameId);
-
 
         var dateOfBirthVal = $("#date-of-birth").val();
-        // var dateOfBirthId = $("#date-of-birth");
-        // checkIfEmpty(dateOfBirthVal, dateOfBirthId);
-        
 
-        var nationalityVal = $("#nationality-id :selected").text();
-        // var nationalityId = $("#nationality-id");
-        // checkSelect(nationalityVal, "Nationality", nationalityId);
-        
+        // var nationality_id = $("#nationality_id :selected").text();
 
-        var countryIdVal = $("#country-id :selected").text();
-        // var countryIdValId = $("#country-id");
-        // checkSelect(countryIdVal, "Country", countryIdValId);
-        
+        // var country_id = $("#country_id :selected").text();
 
         var streetAdressVal = $("#street-adress").val();
-        // var streetAdressId = $("#street-adress");
-        // checkIfEmpty(streetAdressVal, streetAdressId);
         
-
         var postalCodeVal = $("#postal-code").val();
-        // var postalCodeId = $("#postal-code");
-        // checkIfEmpty(postalCodeVal, postalCodeId);
-        
 
         var cityVal = $("#city").val();
-        // var cityId = $("#city");
-        // checkIfEmpty(cityVal, cityId);
-        
 
         var studyVal = $("#study").val();
-        // var studyId = $("#study");
-        // checkIfEmpty(studyVal, studyId);
         
-
         var fieldOfStudiesVal = $("#field-of-studies").val();
-        // var fieldOfStudiesId = $("#field-of-studies");
-        // checkIfEmpty(fieldOfStudiesVal, fieldOfStudiesId);
-        
 
         var graduatedFromVal = $("#graduated-from").val();
-        // var graduatedFromId = $("#graduated-from");
-        // checkIfEmpty(graduatedFromVal, graduatedFromId);
-
 
         var currentlyStudentVal = $("#currently-student :selected").text();
-        // var currentlyStudentId = $("#currently-student");
-        // checkSelect(currentlyStudentVal, "Currently student?", currentlyStudentId);
-
 
         var seekingInternshipVal = $("#seeking-internship :selected").text();
-        // var seekingInternshipId = $("#seeking-internship");
-        // checkSelect(seekingInternshipVal, "Seeking internship?", seekingInternshipId);
-
 
         var openForRealEmploymentVal = $("#open-for-real-employment :selected").text();
-        // var openForRealEmploymentId = $("#open-for-real-employment");
-        // checkSelect(openForRealEmploymentVal, "Open for real employment?", openForRealEmploymentId);
 
-
-        var languagesVal = $("#languages :selected").text();
-        // var languagesId = $("#languages");
-        // checkSelect(languagesVal, "Languages", languagesId);
-
+        // var languagesVal = $("#languages :selected").text();
 
         var profileTextVal = $("#profile-text").val();
-        // var profileTextId = $("#profile-text");
-        // checkIfEmpty(profileTextVal, profileTextId);
-
 
         var profileImageVal = $("#profile-image").val();
-        // var profileImageId = $("#profile-image");
-        // checkIfEmpty(profileImageVal, profileImageId);
 
         var profileVideoVal = $("#profile-video").val();
-        // var profileVideoId = $("#profile-video");
-        // checkIfEmpty(profileVideoVal, profileVideoId);
 
         var socialMediaVal = $("#social-media").val();
-        // var socialMediaId = $("#social-media");
-        // checkIfEmpty(socialMediaVal, socialMediaId);
 
         var newData = {
             "username": username,
@@ -198,8 +142,8 @@ $("#submit-button").on("click", function(event) {
             "firstname": firstNameVal,
             "surname": lastNameVal,
             "date_of_birth": dateOfBirthVal,
-            "nationality_id": nationalityVal,
-            "country_id": countryIdVal,
+            // "nationality_id": nationality_id,
+            // "country_id": country_id,
             "street_adress": streetAdressVal,
             "postal_code": postalCodeVal,
             "city": cityVal,
@@ -209,7 +153,7 @@ $("#submit-button").on("click", function(event) {
             "currently_student": currentlyStudentVal,
             "seeking_internship": seekingInternshipVal,
             "openfor_real_employment": openForRealEmploymentVal,
-            "languages": languagesVal,
+            // "languages": languagesVal,
             "profiletext": profileTextVal,
             "profileimage": profileImageVal,
             "video": profileVideoVal,
@@ -262,10 +206,25 @@ $("#submit-button").on("click", function(event) {
                     "newData": newData,
                 },
                 success: function(data) {
-                    console.log(data);
+                    if (data != "Error") {
+                        sessionStorage.setItem("showMessageWhenDone", "true");
+                        window.location.reload();
+                    } else {
+                        sessionStorage.setItem("showMessageWhenDone", "false");
+                    }
+                   
                 }
         });
     }
 
 
 });
+
+if (sessionStorage.getItem("showMessageWhenDone") == "true") {
+    $("#box-profile").scrollTop(1500);
+    $("#data-veranderd").text("Data changed!");
+    sessionStorage.setItem("showMessageWhenDone", "false");
+}
+
+
+
