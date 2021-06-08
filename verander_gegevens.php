@@ -14,22 +14,43 @@
         }
 
 
-        $updateThis = array();
+        $counter = 0;
         foreach($newData as $key => $value) {
             if ($value != "") {
                 $sql = "SELECT * FROM user WHERE username like :username";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute([":username" => $_SESSION["username"]]);
                 $row = $stmt->fetch();
-
                 $user_id = $row["user_id"];
-                $sql = "UPDATE `intern` SET $key = :value where user_id = $user_id";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute([":value" => $value]);
 
+
+                if ($key == "username") {
+                    $sql = "UPDATE `user` SET $key = :value where user_id = $user_id";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([":value" => $value]);
+
+                } else if ($key == "password") {
+                    $hashedPassword = password_hash($value, PASSWORD_DEFAULT);
+
+                    $sql = "UPDATE `user` SET $key = :value where user_id = $user_id";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([":value" => $hashedPassword]);
+
+                } else {
+                    $sql = "UPDATE `intern` SET $key = :value where user_id = $user_id";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([":value" => $value]);
+                }
+            } else {
+                $counter++;
             }
         }
-        echo "changed data succesfull";
+        if ($counter == 19) {
+            echo "No data changed";
+        } else {
+            echo "Changed data succesfull";
+        }
+        
 
         // if (strlen($updateThis) != 0) {
         //     for ($i = 0; $i < strlen($updateThis); $i++) {
@@ -48,7 +69,7 @@
         //UPDATE `intern` SET `email`=[value-3],`firstname`=[value-4],`surname`=[value-5],`street_adress`=[value-6],`postal_code`=[value-7],`city`=[value-8],`date_of_birth`=[value-9],`country_id`=[value-10],`profiletext`=[value-11],`study`=[value-12],`video`=[value-13],`profileimage`=[value-14],`nationality_id`=[value-15],`field_of_studies`=[value-16],`graduated_from`=[value-17],`currently_student`=[value-18],`languages`=[value-19],`social_media`=[value-20],`seeking_internship`=[value-21],`openfor_real_employment`=[value-22] WHERE 1
     
     } else {
-        else "Error";
+        echo "Error";
         header("Location: login.php");
     }
 

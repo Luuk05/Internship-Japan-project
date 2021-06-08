@@ -12,7 +12,7 @@
     if (isset($_POST["login-knop"])) {
 
         if (!empty($_POST["username"])) {
-            $username = $_POST["username"];
+            
 
         } else {
             $border_color[0] = "red";
@@ -20,7 +20,7 @@
         }
 
         if (!empty($_POST["password"])) {
-            $password = $_POST["password"]; 
+            
 
         } else {
             $border_color[1] = "red";
@@ -28,26 +28,37 @@
         }
 
         if (!empty($_POST["username"]) && !empty($_POST["password"])) {
-            $sql = "SELECT * FROM user WHERE username like :username";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([":username" => $username]);
-            $row = $stmt->fetch();
-            $existingHashFromDb = $row["password"];
+            try {
+                $username = $_POST["username"];
+                $password = $_POST["password"]; 
 
-            if (password_verify($password, $existingHashFromDb)) {
+
+                $sql = "SELECT * FROM user WHERE username like :username";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute([":username" => $username]);
+                $row = $stmt->fetch();
+
                 $count = $stmt->rowCount();
                 if ($count > 0) {
-                    $personsRole = $row["role"];
-                    $_SESSION["username"] = $username;
-                    $_SESSION["password"] = $password;
-                    $_SESSION["permissionToEdit"] = true;
-                    $_SESSION["personsRole"] = $personsRole;
-    
-                    header("Location: profile_page.php");
-                }
-            }
+                    $existingPasswordFromDb = $row["password"];
 
-            
+                    if (password_verify($password, $existingPasswordFromDb)) {
+                        
+                        $personsRole = $row["role"];
+                        $_SESSION["username"] = $username;
+                        $_SESSION["password"] = $existingPasswordFromDb;
+                        $_SESSION["permissionToEdit"] = true;
+                        $_SESSION["personsRole"] = $personsRole;
+        
+                        header("Location: profile_page.php");
+                        
+                    }
+                }
+    
+                
+            } catch(Exception $e) {
+                
+            } 
         }
 
     }

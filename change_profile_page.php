@@ -9,10 +9,7 @@
 
     if (!isset($_SESSION["permissionToEdit"])) {
         header("Location: profile_page.php");
-    } 
-    // if (!isset($_SESSION["personsRole"])) {
-    //     $_SESSION["personsRole"] = 0;
-    // }
+    }
 ?>
 
 <!DOCTYPE html>
