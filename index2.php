@@ -2,10 +2,10 @@
     session_start();
     include_once "pdo_verbinding.php";
 
-
+    $border_color = "#7675758c";
+    $box_shadow = "0 0 1px #4f4f4f";
     if (isset($_POST["zoek-knop"])) {
-        $border_color = "#767575";
-        $box_shadow = "0 0 2px #4f4f4f";
+        
 
         if (!empty($_POST["opleiding"]) && strlen(trim($_POST['opleiding'])) > 0) {
             $opleiding = trim($_POST["opleiding"]);
@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style_index2.css">
     <title>Internship Japan</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container-1">
@@ -66,32 +67,43 @@
                         <h2>Recent opportunities:</h2>
                     </div>
                     <div class="lege-ruimte"></div>
-                    <div class="alle-stages">
-                        <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
-                                <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
-                            </div>
-                        </div>
-                        <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
-                                <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
-                            </div>
-                        </div>
-                        <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4<!--Opleiding. tekst tekst tekst--></h1>
-                                <h2>Google inc. Alphabet B.v. <!--Bedrijfsnaam. tekst tekst tekst--></h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeld<!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst--></p>
-                            </div>
+
+                    <div class="recente-stage-plek">
+                        <img src="images/placeholder-100x100.png" alt="">
+                        <div class="textbox">
+                            <h1>Software developer niveau 4</h1>
+                            <h2>Google inc. Alphabet B.v.</h2>
+                            <p>Tekst tekst tekst voorbeeld voorbeeld</p>
                         </div>
                     </div>
+
+
+                    <!-- <div class="alle-stages">
+                        <div class="recente-stage-plek">
+                            <img src="images/placeholder-100x100.png" alt="">
+                            <div class="textbox">
+                                <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
+                                <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
+                                <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
+                            </div>
+                        </div>
+                        <div class="recente-stage-plek">
+                            <img src="images/placeholder-100x100.png" alt="">
+                            <div class="textbox">
+                                <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
+                                <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
+                                <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
+                            </div>
+                        </div>
+                        <div class="recente-stage-plek">
+                            <img src="images/placeholder-100x100.png" alt="">
+                            <div class="textbox">
+                                <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
+                                <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
+                                <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -99,6 +111,7 @@
                 <!-- info over hoeveel mensen gerigistreed zijn en hoeveel bedrijven -->
         </footer>
     </div>
+    <!-- <script src="js/check_recent_opportunities_clicked.js"></script> -->
 </body>
 </html>
 

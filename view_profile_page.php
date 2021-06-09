@@ -5,7 +5,8 @@
         header("Location: login.php");
     }
 
-
+        //session  role 
+        //session  username
 ?>
 <div id="view-page">
     <?php 

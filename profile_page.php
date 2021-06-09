@@ -32,7 +32,7 @@
                     <h2>View this page</h2>
                     <?php 
                     include_once "view_profile_page.php";
-                    if ($_SESSION["permissionToEdit"]) {
+                    if ($_SESSION["permissionToEdit"] == true) {
                         echo '<script>document.getElementById("form").innerHTML += \'<input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"><input type="submit" value="Log out" name="redirect-button" id="logout-button" class="no-wrap">\';
 
                         $("#redirect-button").click(function(event) {

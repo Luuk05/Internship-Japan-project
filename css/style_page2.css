@@ -80,6 +80,7 @@
     border-radius: 10px;
     box-shadow: 0 0 1px black;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .resultaat-boxen img {
@@ -130,4 +131,9 @@
     letter-spacing: 1.5px;
     color: #1d1b1b;
     text-shadow: 0 0 1px #575252;
+}
+
+#resultaten-box a {
+    text-decoration: none;
+    color: inherit;
 }

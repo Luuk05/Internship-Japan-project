@@ -30,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style_page2.css">
     <title>Zoekresultaten</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container-1">
@@ -56,23 +57,22 @@
                         $sql = "SELECT * FROM company WHERE position like :position AND city like :city";
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute([":position" => "%" . $opleiding . "%", ":city" => "%" . $locatie . "%"]);
-
                         $rows = $stmt->fetchAll();
                         // print("<pre>".print_r($rows, true)."</pre>");
         
                         foreach($rows as $row) {
-                            echo 
-                            "<div class='resultaat-boxen'>
-                                <img src='images/placeholder-100x100.png' alt='img'>
-                                <div class='textbox'>
-                                    <h1>"; echo $row["position"]; echo "</h1>
-                                    <h2>"; echo $row["companyname"]; echo "</h2>
-                                    <h3>"; echo $row["city"]; echo "</h3>
-                                    <p>"; echo $row["positiontext"]; echo "</p>
-                                </div> 
-                            </div>";
+                            echo "<div class='resultaat-boxen' value='" . $row["user_id"] . "'>
+                                    <img src='images/placeholder-100x100.png' alt='img'>
+                                    <div class='textbox'>
+                                        <h1>" . $row["position"] . "</h1>
+                                        <h2>" . $row["companyname"] . "</h2>
+                                        <h3>" . $row["city"] . "</h3>
+                                        <p>" . $row["positiontext"] . "</p>
+                                    </div> 
+                                </div>";
                         }  
-                        
+                        //session  role 
+                        //session  username
 
                         
                     }
@@ -95,5 +95,6 @@
         </div>
     </div>
     <script src="js/error_geen_resultaten_page2.js"></script>
+    <script src="js/check_clicked_resultaat.js"></script>
 </body>
 </html>

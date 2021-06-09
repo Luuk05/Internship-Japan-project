@@ -193,10 +193,19 @@ window.addEventListener('load', function () {
             var emailVal = $("#email").val();
 
             var firstNameVal = $("#first-name").val();
+            // if (firstNameVal = "undefined") {
+            //     firstNameVal = "";
+            // }
             
             var lastNameVal = $("#last-name").val();
+            // if (lastNameVal = "undefined") {
+            //     lastNameVal = "";
+            // }
 
             var fullNameVal = firstNameVal + " " + lastNameVal;
+            // if (fullNameVal = "undefined") {
+            //     fullNameVal = "";
+            // }
 
             var companyNameVal = $("#company-name").val();
 
@@ -270,7 +279,6 @@ window.addEventListener('load', function () {
                         "newData": newData,
                     },
                     success: function(data) {
-                        //checken waarom data changed succesfull als er niets veranderd
                         if (data == "Changed data succesfull") {
                             sessionStorage.setItem("showMessageWhenDone", "true");
                             window.location.reload();

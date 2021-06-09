@@ -7,7 +7,7 @@
         // exit();
     } 
 
-    if (!isset($_SESSION["permissionToEdit"])) {
+    if (!isset($_SESSION["permissionToEdit"]) || $_SESSION["permissionToEdit"] != true) {
         header("Location: profile_page.php");
     }
 ?>

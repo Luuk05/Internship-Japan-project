@@ -2,18 +2,28 @@
 <nav>
     <ul>
         <!-- <img src="images/internshiplogo.png" alt="Intership Japan"> -->
-        <li><a href="">For Employers</a></li>
+        <li><a href="index2.php">Search</a></li>
         <li><a href="">About us</a></li>
         <li><a href="">F.A.Q.</a></li>
     </ul>
-    <!-- <a href = ""><button id="logout-button">Logout</button></a> -->
-    <a href= 
-            <?php 
-                if (isset($_SESSION["username"])) {
-                    echo "profile_page.php";
-                } else {
+    <div id="buttons">
+        <?php 
+            if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true) {
+                echo '<a href = "logout.php" id="logout-button-nav">Log out.</a>';
+            } else {
+                echo '<style>
+                    #buttons {
+                        width: auto;
+                    }
+                </style>';
+            }
+        ?>
+        <a href= 
+                <?php 
                     echo "login.php";
-                }
-            ?>    
-    ><button>Sign in/up</button></a>
+                    
+                ?>    
+        ><button id="sing-in-up">Sign in/up</button></a>
+    </div>
+    
 </nav>

@@ -1,7 +1,7 @@
 <h3>Contact person data:</h3>
 <input type="email" placeholder="Email" name="email" id="email" class="input-algemeen">
 <div id="names">
-    <input type="text" placeholder="Firstname" name="firstname" id="fist-name" class="input-algemeen input-helft">
+    <input type="text" placeholder="Firstname" name="firstname" id="first-name" class="input-algemeen input-helft">
     <input type="text" placeholder="Lastname" name="lastname" id="last-name" class="input-algemeen input-helft">
 </div>
 <hr>
