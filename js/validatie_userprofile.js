@@ -180,18 +180,75 @@ window.addEventListener('load', function () {
                 "social_media": socialMediaVal
             };
 
-            for (const [key, value] of Object.entries(newData)) {
-                console.log(key);
-                console.log(value);
-            }
-            window.stop();
+            // for (const [key, value] of Object.entries(newData)) {
+            //     console.log(key);
+            //     console.log(value);
+            // }
+            // window.stop();
             return newData;
         }
 
         function valideerCompany(username, password) {
-            
 
-            // return ArrayMetWaardes;
+            var emailVal = $("#email").val();
+
+            var firstNameVal = $("#first-name").val();
+            
+            var lastNameVal = $("#last-name").val();
+
+            var fullNameVal = firstNameVal + " " + lastNameVal;
+
+            var companyNameVal = $("#company-name").val();
+
+            var country_id = $("#country-id :selected").val();
+            if (country_id == "Country") {
+                country_id = "";
+            }
+
+            var streetAdressVal = $("#street-adress").val();
+            
+            var postalCodeVal = $("#postal-code").val();
+
+            var cityVal = $("#city").val();
+
+            var profileTextVal = $("#profile-text").val();
+
+            var profileImageVal = $("#profile-image").val();
+
+            var profileVideoVal = $("#profile-video").val();
+
+            var websiteLink = $("#website-link").val();
+
+            var positionVal = $("#position").val();
+
+            var positionTextVal = $("#position-text").val();
+
+
+            var newData = {
+                
+                "username": username,
+                "password": password,
+                "email_contactperson": emailVal,
+                "contactperson": fullNameVal,
+                "companyname": companyNameVal,
+                "country_id": country_id,
+                "street_adress": streetAdressVal,
+                "postal_code": postalCodeVal,
+                "city": cityVal,
+                "profiletext": profileTextVal,
+                "logo": profileImageVal,
+                "video": profileVideoVal,
+                "website": websiteLink,
+                "position": positionVal,
+                "positiontext": positionTextVal
+            };
+
+            // for (const [key, value] of Object.entries(newData)) {
+            //     console.log(key);
+            //     console.log(value);
+            // }
+            // window.stop();
+            return newData;
         }
 
         function valideerEducation(username, password) {
@@ -213,9 +270,10 @@ window.addEventListener('load', function () {
                         "newData": newData,
                     },
                     success: function(data) {
+                        //checken waarom data changed succesfull als er niets veranderd
                         if (data == "Changed data succesfull") {
-                            // sessionStorage.setItem("showMessageWhenDone", "true");
-                            // window.location.reload();
+                            sessionStorage.setItem("showMessageWhenDone", "true");
+                            window.location.reload();
 
                         } else {
                             sessionStorage.setItem("showMessageWhenDone", "false");

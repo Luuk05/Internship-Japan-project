@@ -1,26 +1,33 @@
 <h3>Contact person data:</h3>
-<input type="email" placeholder="Email" name="email" class="input-algemeen">
+<input type="email" placeholder="Email" name="email" id="email" class="input-algemeen">
 <div id="names">
-    <input type="text" placeholder="Firstname" name="firstname" class="input-algemeen input-helft">
-    <input type="text" placeholder="Lastname" name="lastname" class="input-algemeen input-helft">
+    <input type="text" placeholder="Firstname" name="firstname" id="fist-name" class="input-algemeen input-helft">
+    <input type="text" placeholder="Lastname" name="lastname" id="last-name" class="input-algemeen input-helft">
 </div>
 <hr>
 <h3>Company data:</h3>
-<input type="text" placeholder="Company name" name="companyname" class="input-algemeen">
-<select name="countryid" id="country" class="input-algemeen input-helft">
-    <option value="" disabled selected>Country</option>
-    <option value="">Etwas anderes</option>
+<input type="text" placeholder="Company name" name="companyname" id="company-name" class="input-algemeen">
+<select name="countryid" id="country-id" class="input-algemeen input-helft">
+    <option value="Country" disabled selected>Country</option>
+    <?php 
+        $stmt = $pdo->query("SELECT * FROM country");
+        $stmt->execute();
+
+        foreach ($stmt as $row) {
+            echo "<option value='" . $row["country_id"] . "'>" . $row["countryname"] . "</option>";
+        }
+    ?>
 </select>
-<input type="text" placeholder="Adress" name="streetadress" class="input-algemeen">
+<input type="text" placeholder="Adress" name="streetadress" id="street-adress" class="input-algemeen">
 <div id="input-postal-city">
-    <input type="text" placeholder="Postal code" name="postalcode" class="input-algemeen input-helft">
-    <input type="text" placeholder="City" name="city" class="input-algemeen input-helft">
+    <input type="text" placeholder="Postal code" name="postalcode" id="postal-code" class="input-algemeen input-helft">
+    <input type="text" placeholder="City" name="city" id="city" class="input-algemeen input-helft">
 </div>
-<textarea placeholder="Profile text" name="profiletext" class="input-algemeen input-textarea"></textarea>
-<input type="text" placeholder="Company logo link" name="profileimage" class="input-algemeen">
-<input type="text" placeholder="Company video link" name="profilevideo" class="input-algemeen">
-<input type="text" placeholder="Website link" name="websitelink" class="input-algemeen">
+<textarea placeholder="Profile text" name="profiletext" id="profile-text" class="input-algemeen input-textarea"></textarea>
+<input type="text" placeholder="Company logo link" name="profileimage" id="profile-image" class="input-algemeen">
+<input type="text" placeholder="Company video link" name="profilevideo" id="profile-video" class="input-algemeen">
+<input type="text" placeholder="Website link" name="websitelink" id="website-link" class="input-algemeen">
 <hr>
-<input type="text" placeholder="Position" name="position" class="input-algemeen">
-<textarea type="text" placeholder="Informational text for the intern. You can write what you are working on and what the intern will have to do for your company." name="positiontext" class="input-algemeen input-textarea"></textarea>
+<input type="text" placeholder="Position" name="position" id="position" class="input-algemeen">
+<textarea type="text" id="position-text" placeholder="Informational text for the intern. You can write what you are working on and what the intern will have to do for your company." name="positiontext" class="input-algemeen input-textarea"></textarea>
 <hr>

@@ -51,6 +51,12 @@ h2 {
     margin: 20px 0px;
 }
 
+h5 {
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
 #view-page {
     margin-top: 40px;
     width: 100%;
@@ -70,7 +76,7 @@ h2 {
     height: 150px;
 }
 
-#center-about {
+#about-data {
     width: 60%;
     height: 150px;
     display: flex;
@@ -78,6 +84,19 @@ h2 {
     justify-content: center;
 
     float: right;
+}
+
+#general-data {
+    float: left;
+}
+
+#study-data {
+    float: right;
+}
+
+#position-data {
+    float: right;
+    width: 45%;
 }
 
 .clear {
@@ -88,23 +107,14 @@ hr {
     margin: 30px 0;
 }
 
-#general-data {
-
-    float: left;
-}
-
-#study-data {
-    float: right;
-}
-
 .left {
     float: left;
 }
 
-.no-wrap {
+/* .no-wrap {
     white-space: nowrap;
     text-overflow: clip;
-}
+} */
 
 
 h4 {

@@ -30,12 +30,19 @@ if (isset($_POST["userName"])) {
     $stmt->execute([":username" => $userName, ":password" => $hashedPassword]);    //passWord
     $row = $stmt->fetch();
 
-
     $user_id = $row["user_id"];
     $standard_id = 252;
-    $sql = "INSERT INTO $roleName(user_id, country_id, nationality_id) VALUES (:userid, :countryid, :nationalityid)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([":userid" => $user_id, ":countryid" => $standard_id, ":nationalityid" => $standard_id]);
+
+    if ($roleName == "intern") {
+        $sql = "INSERT INTO $roleName(user_id, country_id, nationality_id) VALUES (:userid, :countryid, :nationalityid)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([":userid" => $user_id, ":countryid" => $standard_id, ":nationalityid" => $standard_id]);
+    } else {
+        $sql = "INSERT INTO $roleName(user_id, country_id) VALUES (:userid, :countryid)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([":userid" => $user_id, ":countryid" => $standard_id]);
+    }
+    
 
     
     echo "Account made";

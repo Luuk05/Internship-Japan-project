@@ -78,4 +78,3 @@
 <input type="text" placeholder="Profile Video link" name="profilevideo" id="profile-video" class="input-algemeen">
 <input type="text" placeholder="Social media link &emsp; e.g. LinkedIn" name="socialmedia" id="social-media" class="input-algemeen">
 <hr>
-<p id="data-veranderd"></p>

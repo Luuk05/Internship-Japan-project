@@ -115,6 +115,7 @@ $("#submit-button").on("click", function(event) {
                     "role": role
                 },
                 success: function(data) {
+                    console.log(data);
                     if (data != "") {
                         console.log(data);
                         sessionStorage.setItem("showMessageWhenDone", "true");

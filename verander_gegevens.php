@@ -37,7 +37,7 @@
                     $stmt->execute([":value" => $hashedPassword]);
 
                 } else {
-                    $sql = "UPDATE `intern` SET $key = :value where user_id = $user_id";
+                    $sql = "UPDATE $role SET $key = :value where user_id = $user_id";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute([":value" => $value]);
                 }
@@ -45,7 +45,7 @@
                 $counter++;
             }
         }
-        if ($counter == 19) {
+        if ($counter == count($newData)) {
             echo "No data changed";
         } else {
             echo "Changed data succesfull";

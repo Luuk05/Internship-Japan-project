@@ -54,6 +54,7 @@
                     ?>
 
                     <input type="submit" value="Save changes" id="submit-button">
+                    <p id="data-veranderd"></p>
                 </form>
             </div>
         </div>
