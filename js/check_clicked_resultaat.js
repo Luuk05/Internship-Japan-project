@@ -1,8 +1,6 @@
-$(".resultaat-boxen").click(function(e){
-    var user_id = $(this).attr('value'); //value  $(this).hide();
+$(".resultaat-boxen").click(function(e) {
+    var user_id = $(this).attr('value');
     console.log(user_id);
-
-
 
 
     $.ajax({
@@ -13,6 +11,7 @@ $(".resultaat-boxen").click(function(e){
                 "user_id": user_id
             },
             success: function(data) {
+                // console.log(data);
                 var url = data;
                 window.location.replace(url);
             }

@@ -18,12 +18,50 @@
                 </style>';
             }
         ?>
-        <a href= 
+        <a href= "" id="profile-login">
+            <button id="sing-in-up">
                 <?php 
-                    echo "login.php";
-                    
-                ?>    
-        ><button id="sing-in-up">Sign in/up</button></a>
+                    if (!isset($_SESSION["permissionToEdit"])) {
+                        echo "Sign in/up";
+                    } else {
+                        echo "My Account";
+                    }
+                ?>
+            </button>
+        </a>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#profile-login").click(function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: "get_permission.php",
+                type: "POST",
+                success: function(data) {
+                    var permissionToEdit = data;
+                    console.log(data);
+
+                    if (permissionToEdit) {
+                        $.ajax({
+                            url: "set_names_and_roles_equal.php",
+                            type: "POST",
+                            success: function(data) {
+                                if (data == "Succes") {
+                                    window.location.replace("profile_page.php");
+                                }
+                            }
+                        });
+                        
+                    } else {
+                        window.location.replace("login.php");
+                    }
+                }
+            });
+
+        });
+    
+    </script>
     
 </nav>

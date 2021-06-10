@@ -51,10 +51,11 @@ $("#submit-button").on("click", function(event) {
     function valideerNaam(PHPechoUsername, userName) {
         if (userName != "") {
             if (userName.trim().length > 0) {
-                if (PHPechoUsername == "") {
+                if (PHPechoUsername == "Exists2") {
                     $("#username").val("");
                     $("#username").attr("placeholder","This username already exists.");
                     maakInputRood("#username");
+                    return "";
                 } else {
                     return PHPechoUsername;
                 }

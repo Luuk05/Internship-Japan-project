@@ -5,8 +5,9 @@
         header("Location: login.php");
     }
 
-        //session  role 
-        //session  username
+    // echo $_SESSION["personsRole"];
+    // echo $_SESSION["ownRole"];
+    // exit();
 ?>
 <div id="view-page">
     <?php 
@@ -42,14 +43,14 @@
                 $stmt2->execute(["country_id" => $row["nationality_id"]]);
                 $row2 = $stmt2->fetch();
                 $nationality = $row2["countryname"];
-
-                if ($row["currently_student"] == 1) {
+                
+                if (isset($row["currently_student"]) && $row["currently_student"] == 1) {
                     $currentlyStudent = "Yes";
                 } else {
                     $currentlyStudent = "No";
                 }
-
-                if ($row["openfor_real_employment"] == 1) {
+                    
+                if (isset($row["openfor_real_employment"]) && $row["openfor_real_employment"] == 1) {
                     $openForRealEmployment = "Yes";
                 } else {
                     $openForRealEmployment = "No";

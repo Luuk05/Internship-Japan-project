@@ -11,11 +11,12 @@
 
         $count = $stmt->rowCount();
         if ($count > 0) {
-            $username = $row["username"];
-            $role = $row["role"];
+            $_SESSION["username"] = $row["username"];
+            $_SESSION["personsRole"] = $row["role"];
 
-            $_SESSION["username"] = $username;
-            $_SESSION["personsRole"] = $role;
+            // echo $_SESSION["username"];
+            // echo $_SESSION["personsRole"];
+            // exit();
 
             echo "profile_page.php";
         } 

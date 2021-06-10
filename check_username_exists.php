@@ -9,13 +9,11 @@
 
         $stmt = $pdo->query("SELECT * FROM user"); 
         $stmt->execute();
-    
         $rows = $stmt->fetchAll();
                             
         $userNameExists = false;
     
         foreach($rows as $row) {
-            // echo $row["username"];
             if ($row["username"] == $userName) {
                 $userNameExists = true;
                 break;
@@ -23,7 +21,7 @@
         }
     
         if ($userNameExists) {
-            echo "Exists";
+            echo "Exists2";
         } else {
             echo $userName;
         }   

@@ -49,6 +49,9 @@
                         $_SESSION["password"] = $existingPasswordFromDb;
                         $_SESSION["permissionToEdit"] = true;
                         $_SESSION["personsRole"] = $personsRole;
+                        $_SESSION["ownUsername"] = $username;
+                        $_SESSION["ownRole"] = $personsRole;
+
         
                         header("Location: profile_page.php");
                         
