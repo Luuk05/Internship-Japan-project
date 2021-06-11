@@ -9,7 +9,14 @@
     width: 100%;
     height: auto; 
     min-height: 100vh;
+    /* height: 100vh; */
     background-color: #e5eaf1;
+
+    /* background-image: url("../images/backgroundimg.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed; */
 }
 
 .container-2 {
@@ -18,6 +25,7 @@
     grid-template-columns: 23% 75%;
     grid-column-gap: 2%;
     margin: 40px 15% 0 15%;
+    
     /* padding: 0 0 40px 0; */
 }
 
@@ -70,6 +78,15 @@
     background-color: #607ddc;
     border: 1px solid #607ddc; 
 }
+
+/* #resultaten-box  {
+    overflow-y: scroll;
+    max-height: calc(100vh - 100px - 40px - 40px);
+} */
+
+/* #resultaten-box::-webkit-scrollbar { 
+    display: none;
+} */
 
 .resultaat-boxen {
     display: flex;
