@@ -153,7 +153,7 @@
                         </div>
                         <div class="clear"></div>
                         <div id="email" class="no-wrap">
-                            <p class = "left"><h4 class = "left">Contact person email :</h4>' . $row["email_contactperson"] . '</p>
+                            <p class = "left"><h4 class = "left">Contact person email:</h4>' . $row["email_contactperson"] . '</p>
                         </div>
                         <div class="clear"></div>
                         <div id="city" class="no-wrap">
@@ -165,7 +165,7 @@
                         </div>
                         <div class="clear"></div>
                         <div id="webstite" class="no-wrap">
-                            <p class = "left"><h4 class = "left">Webiste company:</h4>' . $row["website"] . '</p>
+                            <p class = "left"><h4 class = "left">Company website:</h4>' . $row["website"] . '</p>
                         </div>
                         <div id="video-link" class="no-wrap">
                             <p class = "left"><h4 class = "left">Video link:</h4>' . $row["video"] . '</p>
