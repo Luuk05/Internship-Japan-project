@@ -12,6 +12,7 @@
     
             $_SESSION["opleiding"] = $opleiding;
             $_SESSION["locatie"] = $locatie;
+            header("Location: page2.php");
         } else {
             $border_color = "red";
             $box_shadow = "0 0 3px red";
@@ -70,13 +71,12 @@
                                         <p>" . $row["positiontext"] . "</p>
                                     </div> 
                                 </div>";
-                        }  
+                        }
                         //session  role 
                         //session  username
 
                         
                     }
-                    // session_unset();
         
                     
                 ?>
