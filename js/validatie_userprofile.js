@@ -263,7 +263,7 @@ window.addEventListener('load', function () {
         function valideerEducation(username, password) {
             
 
-            // return ArrayMetWaardes;
+            
         }
 
     

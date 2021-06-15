@@ -14,7 +14,7 @@
         }
 
 
-        $counter = 0;
+        // $counter = 0;
         foreach($newData as $key => $value) {
             if ($value != "" && strlen(trim($value)) > 0) {
                 $sql = "SELECT * FROM user WHERE username like :username";
@@ -42,7 +42,7 @@
                     $stmt->execute([":value" => $value]);
                 }
             } else {
-                $counter++;
+                // $counter++;
             }
         }
         if ($counter == count($newData)) {

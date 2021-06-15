@@ -164,7 +164,7 @@
                             <p class = "left"><h4 class = "left">Country:</h4>' . $row2["countryname"] . '</p>
                         </div>
                         <div class="clear"></div>
-                        <div id="webstite" class="no-wrap">
+                        <div id="website" class="no-wrap">
                             <p class = "left"><h4 class = "left">Company website:</h4>' . $row["website"] . '</p>
                         </div>
                         <div id="video-link" class="no-wrap">
@@ -207,7 +207,7 @@
                     
                     <div id="general-data">
                         <div id="education-name" class="no-wrap">
-                            <p class = "left"><h4 class = "left">Education name:</h4>' . $row["companyname"] . '</p>
+                            <p class = "left"><h4 class = "left">Education name:</h4>' . $row["educationname"] . '</p>
                         </div>
                         <div class="clear"></div>
                         <div id="contact-person-name" class="no-wrap">
@@ -226,8 +226,8 @@
                             <p class = "left"><h4 class = "left">Country:</h4>' . $row3["countryname"] . '</p>
                         </div>
                         <div class="clear"></div>
-                        <div id="webstite" class="no-wrap">
-                            <p class = "left"><h4 class = "left">Company website:</h4>' . $row["website"] . '</p>
+                        <div id="website" class="no-wrap">
+                            <p class = "left"><h4 class = "left">Education website:</h4>' . $row["website"] . '</p>
                         </div>
                         <div id="video-link" class="no-wrap">
                             <p class = "left"><h4 class = "left">Video link:</h4>' . $row["video"] . '</p>
