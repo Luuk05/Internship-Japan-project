@@ -21,7 +21,7 @@
         }
     
         if ($userNameExists) {
-            echo "Exists2";
+            echo "Username already exists";
         } else {
             echo $userName;
         }   

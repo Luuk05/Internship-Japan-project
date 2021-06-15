@@ -41,7 +41,7 @@
                 type: "POST",
                 success: function(data) {
                     var permissionToEdit = data;
-                    console.log(data);
+                    // console.log(data);
 
                     if (permissionToEdit) {
                         $.ajax({
@@ -49,13 +49,15 @@
                             type: "POST",
                             success: function(data) {
                                 if (data == "Succes") {
-                                    window.location.replace("profile_page.php");
+                                    window.location.href = "profile_page.php";
+                                    // window.location.replace("profile_page.php");
                                 }
                             }
                         });
                         
                     } else {
-                        window.location.replace("login.php");
+                        window.location.href = "login.php";
+                        // window.location.replace("login.php");
                     }
                 }
             });

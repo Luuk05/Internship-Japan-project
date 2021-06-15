@@ -6,12 +6,12 @@
         $border_color = "#767575";
         $box_shadow = "0 0 2px #4f4f4f";
 
-        if (!empty($_POST["opleiding"]) && strlen(trim($_POST['opleiding'])) > 0) {
-            $opleiding = trim($_POST["opleiding"]);
-            $locatie = trim($_POST["locatie"]);
+        if (!empty($_POST["study"]) && strlen(trim($_POST['study'])) > 0) {
+            $study = trim($_POST["study"]);
+            $location = trim($_POST["locatie"]);
     
-            $_SESSION["opleiding"] = $opleiding;
-            $_SESSION["locatie"] = $locatie;
+            $_SESSION["study"] = $study;
+            $_SESSION["location"] = $location;
             header("Location: page2.php");
         } else {
             $border_color = "red";
@@ -40,24 +40,24 @@
             <div class="filter-box">
                 <h1>Filter</h1>
                 <form action="" method="post">
-                    <input type="text" placeholder="Opleiding..." name="opleiding" class="filter-input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
+                    <input type="text" placeholder="Opleiding..." name="study" class="filter-input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
                     <br>
-                    <input type="text" placeholder="Locatie..." name="locatie" class="filter-input-algemeen">
+                    <input type="text" placeholder="Locatie..." name="location" class="filter-input-algemeen">
                     <br>
                     <input type="submit" name="filter-knop" value="Filter" class="filter-knop">
                 </form>
             </div>
             <div id="resultaten-box">
                 <?php 
-                    if (empty($_SESSION["opleiding"])) {
+                    if (empty($_SESSION["study"])) {
                     } else {
-                        $opleiding = $_SESSION["opleiding"];
-                        $locatie = $_SESSION["locatie"];
+                        $study = $_SESSION["study"];
+                        $location = $_SESSION["location"];
                         
                         
                         $sql = "SELECT * FROM company WHERE position like :position AND city like :city";
                         $stmt = $pdo->prepare($sql);
-                        $stmt->execute([":position" => "%" . $opleiding . "%", ":city" => "%" . $locatie . "%"]);
+                        $stmt->execute([":position" => "%" . $study . "%", ":city" => "%" . $location . "%"]);
                         $rows = $stmt->fetchAll();
                         // print("<pre>".print_r($rows, true)."</pre>");
         

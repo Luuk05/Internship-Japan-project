@@ -47,7 +47,7 @@ if (isset($_POST["userName"])) {
     
     echo "Account made";
 } else {
-    echo "101";
+    echo "Error";
     header("Location: registreer.php");
 }
 

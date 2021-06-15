@@ -1,6 +1,6 @@
 $(".resultaat-boxen").click(function(e) {
     var user_id = $(this).attr('value');
-    console.log(user_id);
+    // console.log(user_id);
 
     $.ajax({
         url: "redirect_to_profile.php",

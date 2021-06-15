@@ -7,12 +7,12 @@
     if (isset($_POST["zoek-knop"])) {
         
 
-        if (!empty($_POST["opleiding"]) && strlen(trim($_POST['opleiding'])) > 0) {
-            $opleiding = trim($_POST["opleiding"]);
-            $locatie = trim($_POST["locatie"]);
+        if (!empty($_POST["study"]) && strlen(trim($_POST['study'])) > 0) {
+            $study = trim($_POST["study"]);
+            $location = trim($_POST["location"]);
 
-            $_SESSION["opleiding"] = $opleiding;
-            $_SESSION["locatie"] = $locatie;
+            $_SESSION["study"] = $study;
+            $_SESSION["location"] = $location;
 
             header("Location: page2.php");
         } else {
@@ -42,9 +42,9 @@
                 <div class="input-velden-box">
                     <form action="" method="post">
                         <h2>Search:</h2>
-                        <input type="text" placeholder="Opleiding..." name="opleiding" class="input-veld-opleiding input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
+                        <input type="text" placeholder="Study..." name="study" class="input-veld-opleiding input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
                         <br>
-                        <input type="text" placeholder="Locatie..." name="locatie" class="input-veld-locatie input-algemeen">
+                        <input type="text" placeholder="City..." name="location" class="input-veld-locatie input-algemeen">
                         <br>
                         <input type="submit" name="zoek-knop" value="Search!" class="search-knop">
                     

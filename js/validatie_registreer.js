@@ -51,7 +51,7 @@ $("#submit-button").on("click", function(event) {
     function valideerNaam(PHPechoUsername, userName) {
         if (userName != "") {
             if (userName.trim().length > 0) {
-                if (PHPechoUsername == "Exists2") {
+                if (PHPechoUsername == "Username already exists") {
                     $("#username").val("");
                     $("#username").attr("placeholder","This username already exists.");
                     maakInputRood("#username");
@@ -97,10 +97,6 @@ $("#submit-button").on("click", function(event) {
        }
     }
 
-    function maakInputRood(id) {
-        $(id).css("border-color", "red");
-    }
-
     function maakAccount(username, password, role) {
         var username = username;
         var password = password;
@@ -117,8 +113,8 @@ $("#submit-button").on("click", function(event) {
                 },
                 success: function(data) {
                     // console.log(data);
-                    if (data != "") {
-                        console.log(data);
+                    if (data != "Error") {
+                        // console.log(data);
                         sessionStorage.setItem("showMessageWhenDone", "true");
                         window.location.reload();
                     } else {
@@ -135,18 +131,23 @@ if (sessionStorage.getItem("showMessageWhenDone") == "true") {
     $("#account-gemaakt").text("Account made!");
     setTimeout(function() { 
         $("#account-gemaakt").text("Redirecting to log-in in 3");
-    }, 2000);
+    }, 1500);
     setTimeout(function() { 
         $("#account-gemaakt").text("Redirecting to log-in in 2");
-    }, 3000);
+    }, 2500);
     setTimeout(function() { 
         $("#account-gemaakt").text("Redirecting to log-in in 1");
-    }, 4000);
+    }, 3500);
     setTimeout(function() { 
-        window.location.replace("login.php");
-    }, 5000);
+        window.location.href = "login.php";
+        // window.location.replace("login.php");
+    }, 4500);
 
     sessionStorage.setItem("showMessageWhenDone", "false")
+}
+
+function maakInputRood(id) {
+    $(id).css("border-color", "red");
 }
 
 
