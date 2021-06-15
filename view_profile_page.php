@@ -18,6 +18,9 @@
         $row = $stmt->fetch();
         if ($stmt->rowCount() > 0) {
             $user_id = $row["user_id"];
+            // echo $user_id;
+
+            // echo "<br>" . $_SESSION["personsRole"];
 
             if ($_SESSION['personsRole'] == 1) {
                 $role = "intern";
@@ -37,7 +40,7 @@
                 $currentTime = new DateTime();
                 $difference = $currentTime->diff($date_of_birth);
                 $age = $difference->y;
-
+            
                 $sql2 = "SELECT * FROM `country` WHERE `country_id` like :country_id";
                 $stmt2 = $pdo->prepare($sql2);
                 $stmt2->execute(["country_id" => $row["nationality_id"]]);

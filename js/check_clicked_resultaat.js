@@ -1,4 +1,4 @@
-$(".resultaat-boxen").click(function(e) {
+$(".resultaat-boxen").click(function() {
     var user_id = $(this).attr('value');
     // console.log(user_id);
 

@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
 
         function valideerNaam(PHPechoUsername) {
             
-            if (PHPechoUsername == "Exists") {
+            if (PHPechoUsername == "Username already exists") {
                 $("#username").val("");
                 $("#username").attr("placeholder","This username already exists.");
                 maakInputRood("#username");
@@ -261,7 +261,65 @@ window.addEventListener('load', function () {
         }
 
         function valideerEducation(username, password) {
+            var emailVal = $("#email").val();
+
+            var firstNameVal = $("#first-name").val();
             
+            var lastNameVal = $("#last-name").val();
+
+            var fullNameVal = firstNameVal + " " + lastNameVal;
+
+            var educationNameVal = $("#education-name").val();
+
+            var country_id = $("#country-id :selected").val();
+            if (country_id == "Country") {
+                country_id = "";
+            }
+
+            var streetAdressVal = $("#street-adress").val();
+            
+            var postalCodeVal = $("#postal-code").val();
+
+            var cityVal = $("#city").val();
+
+            var profileTextVal = $("#profile-text").val();
+
+            var profileImageVal = $("#profile-image").val();
+
+            var profileVideoVal = $("#profile-video").val();
+
+            var websiteLink = $("#website-link").val();
+
+            var positionVal = $("#position").val();
+
+            var positionTextVal = $("#position-text").val();
+
+
+            var newData = {
+                
+                "username": username,
+                "password": password,
+                "email_contactperson": emailVal,
+                "contactperson": fullNameVal,
+                "educationNameVal": educationNameVal,
+                "country_id": country_id,
+                "street_adress": streetAdressVal,
+                "postal_code": postalCodeVal,
+                "city": cityVal,
+                "profiletext": profileTextVal,
+                "logo": profileImageVal,
+                "video": profileVideoVal,
+                "website": websiteLink,
+                "position": positionVal,
+                "positiontext": positionTextVal
+            };
+
+            // for (const [key, value] of Object.entries(newData)) {
+            //     console.log(key);
+            //     console.log(value);
+            // }
+            // window.stop();
+            return newData;
 
             
         }

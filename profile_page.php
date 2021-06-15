@@ -34,9 +34,11 @@
                     <h2>View this page</h2>
                     <?php 
                     include_once "view_profile_page.php";
+                    // echo $_SESSION["personsRole"];
+                    // echo $_SESSION["ownRole"];
                     if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true ) {
                         if (isset($_SESSION["ownUsername"]) && $_SESSION["username"] == $_SESSION["ownUsername"]) {
-                            // echo $_SESSION["username"];
+                            
                             
                             echo '<script>document.getElementById("form").innerHTML += \'<input type="submit" value="Modify account" name="redirect-button" id="redirect-button" class="no-wrap"><input type="submit" value="Log out" name="redirect-button" id="logout-button" class="no-wrap">\';
 
