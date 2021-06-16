@@ -8,7 +8,12 @@
     } 
 
     if (!isset($_SESSION["permissionToEdit"]) || $_SESSION["permissionToEdit"] != true) {
-        header("Location: profile_page.php");
+        if (isset($_SESSION["adminPermission"])) {
+            $_SESSION["permissionToEdit"] = false;
+        } else {
+            header("Location: profile_page.php");
+        }
+        
     }
 ?>
 
@@ -35,7 +40,7 @@
                     <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   
                     <hr>
                     <?php 
-                        if ($_SESSION["permissionToEdit"]) {
+                        if ($_SESSION["permissionToEdit"] || $_SESSION["adminPermission"]) {
                             
                             if ($_SESSION["personsRole"] == 1) {
                                 include_once "gegevens_intern.php";

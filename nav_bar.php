@@ -21,7 +21,7 @@
         <a href= "" id="profile-login">
             <button id="sing-in-up">
                 <?php 
-                    if (!isset($_SESSION["permissionToEdit"])) {
+                    if (!isset($_SESSION["permissionToEdit"]) || $_SESSION["permissionToEdit"] == false) {
                         echo "Sign in/up";
                     } else {
                         echo "My Account";
