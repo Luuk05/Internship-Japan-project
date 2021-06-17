@@ -69,63 +69,65 @@
                     <div class="lege-ruimte"></div>
 
                     <div class="alle-stages">
-                        <?php 
-                        $sql = "SELECT * FROM user WHERE role = 2 ORDER BY account_made DESC LIMIT 3 "; //order by user _ id is beter of specefiekere account_made maken
-                        $stmt = $pdo->query($sql);
-                        $stmt->execute();
-                        $rows = $stmt->fetchAll();
+                        <?php
+                            $offsetCounter = 0;
+                            $saveRow = array();
 
-                        $i = 0;
-                        $user_ids = array();
-                        foreach ($rows as $row) {
-                            $user_ids[$i] = $row["user_id"];
-                            $i++;
-                        }
-                        $i = 0;
-
-                        foreach ($user_ids as $id) {
-                            $sql = "SELECT * FROM company WHERE user_id = :id";
-                            $stmt = $pdo->prepare($sql);
-                            $stmt->execute([":id" => $id]);
-                            $row = $stmt->fetch();
-
-                            echo '<div class="recente-stage-plek">
-                                        <img src="images/placeholder-100x100.png" alt="">
+                            while ( count($saveRow) != 12 ) {
+                                $sql = "SELECT * FROM user WHERE role = 2 ORDER BY user_id DESC LIMIT 1 OFFSET $offsetCounter";
+                                $stmt = $pdo->query($sql);
+                                $stmt->execute();
+                                $row = $stmt->fetch();
+                                $user_id = $row["user_id"];
+                            
+                                $sql = "SELECT * FROM company WHERE user_id = :user_id";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute([":user_id" => $user_id]);
+                                $row = $stmt->fetch();
+                            
+                                    if ($row["position"] != "") {
+                                        if ($row["companyname"] != "") {
+                                            if ($row["positiontext"] != "") {
+                                                array_push($saveRow, $row["user_id"], $row["position"], $row["companyname"], $row["positiontext"]);
+                                            } 
+                                        } 
+                                    } 
+                                $offsetCounter++;
+                                if ($offsetCounter == 100) {
+                                    break;
+                                }
+                            }
+                            
+                            if (count($saveRow) == 12) {
+                                for ($i = 0; $i < 12; $i += 4) {
+                                    echo '<div class="recente-stage-plek" value=' . $saveRow[$i] . '>
+                                    <img src="images/placeholder-100x100.png" alt="">
                                         <div class="textbox">
-                                            <h1>' . $row["position"] . '</h1>
-                                            <h2>' . $row["companyname"] . '</h2>
-                                            <p>' . $row["positiontext"] . '</p>
-                                        </div>
-                                    </div>';
-                        }
+                                    <h1>' . $saveRow[$i + 1] . '</h1>
+                                    <h2>' . $saveRow[$i + 2] . '</h2>
+                                        <p>' . $saveRow[$i + 3] . '</p>
+                                    </div>
+                                </div>';
+                                }
+                            } else {
+                                echo '<div class="recente-stage-plek">
+                                            <div class="textbox">
+                                                <h3>No recent oppurtunities found. After ' . $offsetCounter . ' tries</h3>
+                                            </div>
+                                        </div>';
+                            }
                         
                         ?>
                         
-                        <!-- <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
-                                <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
-                            </div>
-                        </div>
-                        <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
-                                <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
-                            </div>
-                        </div>-->
                     </div> 
                 </div>
             </div>
         </div>
         <footer>
-                <!-- info over hoeveel mensen gerigistreed zijn en hoeveel bedrijven -->
+                <!-- info over hoeveel interns ensen gerigistreed zijn en hoeveel bedrijven -->
         </footer>
     </div>
-    <!-- <script src="js/check_recent_opportunities_clicked.js"></script> -->
+    <script src="js/check_recent_opportunities_clicked.js"></script>
 </body>
 </html>
 
