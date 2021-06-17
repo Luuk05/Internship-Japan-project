@@ -177,7 +177,7 @@
                     
                     <div id="position-data">
                         <div id="study" class="no-wrap">
-                            <p class = "left"><h4 class = "left">Looking for postion:</h4>' . $row["position"] . '</p>
+                            <p class = "left"><h4 class = "left">Looking for position:</h4>' . $row["position"] . '</p>
                         </div>
                         <div class="clear"></div>
                         <div id="field-of-studies" class="no-wrap"> 
@@ -239,7 +239,7 @@
                     
                     <div id="position-data">
                         <div id="study" class="no-wrap">
-                            <p class = "left"><h4 class = "left">Looking for postion:</h4>' . $row["position"] . '</p>
+                            <p class = "left"><h4 class = "left">Looking for position:</h4>' . $row["position"] . '</p>
                         </div>
                         <div class="clear"></div>
                         <div id="field-of-studies" class="no-wrap"> 
