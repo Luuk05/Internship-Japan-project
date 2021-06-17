@@ -49,9 +49,9 @@
                         <input type="submit" name="zoek-knop" value="Search!" class="search-knop">
                     
                         <div class="sign-box">
-                            <h3>Sign in</h3>
+                            <h3><a href="login.php">Sign in</a></h3>
                             <div class="line"></div>
-                            <h3>Sign up</h3>
+                            <h3><a href="registreer.php">Sign up</a></h3>
                         </div>
                         
                         <h2 class="voorgestelde-stages-header">Voorgestelde stages:</h2>
