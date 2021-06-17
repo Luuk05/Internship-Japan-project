@@ -64,22 +64,44 @@
                 </div>
                 <div class="recente-stages-box">
                     <div class="recente-stages-balk">
-                        <h2>Recent opportunities:</h2>
+                        <h2>Recent opportunities for interns:</h2>
                     </div>
                     <div class="lege-ruimte"></div>
 
-                    <div class="recente-stage-plek">
-                        <img src="images/placeholder-100x100.png" alt="">
-                        <div class="textbox">
-                            <h1>Software developer niveau 4</h1>
-                            <h2>Google inc. Alphabet B.v.</h2>
-                            <p>Tekst tekst tekst voorbeeld voorbeeld</p>
-                        </div>
-                    </div>
+                    <div class="alle-stages">
+                        <?php 
+                        $sql = "SELECT * FROM user WHERE role = 2 ORDER BY account_made DESC LIMIT 3 "; //order by user _ id is beter of specefiekere account_made maken
+                        $stmt = $pdo->query($sql);
+                        $stmt->execute();
+                        $rows = $stmt->fetchAll();
 
+                        $i = 0;
+                        $user_ids = array();
+                        foreach ($rows as $row) {
+                            $user_ids[$i] = $row["user_id"];
+                            $i++;
+                        }
+                        $i = 0;
 
-                    <!-- <div class="alle-stages">
-                        <div class="recente-stage-plek">
+                        foreach ($user_ids as $id) {
+                            $sql = "SELECT * FROM company WHERE user_id = :id";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->execute([":id" => $id]);
+                            $row = $stmt->fetch();
+
+                            echo '<div class="recente-stage-plek">
+                                        <img src="images/placeholder-100x100.png" alt="">
+                                        <div class="textbox">
+                                            <h1>' . $row["position"] . '</h1>
+                                            <h2>' . $row["companyname"] . '</h2>
+                                            <p>' . $row["positiontext"] . '</p>
+                                        </div>
+                                    </div>';
+                        }
+                        
+                        ?>
+                        
+                        <!-- <div class="recente-stage-plek">
                             <img src="images/placeholder-100x100.png" alt="">
                             <div class="textbox">
                                 <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
@@ -94,16 +116,8 @@
                                 <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
                                 <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
                             </div>
-                        </div>
-                        <div class="recente-stage-plek">
-                            <img src="images/placeholder-100x100.png" alt="">
-                            <div class="textbox">
-                                <h1>Software developer niveau 4Opleiding. tekst tekst tekst</h1>
-                                <h2>Google inc. Alphabet B.v. Bedrijfsnaam. tekst tekst tekst</h2>
-                                <p>Tekst tekst tekst voorbeeld voorbeeldInformatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
-                            </div>
-                        </div>
-                    </div> -->
+                        </div>-->
+                    </div> 
                 </div>
             </div>
         </div>
