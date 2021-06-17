@@ -42,9 +42,9 @@
                 <div class="input-velden-box">
                     <form action="" method="post">
                         <h2>Search:</h2>
-                        <input type="text" placeholder="Study..." name="study" class="input-veld-opleiding input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
+                        <input type="text" placeholder="Study / Position" name="study" class="input-veld-opleiding input-algemeen" style= "border-color: <?php echo $border_color; ?>;  box-shadow: <?php echo $box_shadow; ?>;">
                         <br>
-                        <input type="text" placeholder="City..." name="location" class="input-veld-locatie input-algemeen">
+                        <input type="text" placeholder="City" name="location" class="input-veld-locatie input-algemeen">
                         <br>
                         <input type="submit" name="zoek-knop" value="Search!" class="search-knop">
                     
