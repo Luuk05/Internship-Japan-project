@@ -39,9 +39,9 @@
                     <input type="password" placeholder="Repeat password" name="repeat_password" id="repeat-password" class="input-algemeen">   
                     <hr>
                     <?php 
-                        if ($_SESSION["permissionToEdit"] || $_SESSION["adminPermission"]) {
+                        if ($_SESSION["permissionToEdit"] || $_SESSION["adminPermission"]) {  //als 1 van deze twee waar is dan krijgt de user toegang om iets te veranderen
                             
-                            if ($_SESSION["personsRole"] == 1) {
+                            if ($_SESSION["personsRole"] == 1) {   //kijk welke dingen er moeten weergegeven worden om te kunnen veranderen
                                 include_once "gegevens_intern.php";
 
                             } else if ($_SESSION["personsRole"] == 2) {

@@ -13,7 +13,7 @@
         $stmt = $pdo->query("SELECT * FROM country");
         $stmt->execute();
 
-        foreach ($stmt as $row) {
+        foreach ($stmt as $row) {     //loop door alle countries heen en laat de country name zien
             echo "<option value='" . $row["country_id"] . "'>" . $row["countryname"] . "</option>";
         }
     ?>

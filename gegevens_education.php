@@ -10,10 +10,10 @@
 <select name="countryid" id="country-id" class="input-algemeen input-helft">
     <option value="Country" disabled selected>Country</option>
     <?php 
-        $stmt = $pdo->query("SELECT * FROM country");
+        $stmt = $pdo->query("SELECT * FROM country");  
         $stmt->execute();
 
-        foreach ($stmt as $row) {
+        foreach ($stmt as $row) {   //loop door alle countries heen en laat de country name zien
             echo "<option value='" . $row["country_id"] . "'>" . $row["countryname"] . "</option>";
         }
     ?>

@@ -4,10 +4,9 @@
 
     $border_color = "#7675758c";
     $box_shadow = "0 0 1px #4f4f4f";
-    if (isset($_POST["zoek-knop"])) {
-        
+    if (isset($_POST["zoek-knop"])) {  // als knop word gedrukt dan kijk of study niet leeg is en of er niet alleen spaties zijn neergezet
 
-        if (!empty($_POST["study"]) && strlen(trim($_POST['study'])) > 0) {
+        if (!empty($_POST["study"]) && strlen(trim($_POST['study'])) > 0) {  //als bovenstaande waar is dan zet sessions en redirect naar volgende pagina
             $study = trim($_POST["study"]);
             $location = trim($_POST["location"]);
 
@@ -15,7 +14,7 @@
             $_SESSION["location"] = $location;
 
             header("Location: page2.php");
-        } else {
+        } else {    //als het niet zo is dan laat gebruiker zien dat hij iets niet goed heeft gedaan
             $border_color = "red";
             $box_shadow = "0 0 3px red";
         }
@@ -73,7 +72,7 @@
                             $offsetCounter = 0;
                             $saveRow = array();
 
-                            while ( count($saveRow) != 12 ) {
+                            while ( count($saveRow) != 12 ) {  //zolang de array lengte niet 12 is dan zoek naar companies die alles hebben ingevuld zodat op de pagina niet lege divs kunnen worden weergegeven
                                 $sql = "SELECT * FROM user WHERE role = 2 ORDER BY user_id DESC LIMIT 1 OFFSET $offsetCounter";
                                 $stmt = $pdo->query($sql);
                                 $stmt->execute();
@@ -88,18 +87,18 @@
                                     if ($row["position"] != "") {
                                         if ($row["companyname"] != "") {
                                             if ($row["positiontext"] != "") {
-                                                array_push($saveRow, $row["user_id"], $row["position"], $row["companyname"], $row["positiontext"]);
+                                                array_push($saveRow, $row["user_id"], $row["position"], $row["companyname"], $row["positiontext"]); //als de de bovenstaande dingen niet leeg zijn dan "onthoud" de informatie van die company
                                             } 
                                         } 
                                     } 
-                                $offsetCounter++;
-                                if ($offsetCounter == 100) {
+                                $offsetCounter++;//houd counter bij om zo te iterate over de tabel
+                                if ($offsetCounter == 100) {  //als die counter 100 is dan is er wel lang genoeg gezocht en laat dan een andere bericht zien
                                     break;
                                 }
                             }
                             
-                            if (count($saveRow) == 12) {
-                                for ($i = 0; $i < 12; $i += 4) {
+                            if (count($saveRow) == 12) {  
+                                for ($i = 0; $i < 12; $i += 4) {  ///loop door de opgeslage rows heen als de array lengte 12 is en dus alles is ingevuld
                                     echo '<div class="recente-stage-plek" value=' . $saveRow[$i] . '>
                                     <img src="images/placeholder-100x100.png" alt="">
                                         <div class="textbox">
@@ -109,7 +108,7 @@
                                     </div>
                                 </div>';
                                 }
-                            } else {
+                            } else { //als er niets is gevonden of het duurde te lang zet dat het ondersaande neer
                                 echo '<div class="recente-stage-plek">
                                             <div class="textbox">
                                                 <h3>No recent oppurtunities found. After ' . $offsetCounter . ' tries</h3>

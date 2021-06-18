@@ -22,7 +22,7 @@
                 <form id="form" action="" method="post">
                     <h2>View this page</h2>
                     <?php 
-                    include_once "view_profile_page.php";
+                    include_once "view_profile_page.php";  //laat view_profile_page.php zien en geef meer buttons weer als de gebruiker ook meer rechten heeft
                     if (isset($_SESSION["adminPermission"]) && $_SESSION["adminPermission"] == true ) {
                         if (isset($_SESSION["ownUsername"]) && $_SESSION["username"] == $_SESSION["ownUsername"]) {
                             
@@ -42,7 +42,7 @@
                                 
                             });
                             
-                            </script>';
+                            </script>';  // met deze knoppen kan de admin dingen aanpassen en terug gaan naar de vorige pagina
                         }
                     } 
                     

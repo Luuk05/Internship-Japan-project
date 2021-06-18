@@ -12,15 +12,13 @@
     if (isset($_POST["login-knop"])) {
 
         if (!empty($_POST["username"])) {
-            
-
+        
         } else {
             $border_color[0] = "red";
             $box_shadow[0] = "0 0 3px red";
         }
 
         if (!empty($_POST["password"])) {
-            
 
         } else {
             $border_color[1] = "red";

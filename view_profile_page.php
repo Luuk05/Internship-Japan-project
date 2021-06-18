@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION["username"])) {
         header("Location: login.php");
-    }
+    } //als de username niet bestaat dan stuur naar login pagina om in te loggen
 
 ?>
 <div id="view-page">
@@ -12,11 +12,11 @@
         $sql = "SELECT * FROM user WHERE username like :username";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([":username" => $_SESSION["username"]]);
-        $row = $stmt->fetch();
+        $row = $stmt->fetch();                //haal alles van user op
         if ($stmt->rowCount() > 0) {
-            $user_id = $row["user_id"];
+            $user_id = $row["user_id"];  //sla user_id op om later dingen uit de juiste table te kunnen halen
 
-            if ($_SESSION['personsRole'] == 1) {
+            if ($_SESSION['personsRole'] == 1) {  //kijk welke role de gegeven user heeft om op die manier andere data weer te laten geven
                 $role = "intern";
             } else if ($_SESSION['personsRole'] == 2) {
                 $role = "company";
@@ -24,30 +24,30 @@
                 $role = "education";
             }
     
-            $sql = "SELECT * FROM $role WHERE user_id like :user_id";
+            $sql = "SELECT * FROM $role WHERE user_id like :user_id";  //haal alles uit tabel van $role waar de user_id gelijk is aan de gegeven usr_id
             $stmt = $pdo->prepare($sql);
             $stmt->execute([ ":user_id" => $user_id ]);
             $row = $stmt->fetch();
 
-            if ($role == "intern") {
-                $date_of_birth = new DateTime($row["date_of_birth"]);
+            if ($role == "intern") {  //specefieke data laten zien bij specefieke roles
+                $date_of_birth = new DateTime($row["date_of_birth"]);  
                 $currentTime = new DateTime();
                 $difference = $currentTime->diff($date_of_birth);
-                $age = $difference->y;
+                $age = $difference->y;             //bereken hoe oud een intern is
             
                 $sql2 = "SELECT * FROM `country` WHERE `country_id` like :country_id";
                 $stmt2 = $pdo->prepare($sql2);
                 $stmt2->execute(["country_id" => $row["nationality_id"]]);
                 $row2 = $stmt2->fetch();
-                $nationality = $row2["countryname"];
+                $nationality = $row2["countryname"];    //kijk uit welk land iemand komt
                 
-                if (isset($row["currently_student"]) && $row["currently_student"] == 1) {
+                if (isset($row["currently_student"]) && $row["currently_student"] == 1) {  //kijk of intern op het moment student is
                     $currentlyStudent = "Yes";
                 } else {
                     $currentlyStudent = "No";
                 }
                     
-                if (isset($row["openfor_real_employment"]) && $row["openfor_real_employment"] == 1) {
+                if (isset($row["openfor_real_employment"]) && $row["openfor_real_employment"] == 1) {   //kijk of intern open staat om later bij een bedrijf er echt te komen te werken
                     $openForRealEmployment = "Yes";
                 } else {
                     $openForRealEmployment = "No";
@@ -119,7 +119,7 @@
                     </div>
                     
                     <div class="clear"></div>
-                    <br>';
+                    <br>';  //geef bepaalde data van de user weer die handig is voor bv companies
             } else if ($role == "company") {
                 $sql2 = "SELECT * FROM `country` WHERE `country_id` like :country_id";
                 $stmt2 = $pdo->prepare($sql2);
@@ -181,7 +181,7 @@
                     </div>
                     
                     <div class="clear"></div>
-                    <br>';
+                    <br>';  //laat data zien die handig is voor interns
             } else {
                 $sql3 = "SELECT * FROM `country` WHERE `country_id` like :country_id";
                 $stmt3 = $pdo->prepare($sql3);
@@ -243,7 +243,7 @@
                     </div>
                     
                     <div class="clear"></div>
-                    <br>';
+                    <br>';  //laat data zien die handig is voor misschien interns en companies
             }
         } else {
             echo "<h5>Page not loading. Log out and log in to see if it works again</h5>";

@@ -1,4 +1,4 @@
-//laat error zien wanneer er een leegte is na de query uitvoer 
+//laat error zien wanneer er een leegte is na de query uitvoer na het zoeken can companies
 function error_geen_resultaten() {
     var divtag = document.createElement("div");
     divtag.setAttribute("id", "error-geen-resultaten");
