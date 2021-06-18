@@ -86,7 +86,7 @@ h5 {
 
 #about-data {
     width: 60%;
-    height: 150px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,8 +118,8 @@ hr {
 .left {
     float: left;
 }
-
-/* .no-wrap {
+/* 
+.no-wrap {
     white-space: nowrap;
     text-overflow: clip;
 } */

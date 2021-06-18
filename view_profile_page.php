@@ -55,6 +55,7 @@
 
                 echo '<div id="img">
                     <img src="https://via.placeholder.com/150" alt="">
+                      
                     </div>
 
                     <div id="about-data">
@@ -129,7 +130,7 @@
 
                 echo '<div id="img">
                     <img src="https://via.placeholder.com/150" alt="">
-                        logo
+                      
                     </div>
 
                     <div id="about-data">
@@ -191,7 +192,7 @@
 
                 echo '<div id="img">
                     <img src="https://via.placeholder.com/150" alt="">
-                        logo
+                        
                     </div>
 
                     <div id="about-data">
