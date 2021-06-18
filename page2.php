@@ -49,7 +49,7 @@
             </div>
             <div id="resultaten-box">
                 <?php 
-                    if (empty($_SESSION["study"])) {
+                    if (empty($_SESSION["study"])) { //als study niet assigned is dan doe niets
                     } else {
                         $study = $_SESSION["study"];
                         $location = $_SESSION["location"];
@@ -58,9 +58,9 @@
                         $sql = "SELECT * FROM company WHERE position like :position AND city like :city";
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute([":position" => "%" . $study . "%", ":city" => "%" . $location . "%"]);
-                        $rows = $stmt->fetchAll();
+                        $rows = $stmt->fetchAll();             //zoek alle bedrijven die waarbij position lijkt op ingevoerde study/position en waarbij city lijkt op ingevoerde locatie
         
-                        foreach($rows as $row) {
+                        foreach($rows as $row) {   //loop alle resultaten door en laat op scherm zien
                             echo "<div class='resultaat-boxen' value='" . $row["user_id"] . "'>
                                     <img src='images/placeholder-100x100.png' alt='img'>
                                     <div class='textbox'>
@@ -72,8 +72,6 @@
                                 </div>";
                         }        
                     }
-        
-                    
                 ?>          
             </div>
         </div>

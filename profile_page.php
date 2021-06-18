@@ -29,7 +29,7 @@
                     <h2>View this page</h2>
                     <?php 
                     include_once "view_profile_page.php";
-                    if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true ) {
+                    if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true ) {   //laat view_profile_page.php zien en geef meer buttons weer als de gebruiker ook meer rechten heeft
                         if (isset($_SESSION["ownUsername"]) && $_SESSION["username"] == $_SESSION["ownUsername"]) {
                             
                             

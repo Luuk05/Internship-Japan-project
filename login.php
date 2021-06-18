@@ -5,11 +5,11 @@
     $border_color = array("#767575a9", "#767575a9");
     $box_shadow = array("0 0 0 #4f4f4f", "0 0 0 #4f4f4f");
 
-    if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true) {
+    if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true) { //als je al ingelogd bent hoef je niet meer op deze pagina te komen
         header("Location: profile_page.php");
     }
 
-    if (isset($_POST["login-knop"])) {
+    if (isset($_POST["login-knop"])) {  
 
         if (!empty($_POST["username"])) {
         
@@ -25,7 +25,7 @@
             $box_shadow[1] = "0 0 3px red";
         }
 
-        if (!empty($_POST["username"]) && !empty($_POST["password"])) {
+        if (!empty($_POST["username"]) && !empty($_POST["password"])) {  //als de knop is geklikt en de velden username en password zijn niet leeg dan:
             try {
                 $username = $_POST["username"];
                 $password = $_POST["password"]; 
@@ -34,15 +34,15 @@
                 $sql = "SELECT * FROM user WHERE username like :username";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute([":username" => $username]);
-                $row = $stmt->fetch();
+                $row = $stmt->fetch();         //haal alles uit user waar username gelijk is aan username
 
                 $count = $stmt->rowCount();
                 if ($count > 0) {
                     $existingPasswordFromDb = $row["password"];
 
-                    if (password_verify($password, $existingPasswordFromDb)) {
+                    if (password_verify($password, $existingPasswordFromDb)) {  //als password gelijk is aan password in de db maak allemaal sessions variabelen die je op de volgende pagina's nodig zult hebben
                         
-                        $personsRole = $row["role"];
+                        $personsRole = $row["role"];                          
                         $_SESSION["username"] = $username;
                         $_SESSION["password"] = $existingPasswordFromDb;
                         $_SESSION["permissionToEdit"] = true;
@@ -51,17 +51,14 @@
                         $_SESSION["ownRole"] = $personsRole;
 
         
-                        header("Location: profile_page.php");
+                        header("Location: profile_page.php");  //redirect naar volgende pagina
                         
                     }
                 }
-    
-                
             } catch(Exception $e) {
                 
             } 
         }
-
     }
 ?>
 

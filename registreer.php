@@ -42,6 +42,6 @@
             </div>
         </div>
     </div>
-    <script src="js/validatie_registreer.js"></script>
+    <script src="js/validatie_registreer.js"></script> <!-- vooral de code hierin is belangrijk -->
 </body>
 </html>

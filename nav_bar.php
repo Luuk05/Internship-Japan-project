@@ -8,7 +8,7 @@
     </ul>
     <div id="buttons">
         <?php 
-            if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true) {
+            if (isset($_SESSION["permissionToEdit"]) && $_SESSION["permissionToEdit"] == true) { //als je bent ingelogd: dan pas mag er een logout button komen
                 echo '<a href = "logout.php" id="logout-button-nav">Log out.</a>';
             } else {
                 echo '<style>
@@ -21,7 +21,7 @@
         <a href= "" id="profile-login">
             <button id="sing-in-up">
                 <?php 
-                    if (!isset($_SESSION["permissionToEdit"]) || $_SESSION["permissionToEdit"] == false) {
+                    if (!isset($_SESSION["permissionToEdit"]) || $_SESSION["permissionToEdit"] == false) { //als je nog geen permission hebt om te editen ben je dus nog niet ingelogd
                         echo "Sign in/up";
                     } else {
                         echo "My Account";
@@ -42,13 +42,13 @@
                 success: function(data) {
                     var permissionToEdit = data;
 
-                    if (permissionToEdit) {
+                    if (permissionToEdit) {  //als je toegang hebt om te editen: zet namen en rollen naar je eigen naam en rol om zo naar je eigen account te kunnen gaan
                         $.ajax({
                             url: "set_names_and_roles_equal.php",
                             type: "POST",
                             success: function(data) {
                                 if (data == "Succes") {
-                                    window.location.href = "profile_page.php";
+                                    window.location.href = "profile_page.php"; //redirect naar profiel pagina
                                 }
                             }
                         });
