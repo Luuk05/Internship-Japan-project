@@ -1,3 +1,11 @@
+:root {
+    --main-red-color: #ff0000;
+    --main-darkblue-color: #0070C1;
+    --main-lightblue-color: #01B0F1;
+    --main-black-color: #171616;
+    --main-white-color: #ffffff;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -35,9 +43,9 @@
     width: 100%;
     height: auto;
     padding: 6% 10%;
-    background-color: #fafbfd;
+    background-color: var(--main-white-color);
     border-radius: 10px;
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 1px var(--main-black-color);
 }
 
 .input-velden-box h2 {
@@ -73,10 +81,10 @@
     margin-top: 15px;
     float: left;
 
-    color: #f0f3f5;
-    background-color: #3E58AA;
+    color: var(--main-white-color);
+    background-color: var(--main-darkblue-color);
     vertical-align: top;
-    border: 1px solid #354b96; 
+    border: 1px solid #0067b1;
     border-radius: 5px;
     box-shadow: 0px 0px 1px #543838;
     font-size: 18px;
@@ -85,10 +93,10 @@
 }
 
 .search-knop:hover {
-    box-shadow: 0 0 2px black;
-    color: black;
-    background-color: #607ddc;
-    border: 1px solid #607ddc; 
+    box-shadow: 0 0 2px var(--main-black-color);
+    color: var(--main-black-color);
+    background-color: var(--main-lightblue-color);
+    border: 1px solid #00a6e2;
 }
 
 .sign-box {
@@ -106,7 +114,7 @@
 }
 
 .sign-box h3:hover {
-    color: #3E58AA;
+    color: var(--main-darkblue-color);
 }
 
 .sign-box a {
@@ -141,8 +149,8 @@
     width: 32%;
     height: 55px;
     font-size: 1vw;
-    color: #362828;
-    background-color: white;
+    color: var(--main-black-color);
+    background-color: var(--main-white-color);
     border: 1px solid #7675758c; 
     border-radius: 5px;
     box-shadow: 0 0 1px #4f4f4f;
@@ -152,9 +160,9 @@
 
 .voorstel-stage-knop:hover {
     box-shadow: 0 0 2px black;
-    background-color: #3E58AA;
-    border: 1px solid #354b96;     
-    color: #f0f3f5;
+    background-color: var(--main-darkblue-color);
+    border: 1px solid #0067b1;  
+    color: var(--main-white-color);
 }
 
 .recente-stages-box {
@@ -168,9 +176,9 @@
     justify-content: center;
     width: 100%;
     height: 45px;
-    background-color: white;
+    background-color: var(--main-white-color);
     border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 1px var(--main-black-color);
 }
 
 .recente-stages-balk h2 {
@@ -194,9 +202,9 @@
     align-items: center;
     width: 100%;
     height: calc((100% - 10%) / 3);
-    background-color: white;
+    background-color: var(--main-white-color);
     cursor: pointer;
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 1px var(--main-black-color);
 }
 
 .recente-stage-plek img {
@@ -233,8 +241,8 @@
 footer {
     width: 100%;
     height: 70px;
-    background-color: white;
-    box-shadow: 0 0 2px black;
+    background-color: var(--main-white-color);
+    box-shadow: 0 0 2px var(--main-black-color);
 
 }
 

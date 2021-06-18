@@ -1,3 +1,11 @@
+:root {
+    --main-red-color: #ff0000;
+    --main-darkblue-color: #0070C1;
+    --main-lightblue-color: #01B0F1;
+    --main-black-color: #171616;
+    --main-white-color: #ffffff;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -33,7 +41,7 @@
     height: auto; /* max- 80*/
     width: 500px; /* 70vw */
     overflow: auto;
-    background-color: #fafbfd;
+    background-color: var(--main-white-color);
     border-radius: 3px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 30px;   /* weghalen als ik wil centeren */
@@ -62,7 +70,7 @@ h2 {
 }
 
 .input-algemeen:focus {
-    outline: 0px solid black;
+    outline: 0px solid var(--main-black-color);
     border: 1px solid #333333a6;
 }
 
@@ -83,10 +91,10 @@ h2 {
     height: 50px;
     margin-top: 0px;
 
-    color: #f0f3f5;
-    background-color: #3E58AA;
+    color: var(--main-white-color);
+    background-color: var(--main-darkblue-color);
     vertical-align: top;
-    border: 1px solid #354b96; 
+    border: 1px solid #0067b1;
     border-radius: 5px;
     box-shadow: 0px 0px 1px #543838;
     font-size: 18px;
@@ -95,116 +103,9 @@ h2 {
 }
 
 .search-knop:hover {
-    box-shadow: 0 0 2px black;
-    color: black;
-    background-color: #607ddc;
-    border: 1px solid #607ddc; 
+    box-shadow: 0 0 2px var(--main-black-color);
+    color: var(--main-black-color);
+    background-color: var(--main-lightblue-color);
+    border: 1px solid #008dc0;
 }
 
-h5 {
-    font-size: 16px;
-    text-align: center;
-    margin: 20px 0px;
-}
-
-#view-page {
-    margin-top: 40px;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-}
-
-#img {
-    margin: 0 auto;
-    width: 150px;
-
-    float: left;
-}
-
-#picture img {
-    width: 150px;
-    height: 150px;
-}
-
-#about-data {
-    width: 60%;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    float: right;
-}
-
-#general-data {
-    float: left;
-}
-
-#study-data {
-    float: right;
-}
-
-#position-data {
-    float: right;
-    width: 45%;
-}
-
-.clear {
-    clear: both;
-}
-
-.left {
-    float: left;
-}
-
-h4 {
-    margin-right: 10px;
-}
-
-
-
-#redirect-button {
-    width: 18%;
-    height: 50px;
-    margin-top: 10px;
-    float: left;
-
-    color: #f0f3f5;
-    background-color: #3E58AA;
-    border: 1px solid #354b96; 
-    border-radius: 5px;
-    box-shadow: 0px 0px 1px #543838;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#redirect-button:hover {
-    box-shadow: 0 0 2px black;
-    color: black;
-    background-color: #607ddc;
-    border: 1px solid #607ddc; 
-}
-
-#logout-button {
-    width: 18%;
-    height: 50px;
-    margin-top: 10px;
-    float: right;
-
-    color: #f0f3f5;
-    background-color: #b13131;
-    border: 1px solid #9e3d3d; 
-    border-radius: 5px;
-    box-shadow: 0px 0px 1px #543838;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#logout-button:hover {
-    box-shadow: 0 0 2px black;
-    color: black;
-    background-color: #bf4747;
-    border: 1px solid #a04343; 
-}

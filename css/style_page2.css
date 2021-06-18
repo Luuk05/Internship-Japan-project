@@ -1,3 +1,11 @@
+:root {
+    --main-red-color: #ff0000;
+    --main-darkblue-color: #0070C1;
+    --main-lightblue-color: #01B0F1;
+    --main-black-color: #171616;
+    --main-white-color: #ffffff;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -35,9 +43,9 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 240px;
-    background-color: #fafbfd;
+    background-color: var(--main-white-color);
     border-radius: 5px;
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 1px var(--main-black-color);
     padding: 25px;
 }
 
@@ -61,10 +69,10 @@
     height: 40px;
     margin-top: 10px;
     
-    color: #f0f3f5;
-    background-color: #3E58AA;
+    color: var(--main-white-color);
+    background-color: var(--main-darkblue-color);
     vertical-align: top;
-    border: 1px solid #354b96; 
+    border: 1px solid #0065ad;
     border-radius: 5px;
     box-shadow: 0px 0px 3px #543838;
     font-size: 18px;
@@ -73,10 +81,10 @@
 }
 
 .filter-knop:hover {
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px var(--main-black-color);
     color: black;
-    background-color: #607ddc;
-    border: 1px solid #607ddc; 
+    background-color: var(--main-lightblue-color);
+    border: 1px solid #5871c4;
 }
 
 /* #resultaten-box  {
@@ -93,9 +101,9 @@
     align-items: center;
     height: 150px;
     width: 100%;
-    background-color: #fafbfd;
+    background-color: var(--main-white-color);
     border-radius: 10px;
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 1px var(--main-black-color);
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -146,7 +154,7 @@
     margin-top: 100px;
     text-align: center;
     letter-spacing: 1.5px;
-    color: #1d1b1b;
+    color: var(--main-black-color);
     text-shadow: 0 0 1px #575252;
 }
 

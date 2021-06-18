@@ -1,3 +1,11 @@
+:root {
+    --main-red-color: #ff0000;
+    --main-darkblue-color: #0070C1;
+    --main-lightblue-color: #01B0F1;
+    --main-black-color: #171616;
+    --main-white-color: #ffffff;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -28,9 +36,9 @@
     height: auto;
     max-height: 70vh;
     width: 500px;
-    background-color: #fafbfd;
+    background-color: var(--main-white-color);
     border-radius: 3px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);  /*rgb(0 0 0 / 15%)*/
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 30px;   /* weghalen als ik wil centeren */
 }
 
@@ -90,7 +98,7 @@ p {
 }
 
 .input-algemeen:focus {
-    outline: 0px solid black;
+    outline: 0px solid var(--main-black-color);
     border: 1px solid #333333da;
 }
 
@@ -145,8 +153,8 @@ hr {
     /* margin-top: 15px; */
 
     color: #f0f3f5;
-    background-color: #3E58AA;
-    border: 1px solid #354b96; 
+    background-color: var(--main-darkblue-color);
+    border: 1px solid #0064ac;
     border-radius: 5px;
     box-shadow: 0px 0px 1px #543838;
     font-size: 18px;
@@ -155,10 +163,10 @@ hr {
 }
 
 .registreer-knop:hover {
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px var(--main-black-color);
     color: black;
-    background-color: #607ddc;
-    border: 1px solid #607ddc; 
+    background-color: var(--main-lightblue-color);
+    border: 1px solid #0098cf;
 }
 
 #account-gemaakt {
