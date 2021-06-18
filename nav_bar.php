@@ -41,7 +41,6 @@
                 type: "POST",
                 success: function(data) {
                     var permissionToEdit = data;
-                    // console.log(data);
 
                     if (permissionToEdit) {
                         $.ajax({
@@ -50,14 +49,12 @@
                             success: function(data) {
                                 if (data == "Succes") {
                                     window.location.href = "profile_page.php";
-                                    // window.location.replace("profile_page.php");
                                 }
                             }
                         });
                         
                     } else {
                         window.location.href = "login.php";
-                        // window.location.replace("login.php");
                     }
                 }
             });

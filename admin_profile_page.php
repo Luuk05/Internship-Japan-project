@@ -2,11 +2,6 @@
     session_start();
     include_once "pdo_verbinding.php";
 
-    // if (!isset($_SESSION["username"])) {
-    //     header("Location: login.php");
-    // } 
-
-
 ?>
 
 <!DOCTYPE html>

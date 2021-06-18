@@ -5,9 +5,6 @@
         header("Location: login.php");
     }
 
-    // echo $_SESSION["personsRole"];
-    // echo $_SESSION["ownRole"];
-    // exit();
 ?>
 <div id="view-page">
     <?php 
@@ -18,9 +15,6 @@
         $row = $stmt->fetch();
         if ($stmt->rowCount() > 0) {
             $user_id = $row["user_id"];
-            // echo $user_id;
-
-            // echo "<br>" . $_SESSION["personsRole"];
 
             if ($_SESSION['personsRole'] == 1) {
                 $role = "intern";
@@ -256,11 +250,6 @@
     } catch(Exception $e) {
         
     }
-
-
-    
-    
     ?>
-    
     
 </div>

@@ -46,6 +46,5 @@
             </div>
         </div>
     </div>
-    <!-- <script src="js/validatie_admin_panel.js"></script> -->
 </body>
 </html>

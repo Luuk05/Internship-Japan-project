@@ -3,7 +3,6 @@
 
 
     if (isset($_POST["userName"])) {
-
        
         $userName = $_POST["userName"];
 
@@ -26,7 +25,4 @@
             echo $userName;
         }   
     }
-
-
-
 ?>

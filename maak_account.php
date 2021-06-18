@@ -17,17 +17,14 @@ if (isset($_POST["userName"])) {
 
     $hashedPassword = password_hash($passWord, PASSWORD_DEFAULT);
 
-    // password_verify($_POST['password'], $existingHashFromDb)
-
-
 
     $sql = "INSERT INTO `user`(`username`, `password`, `role`) VALUES (:username, :password, :role)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(["username" => $userName, "password" => $hashedPassword, "role" => $role]); //passsWord
+    $stmt->execute(["username" => $userName, "password" => $hashedPassword, "role" => $role]);
   
     $sql = "SELECT * FROM user WHERE username like :username AND password like :password";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([":username" => $userName, ":password" => $hashedPassword]);    //passWord
+    $stmt->execute([":username" => $userName, ":password" => $hashedPassword]);
     $row = $stmt->fetch();
 
     $user_id = $row["user_id"];

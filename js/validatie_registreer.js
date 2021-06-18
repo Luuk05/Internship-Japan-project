@@ -112,9 +112,7 @@ $("#submit-button").on("click", function(event) {
                     "role": role
                 },
                 success: function(data) {
-                    // console.log(data);
                     if (data != "Error") {
-                        // console.log(data);
                         sessionStorage.setItem("showMessageWhenDone", "true");
                         window.location.reload();
                     } else {
@@ -140,7 +138,6 @@ if (sessionStorage.getItem("showMessageWhenDone") == "true") {
     }, 3500);
     setTimeout(function() { 
         window.location.href = "login.php";
-        // window.location.replace("login.php");
     }, 4500);
 
     sessionStorage.setItem("showMessageWhenDone", "false")

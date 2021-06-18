@@ -13,11 +13,7 @@
         if ($count > 0) {
             $_SESSION["username"] = $row["username"];
             $_SESSION["personsRole"] = $row["role"];
-
-            // echo $_SESSION["username"];
-            // echo $_SESSION["personsRole"];
-            // exit();
-
+            
             echo "profile_page.php";
         } 
     } else {

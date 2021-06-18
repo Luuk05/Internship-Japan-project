@@ -179,11 +179,6 @@ $("#submit-button").on("click", function(event) {
             "social_media": socialMediaVal
         };
 
-        // for (const [key, value] of Object.entries(newData)) {
-        //     console.log(key);
-        //     console.log(value);
-        // }
-        // window.stop();
         return newData;
     }
 
@@ -192,19 +187,10 @@ $("#submit-button").on("click", function(event) {
         var emailVal = $("#email").val();
 
         var firstNameVal = $("#first-name").val();
-        // if (firstNameVal = "undefined") {
-        //     firstNameVal = "";
-        // }
         
         var lastNameVal = $("#last-name").val();
-        // if (lastNameVal = "undefined") {
-        //     lastNameVal = "";
-        // }
 
         var fullNameVal = firstNameVal + " " + lastNameVal;
-        // if (fullNameVal = "undefined") {
-        //     fullNameVal = "";
-        // }
 
         var companyNameVal = $("#company-name").val();
 
@@ -251,11 +237,6 @@ $("#submit-button").on("click", function(event) {
             "positiontext": positionTextVal
         };
 
-        // for (const [key, value] of Object.entries(newData)) {
-        //     console.log(key);
-        //     console.log(value);
-        // }
-        // window.stop();
         return newData;
     }
 
@@ -313,16 +294,10 @@ $("#submit-button").on("click", function(event) {
             "positiontext": positionTextVal
         };
 
-        // for (const [key, value] of Object.entries(newData)) {
-        //     console.log(key);
-        //     console.log(value);
-        // }
-        // window.stop();
         return newData;
 
         
     }
-
 
 
     function veranderGegevens(newData) {
@@ -363,21 +338,4 @@ function maakInputRood(id) {
     $(id).css("border-color", "red");
     $("#box-profile").scrollTop(0);
 }
-
-// function checkIfEmpty(inputValue, inputId) {
-//     if (inputValue != "") {
-        
-//     } else {
-//         maakInputRood(inputId);
-//     }
-// }
-
-// function checkSelect(value, value2, id) {
-//     if (value == value2) {
-//         maakInputRood(id);
-//     } else {
-
-//     }
-// }
-
 

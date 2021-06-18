@@ -1,6 +1,6 @@
 $(".resultaat-boxen").click(function() {
     var user_id = $(this).attr('value');
-    // console.log(user_id);
+   
 
     $.ajax({
         url: "redirect_to_profile.php",
@@ -12,10 +12,7 @@ $(".resultaat-boxen").click(function() {
             success: function(data) {
                 var url = data;
                 window.location.href = url;
-                // setTimeout(function(){
 
-                //     window.location.href = url;
-                // }, 0);
             }
     });
 

@@ -59,7 +59,6 @@
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute([":position" => "%" . $study . "%", ":city" => "%" . $location . "%"]);
                         $rows = $stmt->fetchAll();
-                        // print("<pre>".print_r($rows, true)."</pre>");
         
                         foreach($rows as $row) {
                             echo "<div class='resultaat-boxen' value='" . $row["user_id"] . "'>
@@ -71,26 +70,11 @@
                                         <p>" . $row["positiontext"] . "</p>
                                     </div> 
                                 </div>";
-                        }
-                        //session  role 
-                        //session  username
-
-                        
+                        }        
                     }
         
                     
-                ?>
-                
-                <!-- <div class="resultaat-boxen">
-                    <img src="images/placeholder-100x100.png" alt="img">
-                    <div class="textbox">
-                        <h1>Software developer niveau 4 --> <!--Opleiding. tekst tekst tekst--> <!-- </h1>
-                       <h2>Google inc. Alphabet B.v. --><!--Bedrijfsnaam. tekst tekst tekst--> <!--</h2>
-                        <h3>Locatie</h3>
-                        <p>Tekst tekst tekst voorbeeld voorbeeld --> <!--Informatie over het bedrijf en wat ze zoeken. tekst tekst tekst</p>
-                    </div> 
-                </div> -->
-                
+                ?>          
             </div>
         </div>
     </div>
