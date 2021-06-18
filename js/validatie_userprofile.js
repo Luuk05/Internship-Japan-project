@@ -19,7 +19,7 @@ $("#role ").on("change", function() {
 $("#submit-button").on("click", function(event) {
     event.preventDefault();
 
-    sessionStorage.setItem("showMessageWhenDone", "false");   //deze storage is voor als het account maken gelukt is
+    sessionStorage.setItem("showMessageWhenDone", "false");   //deze storage is voor als het account wijzigen gelukt is
 
     var userName = $("#username").val();
     var passWord = $("#password").val();
